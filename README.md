@@ -1,2 +1,1 @@
 # miniProject Green
-# MPGreen
