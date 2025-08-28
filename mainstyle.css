@@ -1,0 +1,244 @@
+/* ===== 초기화 ===== */
+*{
+    margin : 0px;
+    padding: 0px;
+    font : normal 16px 'Noto Sans KR', sans-serif;
+    letter-spacing: 0%;
+    vertical-align: middle;
+}
+
+a{
+    text-decoration:  none;
+    color:  black;
+}
+
+ul, ol{
+    list-style: none;
+}
+
+#wrapper{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* ===== 헤더 ===== */
+header > div:nth-child(2) > div > nav .dropdown-content li {
+    height: 30px;
+    padding-top: 10px;
+    padding-left: 5px;
+    border-bottom: 1px solid white;
+}
+header > div:nth-child(2) > div > nav .dropdown-content li:last-child{
+    border-bottom: none;
+}
+
+header > div:nth-child(2) > div > nav .dropdown{
+    position : relative;
+    display: inline-block;
+}
+header > div:nth-child(2) > div > nav .dropdown > ul{
+    border: 1px solid #3F97F6;
+    height: auto;
+}
+header > div:nth-child(2) > div > nav .dropdown-content a {
+    color: white;
+    margin: 0 auto;
+    text-align: left;
+    font-weight: 400;
+}
+
+header > div:nth-child(2) > div > nav .dropbtn{
+    cursor : pointer;
+}
+header > div:nth-child(2) > div > nav .dropdown-content{
+    display: none;
+    flex-direction: column;
+    position : absolute;
+    z-index : 1000; /*�ㅻⅨ �붿냼�ㅻ낫�� �욎뿉 諛곗튂*/
+    width: 150px;
+    background-color: #3F97F6;
+    margin-top: -25px;
+}
+header > div:nth-child(2) > div > nav .dropdown-content a:hover{
+    color: #39A6F4;
+}
+header > div:nth-child(2) > div > nav .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+header{
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+}
+
+header > div:nth-child(1){
+    height: 27px;
+    background-color: #3F97F6;
+}
+
+header > div:nth-child(2){
+    height: 77px;
+}
+
+header > div > div{
+    width: 1200px;
+    height: 77px;
+    margin: 0 auto;
+}
+
+header > div > div > p{
+    float: right;
+    margin-top: 2px;
+}
+
+header > div > div > p > a{
+    color: white;
+    margin-left: 10px;
+    font-size: 12px;
+}
+
+header > div:nth-child(2) img{
+    float: left;
+    margin-top: 10px;
+}
+
+header > div:nth-child(2) > div > nav{
+    float: right;
+    width: 660px;
+    height: 77px;
+}
+
+header > div:nth-child(2) > div > nav > ul > li{
+    float: right;
+    width: 16%;
+    height: 100%;
+}
+
+header > div:nth-child(2) > div > nav a{
+    margin-top: 25px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 500;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around; 
+    align-items: center; 
+    height: 77px;
+}
+
+/* 상단 유틸 설정 */
+.util {
+    display: flex;              /* 가로 나열 */
+    justify-content: flex-end;  /* 오른쪽 맞춤 */
+    align-items: center;
+    margin-top: 10px;
+}
+.util a { color: #fff;}
+.util li:not(:last-child)::after {
+    content: " │ ";               /* 구분자 */
+    color: #fff;
+
+}
+ 
+/* ===== 푸터 ===== */
+
+footer {
+    width:100%; 
+    height:50px;
+    gap: 0;
+    color:#ddd;}
+footer > div {width:100%;}
+footer > div:nth-child(1){height:px; background:#1f2838 ;}
+footer > div:nth-child(2){height:219px; background:#19202d;}
+/* 바 전체 */
+footer .terms{
+  width:1200px; height:50px;
+  margin:0 auto;
+  display:flex;
+  background:#1a2230;
+}
+
+/* 각 칸: 정확히 240×50, 포지셔닝 기준 제공 */
+footer .terms li{
+  flex:0 0 240px;          /* 240px × 5 = 1200px */
+  height:50px;
+  list-style:none;
+  position:relative;       /* ✅ ::after 기준 */
+  display:flex;
+}
+
+/* 박스 전체가 클릭되도록 */
+footer .terms li a{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%; height:100%;
+  color:#fff; text-decoration:none; font-weight:bold;
+}
+/* 양끝에 '│' 문자 추가 */
+footer .terms::before,
+footer .terms::after {
+  content:"│";
+  color:#626874;
+  display:flex;
+  align-items:center;
+}
+/* 마지막 li를 제외한 li의 오른쪽에 '│' 문자 추가 */
+footer .terms li:not(:last-child)::after{
+  content:"│";
+  position:absolute; 
+  right:0; top:50%;
+  transform:translateY(-50%);   /* 세로 중앙 */
+  color:#626874;                 /* 원하시는 색 */
+  pointer-events:none;           /* 클릭 방해 방지 */
+}
+
+footer .info {padding-top:18px; color:#b7c0c8; line-height:24px;}
+
+
+/* ===== 메인 ===== */
+main {width:100%; height:auto;}
+main > section {width:100%; height:auto;}
+main > section > .container {padding:0 0;} /* 필요시 */
+
+/* 1) 히어로 배너 */
+main > section:nth-child(1){height:360px; background:#c9d7ec;}
+.main-hero {position:relative;}
+.main-hero .slider {position:absolute; inset:0; background:#b8c7e1;}
+
+/* 2) 게시판 2단 (학사안내 / 공지사항) */
+main > section:nth-child(2){height:220px; background:#fff;}
+.board-wrap {padding:20px 0;}
+.board {float:left; width:540px; height:180px; background:#e9f2ff; border:1px solid #cfe2ff;}
+.board + .board {float:right; background:#e9f7ff; border-color:#cfefff;}
+.board .title {height:40px; background:#3f97f6; color:#fff; line-height:40px; padding:0 16px; font-weight:bold;}
+.board .list {height:calc(100% - 40px); background:#f5f9ff;}
+
+/* 3) 포토 갤러리 */ 
+main > section:nth-child(3){height:190px; background:#fff;}
+.gallery {padding:16px 0;}
+.gallery .thumb {float:left; width:260px; height:150px; background:#e5e7eb; border:1px dashed #cbd5e1;}
+.gallery .thumb + .thumb {margin-left:20px;}
+
+/* 4) HELPER 띠 */
+main > section:nth-child(4){height:120px; background:#032057;}
+.helper {height:100%;}
+
+/* 5) 뉴스 & 스마트 링크 */
+main > section:nth-child(5){height:220px; background:#fff;}
+.news-link {padding:20px 0;}
+.news {float:left; width:540px; height:180px; background:#e9f2ff; border:1px solid #cfe2ff;}
+.links {float:right; width:540px; height:180px; background:#eef2f7; border:1px dashed #cbd5e1;}
+.links .icons {display:flex; justify-content:space-between; align-items:center; height:100%; padding:0 24px;}
+.links .icons .ico {width:72px; height:72px; background:#dfe4ea; border-radius:50%;}
+
+/* clearfix */
+.board-wrap::after, .gallery::after, .news-link::after {content:""; display:block; clear:both;}
