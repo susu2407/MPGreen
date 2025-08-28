@@ -21,6 +21,10 @@ ul, ol{
     height: 100%;
     box-sizing: border-box;
 }
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
 
 /* ===== 헤더 ===== */
 header > div:nth-child(2) > div > nav .dropdown-content li {
@@ -156,23 +160,25 @@ footer {
     gap: 0;
     color:#ddd;}
 footer > div {width:100%;}
-footer > div:nth-child(1){height:px; background:#1f2838 ;}
-footer > div:nth-child(2){height:219px; background:#19202d;}
+/* terms 부분 */
+footer > div:nth-child(1){ height:px;    background:#1f2838 ;}
+/* 맨 아래 info 부분 */
+footer > div:nth-child(2){ height:219px; background:#19202d; }
 /* 바 전체 */
 footer .terms{
-  width:1200px; height:50px;
-  margin:0 auto;
-  display:flex;
-  background:#1a2230;
+    width:1200px; height:50px;
+    margin:0 auto;
+    display:flex;
+    background:#1a2230;
 }
 
 /* 각 칸: 정확히 240×50, 포지셔닝 기준 제공 */
 footer .terms li{
-  flex:0 0 240px;          /* 240px × 5 = 1200px */
-  height:50px;
-  list-style:none;
-  position:relative;       /* ✅ ::after 기준 */
-  display:flex;
+    flex:0 0 240px;          /* 240px × 5 = 1200px */
+    height:50px;
+    list-style:none;
+    position:relative;       /* ✅ ::after 기준 */
+    display:flex;
 }
 
 /* 박스 전체가 클릭되도록 */
@@ -197,11 +203,31 @@ footer .terms li:not(:last-child)::after{
   position:absolute; 
   right:0; top:50%;
   transform:translateY(-50%);   /* 세로 중앙 */
-  color:#626874;                 /* 원하시는 색 */
-  pointer-events:none;           /* 클릭 방해 방지 */
+  color:#626874;              /* 원하시는 색 */
+  pointer-events:none;          /* 클릭 방해 방지 */
 }
+footer .footer-inner{
+  width:1200px;
+  margin:0 auto;
+  height:100%;
+  display:flex;              /* 좌우 배치 */
+  align-items:top;           /* 세로 중앙 */
+  gap:2px;                  /* 로고와 info 사이 간격 */
+}
+footer .footer-logo{
+  flex:0 0 200px;            /* 로고 영역 고정폭 (조정 필요) */
+}
+footer .footer-logo img{
+  max-width:100%;
+  height:auto;
+}
+footer .info {padding-top:14px; color:#a8a9ac; line-height:24px;}
 
-footer .info {padding-top:18px; color:#b7c0c8; line-height:24px;}
+
+
+
+
+
 
 
 /* ===== 메인 ===== */
