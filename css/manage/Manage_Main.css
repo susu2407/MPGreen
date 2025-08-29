@@ -22,3 +22,48 @@
        url('/fonts/NotoSansKR-Regular.woff2') format('woff2'),
        url('/fonts/NotoSansKR-Regular.woff') format('woff');
 }
+
+/* 사이드바 */
+main {
+        width: 100%;
+        max-width: 1400px;
+        height: auto;
+        display: flex;
+        margin: 0 auto;
+    }
+
+aside {
+        flex-basis: 15%;
+        flex-grow: 0;
+        height: auto;
+        padding: 25px 30px;
+        background-color: #dadada;
+        
+    }
+
+aside div {
+        margin-bottom: 20px;
+    }
+
+aside img {
+        width: 20px;
+        height: 20px;
+        position: relative;
+        top: 3px;
+        right: 5px;
+        
+    }
+
+aside h4 {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+
+aside a {
+        font-size: 14px;
+        margin-left: 25px;
+        line-height: 30px;
+        text-decoration: none; /*밑줄제거*/
+        color: #000;
+    }

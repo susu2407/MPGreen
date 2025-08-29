@@ -7,11 +7,6 @@
     font-optical-sizing: auto;
     }
 
-a {
-    text-decoration: none; /*밑줄제거*/
-    color: #111;
-    }
-
 .nav {
     background-color: #00518C;
     display: flex;
@@ -29,7 +24,8 @@ a {
     }
 
 .navItem > div > a {
-    color: #fff; /* 글자색을 흰색으로 변경 */
+    color: #fff;
+    text-decoration: none; /*밑줄제거*/
 }
 
 .navItem > div + div {
@@ -49,3 +45,4 @@ a {
 .header_bar article {
     margin-left: 100px; /* 좌측에서 멀어지기 */
 }
+
