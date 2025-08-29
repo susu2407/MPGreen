@@ -20,31 +20,24 @@
         height: 600px;
         margin-top: 146px;
         margin-left: 360px;
-        border: 1px solid black;
         /* box-sizing: border-box; */
     }
     .sidebar{
         float: inline-start;
         width: 210px;
         height: 418px;
-        border: 1px solid red;
-        box-sizing: border-box;
     }
     .board{
         display: flex;
         width: 990px;
         height: 500px;
         margin-left: 210px;
-        border: 1px solid blue;
-        box-sizing: border-box;
     }
 
     .sidebarHeader{
         width: 210px;
         height: 54px;
         margin-top: 62px;
-        border: 1px solid green;
-        box-sizing: border-box;
     }
     
     .sbTitle{
@@ -52,8 +45,6 @@
         height: 36px;
         margin-top: -1px;
         font: 700 32px bold;
-        border: 1px solid purple;
-        box-sizing: border-box;
     }
 
     .sidebarMenu{
@@ -64,14 +55,27 @@
     }
 
     .item{
+        position: relative;
         width: 210px;
-        height: 60px;
+        height: 57.5px;
         margin-top: 2px;
         border-bottom: 1px solid #dcdcdc;
         box-sizing: border-box;
         flex-direction: column;
+        transform: rotate(0deg);
+        opacity: 1;
+        display: flex;
     }
-
+    .list {
+        width: 210px;
+        height: 302px;
+        transform: rotate(0deg);
+        opacity: 1;
+        border-top-width: 2px;
+        border-top-style: solid;
+        border-top-color: #333;
+        list-style: none;
+        }
     .itemText{
         width: 77.51px;
         height: 18px;
@@ -79,7 +83,7 @@
         margin-left: 20px;
         font-family: "Noto Sans KR";
         font: 350 16px light;
-        text-align: center;
+        text-align: left;
         line-height: 21px;
         color: #333333;
     }
@@ -137,21 +141,21 @@
                 <h2 class="sbTitle">대학소개</h2>
             </div>
             <div class="sidebarMenu">
-                <ul>
+                <ul class="list">
                     <li class="item">
-                        <a href="#" class="itemText">1</a>
+                        <a href="#" class="itemText">총장 인사말</a>
                     </li>
                     <li class="item">
-                        <a href="#" class="itemText">2</a>
+                        <a href="#" class="itemText">교육이념</a>
                     </li>
                     <li class="item">
-                        <a href="#" class="itemText">3</a>
+                        <a href="#" class="itemText">연혁</a>
                     </li>
                     <li class="item">
-                        <a href="#" class="itemText">4</a>
+                        <a href="#" class="itemText">조직도</a>
                     </li>
                     <li class="item">
-                        <a href="#" class="itemText">5</a>
+                        <a href="#" class="itemText">오시는길</a>
                     </li>
                 </ul>
             </div>
