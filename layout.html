@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기본 레이아웃 설정</title>
+</head>
+<style>
+    
+    ul,ol{
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+    }
+    a{
+        text-decoration: none; color: black;
+    }
+    #container{
+        width: 1200px;
+        height: 600px;
+        margin-top: 146px;
+        margin-left: 360px;
+        border: 1px solid black;
+        /* box-sizing: border-box; */
+    }
+    .sidebar{
+        float: inline-start;
+        width: 210px;
+        height: 418px;
+        border: 1px solid red;
+        box-sizing: border-box;
+    }
+    .board{
+        display: flex;
+        width: 990px;
+        height: 500px;
+        margin-left: 210px;
+        border: 1px solid blue;
+        box-sizing: border-box;
+    }
+
+    .sidebarHeader{
+        width: 210px;
+        height: 54px;
+        margin-top: 62px;
+        border: 1px solid green;
+        box-sizing: border-box;
+    }
+    
+    .sbTitle{
+        width: 128.4px;
+        height: 36px;
+        margin-top: -1px;
+        font: 700 32px bold;
+        border: 1px solid purple;
+        box-sizing: border-box;
+    }
+
+    .sidebarMenu{
+        width: 210px;
+        height: 302px;
+        border-top: 2px solid black;
+        box-sizing: border-box;
+    }
+
+    .item{
+        width: 210px;
+        height: 60px;
+        margin-top: 2px;
+        border-bottom: 1px solid #dcdcdc;
+        box-sizing: border-box;
+        flex-direction: column;
+    }
+
+    .itemText{
+        width: 77.51px;
+        height: 18px;
+        margin-top: 20px;
+        margin-left: 20px;
+        font-family: "Noto Sans KR";
+        font: 350 16px light;
+        text-align: center;
+        line-height: 21px;
+        color: #333333;
+    }
+    
+    .itemTextWhite{
+        width: 77.51px;
+        height: 18px;
+        margin-top: 20px;
+        margin-left: 20px;
+        font-family: "Noto Sans KR";
+        font: 350 16px light;
+        text-align: center;
+        line-height: 21px;
+        color: #ffffff;
+    }
+
+    .boardUpper{
+        width: 930px;
+        height: 56px;
+        margin-top: 62px;
+        margin-left: 60px;
+        border-bottom: 2px solid black;
+        box-sizing: border-box;
+    }
+
+    .buText{
+        width: 104.36px;
+        height: 30px;
+        margin-top: 7px;
+        font-family: "Noto Sans KR";
+        font: 700 26px bold;
+        line-height: 44px;
+        text-align: center;
+    }
+
+    .boardLower{
+        width: 930px;
+        height: 19px;
+
+    }
+    
+    .blText{
+        width: 125.33px;
+        height: 18px;
+        font-family: "Noto Sans KR";
+        font: 350 16px light;
+        line-height: 100%;
+        text-align: center;
+    }
+</style>
+<body>
+    <section id="container">
+        <div class="sidebar">
+            <div class="sidebarHeader">
+                <h2 class="sbTitle">대학소개</h2>
+            </div>
+            <div class="sidebarMenu">
+                <ul>
+                    <li class="item">
+                        <a href="#" class="itemText">1</a>
+                    </li>
+                    <li class="item">
+                        <a href="#" class="itemText">2</a>
+                    </li>
+                    <li class="item">
+                        <a href="#" class="itemText">3</a>
+                    </li>
+                    <li class="item">
+                        <a href="#" class="itemText">4</a>
+                    </li>
+                    <li class="item">
+                        <a href="#" class="itemText">5</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="board">
+            <div class="boardUpper">
+                <h3 class="buText">교육이념</h3>
+                <div class="boardLower">
+                    <article class="blText">
+                        컨텐츠 내용 꾸미기
+                    </article>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</body>
+</html>
