@@ -2,10 +2,11 @@
 *{
     margin : 0px;
     padding: 0px;
-    font : normal 16px 'Noto Sans KR', sans-serif;
     letter-spacing: 0%;
     vertical-align: middle;
 }
+html { font-size: 12xp;}
+body { font-family: 'Noto Sans Kr', sans-serif;}
 
 a{
     text-decoration:  none;
@@ -31,7 +32,7 @@ header > div:nth-child(2) > div > nav .dropdown-content li {
     height: 30px;
     padding-top: 10px;
     padding-left: 5px;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid 3F97F6;
 }
 header > div:nth-child(2) > div > nav .dropdown-content li:last-child{
     border-bottom: none;
@@ -59,13 +60,13 @@ header > div:nth-child(2) > div > nav .dropdown-content{
     display: none;
     flex-direction: column;
     position : absolute;
-    z-index : 1000; /*�ㅻⅨ �붿냼�ㅻ낫�� �욎뿉 諛곗튂*/
+    z-index : 1000;
     width: 150px;
     background-color: #3F97F6;
     margin-top: -25px;
 }
 header > div:nth-child(2) > div > nav .dropdown-content a:hover{
-    color: #39A6F4;
+    color: #93cef8;
 }
 header > div:nth-child(2) > div > nav .dropdown:hover .dropdown-content {
     display: block;
@@ -152,24 +153,27 @@ nav ul {
 
 }
  
-/* ===== 푸터 ===== */
+/* =============== 푸터 =============== */
 
 footer {
     width:100%; 
-    height:50px;
-    gap: 0;
+    height:auto;
     color:#ddd;}
-footer > div {width:100%;}
+footer > div { width:100%; }
 /* terms 부분 */
-footer > div:nth-child(1){ height:px;    background:#1f2838 ;}
+footer > div:nth-child(1){ background:#202839;}
 /* 맨 아래 info 부분 */
-footer > div:nth-child(2){ height:219px; background:#19202d; }
+footer > div:nth-child(2){ 
+    height:200px; 
+    background:#1a202d;
+    display: flex;
+    align-items: center;
+ }
 /* 바 전체 */
 footer .terms{
-    width:1200px; height:50px;
+    width:100%;;
     margin:0 auto;
-    display:flex;
-    background:#1a2230;
+    display:flex;               /* footer-inner를 세로로 가운데 배치 */
 }
 
 /* 각 칸: 정확히 240×50, 포지셔닝 기준 제공 */
@@ -177,70 +181,104 @@ footer .terms li{
     flex:0 0 240px;          /* 240px × 5 = 1200px */
     height:50px;
     list-style:none;
-    position:relative;       /* ✅ ::after 기준 */
+    position:relative;       /* ::after 기준 */
     display:flex;
 }
 
 /* 박스 전체가 클릭되도록 */
-footer .terms li a{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  width:100%; height:100%;
-  color:#fff; text-decoration:none; font-weight:bold;
+footer .terms li a {
+    font-size: 15px;
+    color:#fff; 
+    text-decoration:none;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:100%; height:100%;
 }
 /* 양끝에 '│' 문자 추가 */
 footer .terms::before,
 footer .terms::after {
-  content:"│";
-  color:#626874;
-  display:flex;
-  align-items:center;
+    content:"│";
+    color:#626874;
+    display:flex;
+    align-items:center;
 }
 /* 마지막 li를 제외한 li의 오른쪽에 '│' 문자 추가 */
 footer .terms li:not(:last-child)::after{
-  content:"│";
-  position:absolute; 
-  right:0; top:50%;
-  transform:translateY(-50%);   /* 세로 중앙 */
-  color:#626874;              /* 원하시는 색 */
-  pointer-events:none;          /* 클릭 방해 방지 */
+    content:"│";
+    position:absolute; 
+    right:0; top:50%;
+    transform:translateY(-50%);   /* 세로 중앙 */
+    color:#626874;              /* 원하시는 색 */
+    pointer-events:none;          /* 클릭 방해 방지 */
 }
 footer .footer-inner {
-  width: 1200px;
-  margin: 0 auto;
-  height: 100%;
-  display: flex;
-  align-items: flex-start;  /* 상단 정렬 */
-  gap: 2px;
+    width: 1200px;
+    margin: 0 auto;
+    height: 200px;
+    display: flex;
+    align-items: flex-start;  /* 상단 정렬 */
+    position: relative;       /* 기준점 */
+    margin-top: 80px;
 }
-
+/* 푸터 로고 */
 footer .footer-logo {
-  flex: 0 0 200px;
+    flex: 0 0 200px;
 }
-
 footer .footer-logo img {
-  max-width: 100%;
-  height: auto;
+    max-width: 100%;
+    height: auto;
+}
+/* 푸터 info */
+footer .info p {
+    color: #a8a9ac;
+    font-size: 12px;
 }
 
-footer .info {
-  /* padding-top: 14px; ← 제거 또는 조정 */
-  color: #a8a9ac;
-  line-height: 24px;
+/* 푸터 오른쪽 검색박스 */
+footer .footer-tools{
+    position: absolute;    /* footer-inner를 기준으로 위치 고정 */
+    top: 35px;             /* 상단에서 35px 떨어짐 */
+    left: 1000px;          /* 왼쪽에서 1000px 떨어짐 */
+}
+footer .footer-tools select {
+    width: 200px;
+    height: 36px;
+    background: #131721          /* 배경색 및 화살표 */
+                url(./images/bg-related-arr-open.png) 
+                no-repeat right 
+                10px 
+                center;
+    color: #a8a9ac;             /* 글자색 (흰색) */
+    border: 1px solid #131721;  /* 테두리 (디자인 맞게 수정 가능) */
+    border-radius: 4px;           /* 모서리 둥글기 */
+    padding: 0 10px;              /* 좌우 여백 */
+    font-size: 14px;              /* 글자 크기 */
+    appearance: none;             /* 기본 화살표 없애기 (브라우저마다 다름) */
+    outline: none;
+    cursor: pointer;
 }
 
 
-
-/* ===== 메인 ===== */
+/* =============== 메인 =============== */
 main {width:100%; height:auto;}
 main > section {width:100%; height:auto;}
 main > section > .container {padding:0 0;} /* 필요시 */
 
 /* 1) 히어로 배너 */
-main > section:nth-child(1){height:360px; background:#c9d7ec;}
-.main-hero {position:relative;}
-.main-hero .slider {position:absolute; inset:0; background:#b8c7e1;}
+main > section:nth-child(1){
+    height:360px; 
+    background:#c9d7ec;}
+.main-hero {
+    position:relative;
+}
+.main-hero .slider {
+    position:absolute; 
+    inset:0; 
+    /* 배경 이미지 추가 */
+    background:url(./images/bg-main-vi01.jpg) no-repeat center center;
+    background-size: cover;
+}
 
 /* 2) 게시판 2단 (학사안내 / 공지사항) */
 main > section:nth-child(2){height:220px; background:#fff;}
