@@ -1,0 +1,24 @@
+/* 기본 폰트 정의 */
+@font-face {
+  font-family: 'Noto Sans KR'; /* 사용할 폰트 이름 설정 */
+  font-weight: 300; /* Light 폰트의 두께 */
+  src: local('Noto Sans KR Light'), 
+       url('/fonts/NotoSansKR-Light.woff2') format('woff2'),
+       url('/fonts/NotoSansKR-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-weight: 500; /* Medium 폰트의 두께 */
+  src: local('Noto Sans KR Medium'),
+       url('/fonts/NotoSansKR-Medium.woff2') format('woff2'),
+       url('/fonts/NotoSansKR-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-weight: 700; /* Regular 폰트의 두께 */
+  src: local('Noto Sans KR Medium'),
+       url('/fonts/NotoSansKR-Regular.woff2') format('woff2'),
+       url('/fonts/NotoSansKR-Regular.woff') format('woff');
+}
