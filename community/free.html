@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>커뮤니티 - 자유게시판</title>
+  <link rel="stylesheet" href="../css/community/Community.css">
+</head>
+<body>
+<div id="wrapper">
+
+  <!-- ===== 헤더 ===== -->
+  <header>
+    <div>
+      <div>
+        <ul class="util">
+          <li><a href="../main.html">HOME</a></li>
+          <li><a href="#">사이트맵</a></li>
+          <li><a href="#">로그인</a></li>
+          <li><a href="#">학생지원</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 로고 + GNB -->
+    <div>
+      <div>
+        <a href="../main.html"><img src="../images/header_logo.png" alt="그린대학교"></a>
+        <nav>
+          <ul>
+            <li class="dropdown">
+              <a class="dropbtn" href="#">대학소개</a>
+              <ul class="dropdown-content">
+                <li><a href="#">총장 인사말</a></li>
+                <li><a href="#">교육이념</a></li>
+                <li><a href="#">연혁</a></li>
+                <li><a href="#">조직도</a></li>
+                <li><a href="#">오시는길</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a class="dropbtn" href="#">입학안내</a>
+              <ul class="dropdown-content">
+                <li><a href="notice.html">공지사항</a></li>
+                <li><a href="#">수시모집</a></li>
+                <li><a href="#">정시모집</a></li>
+                <li><a href="#">편입학</a></li>
+                <li><a href="#">입학상담</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a class="dropbtn" href="#">대학·대학원</a>
+              <ul class="dropdown-content">
+                <li><a href="#">인문사회대학</a></li>
+                <li><a href="#">자연과학대학</a></li>
+                <li><a href="#">공과대학</a></li>
+                <li><a href="#">사범대학</a></li>
+                <li><a href="#">대학원</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a class="dropbtn" href="#">학사안내</a>
+              <ul class="dropdown-content">
+                <li><a href="notice.html">공지사항</a></li>
+                <li><a href="#">학사일정</a></li>
+                <li><a href="#">수강신청</a></li>
+                <li><a href="#">성적</a></li>
+                <li><a href="#">수료 및 졸업</a></li>
+                <li><a href="#">자주하는 질문</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a class="dropbtn" href="#">대학생활</a>
+              <ul class="dropdown-content">
+                <li><a href="#">학생회 소개</a></li>
+                <li><a href="#">동아리/스터디</a></li>
+                <li><a href="#">식단안내</a></li>
+                <li><a href="#">갤러리</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a class="dropbtn" href="#">커뮤니티</a>
+              <ul class="dropdown-content">
+                  <li><a href="./notice.html">공지사항</a></li>
+                  <li><a href="./news.html">뉴스 및 칼럼</a></li>
+                  <li><a href="./jobs.html">취업정보</a></li>
+                  <li><a href="./free.html">자유게시판</a></li>
+                  <li><a href="./qna.html">질문과 답변</a></li>
+                  <li><a href="./data.html">자료실</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== breadcrumb bar ===== -->
+  <div class="crumb-bar">
+    <div class="crumb container">
+      <img src="../images/ico-home.png" alt="홈" class="crumb-home">
+      <a href="#">커뮤니티</a>
+      <span class="sep">›</span>
+      <span class="current">자유게시판</span>
+    </div>
+  </div>
+
+  <!-- ===== 본문 ===== -->
+  <main>
+    <div class="container content-wrap">
+      <!-- 좌측 메뉴 -->
+      <aside class="sidebar">
+        <h4>커뮤니티</h4>
+        <ul>
+          <li><a href="./notice.html">공지사항</a></li>
+          <li><a href="./news.html">뉴스 및 칼럼</a></li>
+        <li><a href="./jobs.html">취업정보</a></li>
+        <li class="active"><a href="./free.html">자유게시판</a></li>
+          <li><a href="./qna.html">질문과 답변</a></li>
+          <li><a href="./data.html">자료실</a></li>
+        </ul>
+      </aside>
+
+      <!-- 우측 콘텐츠 -->
+      <section class="content">
+        <h2>자유게시판</h2>
+
+        <!-- 검색 영역 -->
+        <div class="search-box">
+          <select>
+            <option>전체</option>
+            <option>제목</option>
+            <option>업체</option>
+          </select>
+          <input type="text" placeholder="검색어를 입력해 주세요">
+          <button>검색</button>
+        </div>
+
+        
+          <!-- 게시판 테이블 (notice-board 스타일 재사용) -->
+          <table class="notice-board">
+            <!-- 열 폭 고정: 페이지 이동해도 변하지 않도록 -->
+            <colgroup>
+              <col style="width:8%">   <!-- 번호 -->
+              <col style="width:57%">  <!-- 제목 -->
+              <col style="width:13%">  <!-- 작성자 -->
+              <col style="width:12%">  <!-- 작성일 -->
+              <col style="width:10%">  <!-- 조회 -->
+            </colgroup>
+            <thead>
+              <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>작성일</th>
+                <th>조회</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>3</td>
+                <td>2024 하반기 도서관 이용자 만족도 조사(추첨을 통해 문화상품권 증정)</td>
+                <td>홍길동</td>
+                <td>24.04.09</td>
+                <td>160</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>분실물 찾아가세요 : 공학관 2층 세미나실에서 흰색 텀블러 발견</td>
+                <td>홍길동</td>
+                <td>24.04.09</td>
+                <td>160</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>동아리 연합회 주최 &lt;봄맞이 플리마켓&gt; 부스 신청 안내</td>
+                <td>홍길동</td>
+                <td>24.04.09</td>
+                <td>160</td>
+              </tr>
+            </tbody>
+          </table>
+
+        <!-- 페이징 -->
+        <div class="pagination">
+          <a href="#">&laquo;</a>
+          <a href="#">&lsaquo;</a>
+          <a href="#" class="active">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">&rsaquo;</a>
+          <a href="#">&raquo;</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- ===== 푸터 ===== -->
+  <footer>
+    <div>
+      <div class="container bottom">
+        <ul class="terms">
+          <li><a href="#">개인정보처리방침</a></li>
+          <li><a href="#">통합정보시스템</a></li>
+          <li><a href="#">학사일정</a></li>
+          <li><a href="#">주요민원 연락처</a></li>
+          <li><a href="#">교내공지사항</a></li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <img src="../images/footer_logo.png" alt="그린대학교" class="icon">
+        </div>
+        <div class="info">
+          <p>
+            그린대학교<br>
+            [12345] 부산광역시 부산진구 부전대로 123 그린대학교<br>
+            대표전화 : 051-123-1000 / 입학안내 : 051-123-1302 / FAX : 051-123-3333<br><br>
+            CopyrightⓒGreen University All rights reserved.
+          </p>
+        </div>
+        <div class="footer-tools">
+          <form action="#" method="get">
+            <select name="site" class="site-select" aria-label="주요사이트">
+              <option selected>주요사이트</option>
+              <option value="introduce">대학소개</option>
+              <option value="admission">입학안내</option>
+              <option value="graduate">대학.대학원</option>
+              <option value="Academic">학사안내</option>
+              <option value="campuslife">대학생활</option>
+              <option value="community">커뮤니티</option>
+            </select>
+          </form>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
