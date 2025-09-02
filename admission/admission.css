@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 html { font-size: 12xp;}
 body { font-family: 'Noto Sans Kr', sans-serif;}
 
@@ -128,6 +129,15 @@ nav ul {
 }
 
 /* 리스트 스타일 */
+=======
+/* 
+///////////////////////////////////////////////////
+// 화면 레이아웃
+///////////////////////////////////////////////////
+ */
+
+    /* 리스트 스타일 */
+>>>>>>> origin/feature/chamdarang
     ul,ol{
         list-style: none;
         margin: 0px;
@@ -238,6 +248,10 @@ nav ul {
         width: 930px;
         height: 56px;
         margin-top: 62px;
+<<<<<<< HEAD
+=======
+        margin-bottom: 30px;
+>>>>>>> origin/feature/chamdarang
         margin-left: 60px;
         border-bottom: 2px solid black;
         box-sizing: border-box;
@@ -272,6 +286,7 @@ nav ul {
         text-align: center;
     }
 
+<<<<<<< HEAD
 footer {
     width:100%; 
     height:auto;
@@ -375,3 +390,16 @@ footer .footer-tools select {
     outline: none;
     cursor: pointer;
 }
+=======
+    /*
+    ///////////////////////////////////////////////////
+    // notice.css
+    ///////////////////////////////////////////////////
+    */
+
+    .searchingField{
+        margin-top: 30px;
+        margin-bottom: 20px;
+
+    }
+>>>>>>> origin/feature/chamdarang
