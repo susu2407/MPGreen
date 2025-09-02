@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기본 레이아웃 설정</title>
+</head>
+<style>
+    /* 리스트 스타일 */
+    ul,ol{
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    /* a태그 스타일 */
+    a{
+        text-decoration: none; color: black;
+    }
+
+    /* container 레이아웃 */
+    #container{
+        width: 1200px;
+        height: 600px;
+        margin-top: 146px;
+        margin-left: 360px;
+        /* box-sizing: border-box; */
+    }
+
+    /* sidebar 레이아웃 */
+    .sidebar{
+        float: inline-start;
+        width: 210px;
+        height: 418px;
+    }
+
+    /* board 레이아웃 */
+    .board{
+        display: flex;
+        width: 990px;
+        height: 500px;
+        margin-left: 210px;
+    }
+
+    /* sidebar 윗부분 레이아웃 */
+    .sidebarHeader{
+        width: 210px;
+        height: 54px;
+        padding-top: 62px;
+
+    }
+    
+    /* sidevar 제목 서식 */
+    .sbTitle{
+        width: 128.4px;
+        height: 36px;
+        margin-top: -1px;
+        font: 700 32px bold;
+    }
+
+    /* sidebar 메뉴 서식 */
+    .sidebarMenu{
+        width: 210px;
+        height: 302px;
+        border-top: 2px solid black;
+    }
+
+    /* sidebar item 서식 */
+    .item{
+        position: relative;
+        width: 210px;
+        height: 60px;
+        padding-top: 2px;
+        border-bottom: 1px solid #dcdcdc;
+        box-sizing: border-box;
+        flex-direction: column;
+        transform: rotate(0deg);
+        opacity: 1;
+        display: flex;
+        
+    }
+    /* item 텍스트 서식 */
+    .itemText{
+        width: 77.51px;
+        height: 18px;
+        margin-top: 18px;
+        margin-left: 20px;
+        font-family: "Noto Sans KR";
+        font: 350 16px light;
+        text-align: left;
+        line-height: 21px;
+        color: #333333;
+    }
+ 
+    /* item 영역 hover 할 때 색 변경(배경+글자) */
+    .item:hover a {
+    color: #FFFFFF;
+    }
+
+    .item:hover {
+        background-color: #3F97F6;
+        border-color: #3F97F6;
+    }
+
+    /* list 서식 */
+    .list {
+        width: 210px;
+        height: 302px;
+        transform: rotate(0deg);
+        opacity: 1;
+        list-style: none;
+
+        }
+    
+    /* board 윗부분 레이아웃 */
+    .boardUpper{
+        width: 930px;
+        height: 56px;
+        margin-top: 62px;
+        margin-left: 60px;
+        border-bottom: 2px solid black;
+        box-sizing: border-box;
+
+    }
+
+    /* board 제목 서식 */
+    .buText{
+        width: 104.36px;
+        height: 30px;
+        margin-top: 7px;
+        font-family: "Noto Sans KR";
+        font: 700 26px bold;
+        line-height: 44px;
+        text-align: center;
+    }
+
+    /* board 본문 레이아웃 */
+    .boardLower{
+        width: 930px;
+        height: 19px;
+
+    }
+    
+    /* board 본문 서식 */
+    .blText{
+        width: 125.33px;
+        height: 18px;
+        font-family: "Noto Sans KR";
+        font: 350 16px light;
+        line-height: 100%;
+        text-align: center;
+    }
+
+    /*컨테츠 꾸미기 레이아웃*/
+    .boardLower article { 
+        width: 100%; 
+    }
+    
+        /* 타임라인 전체 컨테이너 */
+    .timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px 0;
+    }
+
+    /* 중앙 세로선 */
+    .timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: #3498db;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    }
+
+    /* 타임라인 아이템 공통 */
+    .timeline-item {
+    padding: 20px 30px;
+    position: relative;
+    width: 45%;
+    opacity: 0;
+    transition: all 0.6s ease-out;
+    }
+
+    /* 애니메이션 */
+    .timeline-item.show {
+    opacity: 1;
+    transform: translateY(0);
+    }
+
+    /* 왼쪽 아이템 */
+    .timeline-item.left {
+    left: 0;
+    text-align: right;
+    transform: translateX(-50px);
+    }
+
+    /* 오른쪽 아이템 */
+    .timeline-item.right {
+    left: 50%;
+    text-align: left;
+    transform: translateX(50px);
+    }
+
+    /* 마커 */
+    .timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #3498db;
+    border: 4px solid #fff;
+    top: 20px;
+    border-radius: 50%;
+    z-index: 1;
+    }
+
+    /* 왼쪽 마커 위치 */
+    .timeline-item.left::after {
+    right: -10px;
+    }
+
+    /* 오른쪽 마커 위치 */
+    .timeline-item.right::after {
+    left: -10px;
+    }
+
+    /* 년도 스타일 */
+    .timeline-item h3 {
+    margin: 0 0 10px 0;
+    color: #3498db;
+    }
+
+    /* 이벤트 리스트 스타일 */
+    .timeline-item ul {
+    padding-left: 20px;
+    margin: 0;
+    }
+
+/* 반응형 */
+@media screen and (max-width: 768px) {
+  .timeline-item {
+    width: 100%;
+    left: 0 !important;
+    transform: translateX(0) !important;
+    margin-bottom: 20px;
+    text-align: left !important;
+  }
+  .timeline-item::after {
+    left: 50%;
+    margin-left: -10px;
+  }
+}
+</style>
+<body>
+    <!-- ===== 메인 ===== -->
+    <main>
+        <section id="container"> 
+        <div class="sidebar"> <!--사이드바-->
+            <div class="sidebarHeader"> <!--사이드바 윗부분(제목 영역)-->
+                <h2 class="sbTitle">대학소개</h2> <!--사이드바 제목-->
+            </div>
+            <div class="sidebarMenu"> <!--사이드바 하위 메뉴-->
+                <ul class="list"> <!--사이드바 리스트-->
+                    <li class="item"> <!--사이드바 리스트 요소-->
+                        <a href="./greeting.html" class="itemText">총장 인사말</a>
+                    </li>
+                    <li class="item">
+                        <a href="./philosophy.html" class="itemText">교육이념</a>
+                    </li>
+                    <li class="item">
+                        <a href="./history.html" class="itemText">연혁</a>
+                    </li>
+                    <li class="item">
+                        <a href="./organization.html" class="itemText">조직도</a>
+                    </li>
+                    <li class="item">
+                        <a href="./location.html" class="itemText">오시는길</a>
+                    </li>
+                </ul>
+            </div>
+            </div>
+            <div class="board"> <!--본문 영역-->
+                <div class="boardUpper"> <!--본문 윗부분(제목 영역)-->
+                    <h3 class="buText">교육이념</h3>
+                    <div class="boardLower"> <!--본문(내용 영역)-->
+                        <article>
+                            <div class="timeline" id="timeline"></div>
+
+                            <script>
+                            const timeline = document.getElementById('timeline');
+
+                            // 1995~2025 연혁 데이터 (각 연도 5~10개 사건)
+                            const historyData = [
+                                { year: '1995', events: ['대학 설립', '초대 총장 취임', '첫 학부 과정 개설'] },
+                                { year: '2000', events: ['새로운 학술관 개관', '국제 학술 교류 확대'] },
+                                { year: '2005', events: ['대학 부설 연구소 설립', '해외 교환학생 프로그램 확대'] },
+                                { year: '2010', events: ['학술정보관 개관', '학부 전공 다양화'] },
+                                { year: '2015', events: ['대학 창립 20주년', '교내 연구 장학금 확대'] },
+                                { year: '2020', events: ['온라인 수업 시스템 도입', '코로나 대응 정책 시행'] },
+                                { year: '2025', events: ['신입생 오리엔테이션 최신화', '졸업생 멘토링 강화'] }
+                            ];
+
+                            historyData.forEach((h, idx) => {
+                            const div = document.createElement('div');
+                            div.className = idx % 2 === 0 ? 'timeline-item left' : 'timeline-item right';
+                            div.innerHTML = `<h3>${h.year}년</h3><ul>${h.events.map(e => `<li>${e}</li>`).join('')}</ul>`;
+                            timeline.appendChild(div);
+                            });
+
+                            // 스크롤 애니메이션
+                            const items = document.querySelectorAll('.timeline-item');
+                            const observer = new IntersectionObserver((entries) => {
+                            entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                entry.target.classList.add('show');
+                                }
+                            });
+                            }, { threshold: 0.1 });
+
+                            items.forEach(item => observer.observe(item));
+                            </script>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
