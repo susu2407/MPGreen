@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기본 레이아웃 설정</title>
+</head>
+<style>
+    /* 리스트 스타일 */
+    ul,ol{
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    /* a태그 스타일 */
+    a{
+        text-decoration: none; color: black;
+    }
+
+    /* container 레이아웃 */
+    #container{
+        width: 1200px;
+        height: 600px;
+        margin-top: 146px;
+        margin-left: 360px;
+        /* box-sizing: border-box; */
+    }
+
+    /* sidebar 레이아웃 */
+    .sidebar{
+        float: inline-start;
+        width: 210px;
+        height: 418px;
+    }
+
+    /* board 레이아웃 */
+    .board{
+        display: flex;
+        width: 990px;
+        height: 500px;
+        margin-left: 210px;
+    }
+
+    /* sidebar 윗부분 레이아웃 */
+    .sidebarHeader{
+        width: 210px;
+        height: 54px;
+        padding-top: 62px;
+
+    }
+    
+    /* sidevar 제목 서식 */
+    .sbTitle{
+        width: 128.4px;
+        height: 36px;
+        margin-top: -1px;
+        font: 700 32px bold;
+    }
+
+    /* sidebar 메뉴 서식 */
+    .sidebarMenu{
+        width: 210px;
+        height: 302px;
+        border-top: 2px solid black;
+    }
+
+    /* sidebar item 서식 */
+    .item{
+        position: relative;
+        width: 210px;
+        height: 60px;
+        padding-top: 2px;
+        border-bottom: 1px solid #dcdcdc;
+        box-sizing: border-box;
+        flex-direction: column;
+        transform: rotate(0deg);
+        opacity: 1;
+        display: flex;
+        
+    }
+    /* item 텍스트 서식 */
+    .itemText{
+        width: 77.51px;
+        height: 18px;
+        margin-top: 18px;
+        margin-left: 20px;
+        font-family: "Noto Sans KR";
+        font: 350 16px light;
+        text-align: left;
+        line-height: 21px;
+        color: #333333;
+    }
+ 
+    /* item 영역 hover 할 때 색 변경(배경+글자) */
+    .item:hover a {
+    color: #FFFFFF;
+    }
+
+    .item:hover {
+        background-color: #3F97F6;
+        border-color: #3F97F6;
+    }
+
+    /* list 서식 */
+    .list {
+        width: 210px;
+        height: 302px;
+        transform: rotate(0deg);
+        opacity: 1;
+        list-style: none;
+
+        }
+    
+    /* board 윗부분 레이아웃 */
+    .boardUpper{
+        width: 930px;
+        height: 56px;
+        margin-top: 62px;
+        margin-left: 60px;
+        border-bottom: 2px solid black;
+        box-sizing: border-box;
+
+    }
+
+    /* board 제목 서식 */
+    .buText{
+        width: 930px;
+        height: 30px;
+        margin-top: 7px;
+        font-family: "Noto Sans KR";
+        font: 700 26px bold;
+        line-height: 44px;
+        text-align: left;
+    }
+
+    /* board 본문 레이아웃 */
+    .boardLower{
+        width: 930px;
+        height: 19px;
+    }
+    
+    /* board 본문 서식 */
+    .blText {
+    width: 100%;
+    height: auto;  /* 높이 자동 */
+    font-family: "Noto Sans KR";
+    font-weight: 350;
+    font-size: 16px;
+    line-height: 1.6em;
+    color: #333;
+    text-align: left; /* 중앙정렬보단 왼쪽이 보기 편함 */
+}
+
+
+    /*컨테츠 꾸미기 레이아웃*/
+    .boardLower h2 {
+        font-size: 1.8em;
+        font-weight: 700;
+        color: #2b7a0b;
+        text-align: center;
+        margin-bottom: 30px;
+        line-height: 1.3em;
+        animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        0% { opacity: 0; transform: translateY(-20px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .section {
+        margin-bottom: 25px;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: slideUp 1s forwards;
+    }
+
+    /* 순차적으로 나타나도록 지연 적용 */
+    .section:nth-child(2) { animation-delay: 0.3s; }
+    .section:nth-child(3) { animation-delay: 0.6s; }
+    .section:nth-child(4) { animation-delay: 0.9s; }
+    .section:nth-child(5) { animation-delay: 1.2s; }
+    .section:nth-child(6) { animation-delay: 1.5s; }
+
+    @keyframes slideUp {
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .final-message {
+        background: linear-gradient(135deg, #d1f0d1, #eaf7e0);
+        padding: 20px;
+        border-radius: 12px;
+        text-align: center;
+        font-weight: 700;
+        color: #2b7a0b;
+        line-height: 1.6em;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        transform: scale(1);
+        transition: transform 0.3s ease;
+    }
+
+    .blText .final-message:hover { transform: scale(1.05); }
+
+    .blText .section ul { margin: 10px 0 15px 20px; }
+    .blText .section ul li { margin-bottom: 5px; line-height: 1.6em; }
+</style>
+<body>
+    <!-- ===== 메인 ===== -->
+    <main>
+        <section id="container"> 
+        <div class="sidebar"> <!--사이드바-->
+            <div class="sidebarHeader"> <!--사이드바 윗부분(제목 영역)-->
+                <h2 class="sbTitle">대학소개</h2> <!--사이드바 제목-->
+            </div>
+            <div class="sidebarMenu"> <!--사이드바 하위 메뉴-->
+                <ul class="list"> <!--사이드바 리스트-->
+                    <li class="item"> <!--사이드바 리스트 요소-->
+                        <a href="./greeting.html" class="itemText">총장 인사말</a>
+                    </li>
+                    <li class="item">
+                        <a href="./philosophy.html" class="itemText">교육이념</a>
+                    </li>
+                    <li class="item">
+                        <a href="./history.html" class="itemText">연혁</a>
+                    </li>
+                    <li class="item">
+                        <a href="./organization.html" class="itemText">조직도</a>
+                    </li>
+                    <li class="item">
+                        <a href="./location.html" class="itemText">오시는길</a>
+                    </li>
+                </ul>
+            </div>
+            </div>
+            <div class="board"> <!--본문 영역-->
+                <div class="boardUpper"> <!--본문 윗부분(제목 영역)-->
+                    <h3 class="buText">교육이념</h3>
+                    <div class="boardLower"> <!--본문(내용 영역)-->
+                        <article>
+
+                            <h2>“미래를 이끄는 힘은 사람이며, 교육은 그 사람을 변화시키는 가장 강력한 도구입니다.”</h2>
+
+                            <div class="section">
+                                <h3>실무 중심의 창의적 인재 양성</h3>
+                                <p>
+                                    그린대학교는 빠르게 변화하는 4차 산업혁명 시대 속에서 단순한 지식 전달을 넘어,
+                                    <strong>실무 중심의 창의적 인재를 양성</strong>하는 것을 교육의 최우선 가치로 삼고 있습니다.
+                                    우리는 기술이 사람을 대신하는 세상이 아니라, 기술을 통해 사람이 더욱 성장하고,
+                                    나아가 사회 전체가 발전하는 세상을 꿈꿉니다.
+                                </p>
+                            </div>
+
+                            <div class="section">
+                                <h3>배움은 꿈을 현실로 만드는 여정</h3>
+                                <p>
+                                    교육은 단순히 취업을 위한 준비 과정이 아닙니다. 교육은 개인이 자신의 가능성을 발견하고,
+                                    그것을 실현하는 여정입니다. 그린대학교는 모든 학생이 <strong>“내일을 설계하는 주체”</strong>로
+                                    성장할 수 있도록, 실무 경험을 기반으로 한 체계적인 커리큘럼과
+                                    <strong>끊임없는 도전</strong>을 장려합니다.
+                                </p>
+                            </div>
+
+                            <div class="section">
+                                <h3>꿈을 현실로 만드는 교육</h3>
+                                <ul>
+                                    <li>🔹 배움의 순간마다 자신의 열정을 확인</li>
+                                    <li>🔹 열정을 사회와 나누며 스스로의 가치를 높임</li>
+                                    <li>🔹 창의력, 도전 정신, 따뜻한 인성을 겸비한 글로벌 인재 양성</li>
+                                </ul>
+                                <p>
+                                    미래 사회는 융합적 사고와 협업 능력을 요구합니다. 그린대학교는 학생 개개인이
+                                    성장할 수 있는 환경을 조성합니다.
+                                </p>
+                            </div>
+
+                            <div class="section">
+                                <h3>열린 그린대학교의 문</h3>
+                                <p>
+                                    우리 대학의 문은 언제나 열려 있습니다. <strong>열정을 가진 누구나, 도전하고자 하는 누구나</strong>,
+                                    그린대학교에서 새로운 길을 찾을 수 있습니다.
+                                    저는 총장으로서 모든 학생이 자신이 원하는 미래를 향해 나아가도록,
+                                    그리고 그 과정에서 좌절하지 않고 성장할 수 있도록 <strong>든든한 동반자</strong>가 될 것을 약속드립니다.
+                                </p>
+                            </div>
+
+                            <div class="section final-message">
+                                <p>
+                                    여러분의 꿈은 곧 우리의 사명이며,<br>
+                                    여러분의 성취는 곧 우리의 보람입니다.<br>
+                                    그린대학교와 함께라면 그 꿈은 더 이상 꿈이 아닌 <strong>현실</strong>이 될 것입니다.
+                                </p>
+                            </div>
+
+                        </article>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
