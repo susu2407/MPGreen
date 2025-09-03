@@ -1,0 +1,103 @@
+    /*컨테츠 꾸미기 레이아웃*/
+    .boardLower article { 
+        width: 100%; 
+    }
+    
+        /* 타임라인 전체 컨테이너 */
+    .timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px 0;
+    }
+
+    /* 중앙 세로선 */
+    .timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: #3498db;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    }
+
+    /* 타임라인 아이템 공통 */
+    .timeline-item {
+    padding: 20px 30px;
+    position: relative;
+    width: 45%;
+    opacity: 0;
+    transition: all 0.6s ease-out;
+    }
+
+    /* 애니메이션 */
+    .timeline-item.show {
+    opacity: 1;
+    transform: translateY(0);
+    }
+
+    /* 왼쪽 아이템 */
+    .timeline-item.left {
+    left: 0;
+    text-align: right;
+    transform: translateX(-50px);
+    }
+
+    /* 오른쪽 아이템 */
+    .timeline-item.right {
+    left: 50%;
+    text-align: left;
+    transform: translateX(50px);
+    }
+
+    /* 마커 */
+    .timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #3498db;
+    border: 4px solid #fff;
+    top: 20px;
+    border-radius: 50%;
+    z-index: 1;
+    }
+
+    /* 왼쪽 마커 위치 */
+    .timeline-item.left::after {
+    right: -10px;
+    }
+
+    /* 오른쪽 마커 위치 */
+    .timeline-item.right::after {
+    left: -10px;
+    }
+
+    /* 년도 스타일 */
+    .timeline-item h3 {
+    margin: 0 0 10px 0;
+    color: #3498db;
+    }
+
+    /* 이벤트 리스트 스타일 */
+    .timeline-item ul {
+    padding-left: 20px;
+    margin: 0;
+    }
+
+    /* 반응형 */
+    @media screen and (max-width: 768px) {
+    .timeline-item {
+        width: 100%;
+        left: 0 !important;
+        transform: translateX(0) !important;
+        margin-bottom: 20px;
+        text-align: left !important;
+    }
+    .timeline-item::after {
+        left: 50%;
+        margin-left: -10px;
+    }
+    }
