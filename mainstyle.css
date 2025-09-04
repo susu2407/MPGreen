@@ -6,7 +6,6 @@
     vertical-align: middle;
 }
 html { font-size: 12xp;}
-body { font-family: 'Noto Sans Kr', sans-serif;}
 
 a{
     text-decoration:  none;
@@ -261,50 +260,297 @@ footer .footer-tools select {
 
 
 /* =============== 메인 =============== */
-main {width:100%; height:auto;}
-main > section {width:100%; height:auto;}
-main > section > .container {padding:0 0;} /* 필요시 */
-
-/* 1) 히어로 배너 */
-main > section:nth-child(1){
-    height:360px; 
-    background:#c9d7ec;}
-.main-hero {
-    position:relative;
+/* --- 기본 스타일 및 공통 클래스 --- */
+body {
+    font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    /* ★★★ 1. 전체 배경을 회색으로 설정 ★★★ */
+    background-color: #f0f2f5; /* 이미지와 유사한 약간 푸른빛이 도는 회색으로 변경 */
 }
-.main-hero .slider {
-    position:absolute; 
-    inset:0; 
-    /* 배경 이미지 추가 */
-    background:url(./images/bg-main-vi01.jpg) no-repeat center center;
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 콘텐츠의 최대 너비를 1200px로 제한하고 중앙 정렬하는 역할 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    /* 화면이 작아질 때를 대비한 좌우 여백 */
+    padding: 0 15px; 
+}
+
+/* --- 1. 최상단 메인 배너 섹션 --- */
+.hero-section {
+    width: 100%;
+    height: 450px;
+    background-color: #ddd; /* 이미지 자리 표시 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative; /* 자식 요소의 위치 기준 */
+    /* 실제 사용 시, 아래 주석을 풀고 이미지 경로를 입력하세요. */
+    /*
+    background-image: url('메인 배너 이미지 경로');
     background-size: cover;
+    background-position: center;
+    */
 }
 
-/* 2) 게시판 2단 (학사안내 / 공지사항) */
-main > section:nth-child(2){height:220px; background:#fff;}
-.board-wrap {padding:20px 0;}
-.board {float:left; width:540px; height:180px; background:#e9f2ff; border:1px solid #cfe2ff;}
-.board + .board {float:right; background:#e9f7ff; border-color:#cfefff;}
-.board .title {height:40px; background:#3f97f6; color:#fff; line-height:40px; padding:0 16px; font-weight:bold;}
-.board .list {height:calc(100% - 40px); background:#f5f9ff;}
+/* 이미지가 너무 밝을 경우 텍스트가 안보일 수 있어 어둡게 처리하는 레이어 추가 */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
 
-/* 3) 포토 갤러리 */ 
-main > section:nth-child(3){height:190px; background:#fff;}
-.gallery {padding:16px 0;}
-.gallery .thumb {float:left; width:260px; height:150px; background:#e5e7eb; border:1px dashed #cbd5e1;}
-.gallery .thumb + .thumb {margin-left:20px;}
+.hero-content {
+    /* 어둡게 처리한 레이어 위에 텍스트가 오도록 설정 */
+    position: relative;
+    z-index: 1;
+}
 
-/* 4) HELPER 띠 */
-main > section:nth-child(4){height:120px; background:#032057;}
-.helper {height:100%;}
+.hero-content p {
+    font-size: 18px;
+    margin: 0 0 10px;
+}
 
-/* 5) 뉴스 & 스마트 링크 */
-main > section:nth-child(5){height:220px; background:#fff;}
-.news-link {padding:20px 0;}
-.news {float:left; width:540px; height:180px; background:#e9f2ff; border:1px solid #cfe2ff;}
-.links {float:right; width:540px; height:180px; background:#eef2f7; border:1px dashed #cbd5e1;}
-.links .icons {display:flex; justify-content:space-between; align-items:center; height:100%; padding:0 24px;}
-.links .icons .ico {width:72px; height:72px; background:#dfe4ea; border-radius:50%;}
+.hero-content h2 {
+    font-size: 42px;
+    font-weight: 700;
+    margin: 0 0 30px;
+}
 
-/* clearfix */
-.board-wrap::after, .gallery::after, .news-link::after {content:""; display:block; clear:both;}
+.hero-button {
+    display: inline-block;
+    padding: 12px 30px;
+    border: 1px solid white;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.hero-button:hover {
+    background-color: white;
+    color: #333;
+}
+
+/* --- 2. 공지사항 섹션 --- */
+.notice-section {
+    /* 이미지를 보면 공지사항 섹션이 메인 배너 위에 살짝 걸쳐있습니다. */
+    /* margin-top을 음수값으로 주어 위로 끌어올립니다. */
+    margin-top: -80px; 
+    position: relative;
+    z-index: 2; /* 다른 요소들보다 위에 보이도록 설정 */
+}
+
+.notice-section .container {
+    display: flex;
+}
+
+.notice-board {
+    /* flex: 1; 은 두 게시판이 동일한 너비를 갖도록 합니다. (600px씩) */
+    flex: 1;
+    padding: 25px;
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+}
+
+.notice-board h3 {
+    font-size: 20px;
+    margin: 0 0 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #eee;
+}
+
+/* 공지사항 파란색 헤더 스타일 */
+.notice-board.blue-header {
+    background-color: #3a75c4; /* 이미지에서 추출한 파란색 */
+    color: white;
+}
+.notice-board.blue-header h3 {
+    border-bottom-color: rgba(255, 255, 255, 0.5);
+}
+.notice-board.blue-header a {
+    color: white;
+}
+.notice-board.blue-header span {
+    color: rgba(255, 255, 255, 0.8);
+}
+.notice-board.blue-header a:hover {
+    text-decoration: underline;
+    color: #fff;
+}
+
+.notice-board li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    font-size: 15px;
+}
+
+.notice-board li a {
+    /* 제목이 너무 길 경우 ... 으로 표시 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 20px; /* 날짜와 간격 확보 */
+    transition: color 0.3s;
+}
+.notice-board li a:hover {
+    color: #3a75c4;
+}
+.notice-board li span {
+    color: #888;
+    font-size: 14px;
+    /* 날짜가 줄어들지 않도록 설정 */
+    flex-shrink: 0;
+}
+
+/* --- 3. 포토 갤러리 섹션 --- */
+.gallery-section {
+    padding: 70px 0;
+    background-color: #fff; /* 공지사항 섹션과 분리감을 주기 위해 배경색 변경 */
+    margin-top: 50px;
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 0 30px;
+    color: #444;
+}
+
+.gallery-container {
+    display: flex;
+    justify-content: space-between; /* 아이템들을 양쪽 끝에 붙이고 균등하게 정렬 */
+    height: 220px;
+}
+
+.gallery-item {
+    width: 285px; /* 고정 너비 */
+    height: 220px; /* 고정 높이 */
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #555;
+    overflow: hidden;
+}
+/* 실제 사용 시, .gallery-item 안에 img 태그를 넣고 width: 100%; height: 100%; object-fit: cover; 적용 */
+
+
+/* --- 4. 주요사이트 바로가기 배너 --- */
+.sites-banner-section {
+    padding: 40px 0;
+    background-color: #373d4b;
+    color: white;
+}
+.sites-banner-section .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.banner-text h4 {
+    margin: 0 0 5px;
+    font-size: 22px;
+    font-weight: 600;
+}
+.banner-text p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.8);
+}
+.banner-button {
+    padding: 10px 25px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+.banner-button:hover {
+    background-color: white;
+    color: #373d4b;
+}
+
+/* --- 5. 하단 콘텐츠 섹션 --- */
+.bottom-content-section {
+    padding: 70px 0;
+    background-color: #fff;
+}
+.bottom-content-section .container {
+    display: flex;
+    gap: 40px;
+}
+.news-board {
+    flex-grow: 1; /* 남는 공간을 모두 차지 */
+}
+.news-board h3, .smart-link-section h3 {
+    font-size: 20px;
+    margin: 0 0 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #eee;
+}
+.news-board li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    font-size: 15px;
+}
+.news-board li a {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 20px;
+}
+.news-board li span {
+    color: #888;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.smart-link-section {
+    width: 600px; /* 스마트링크 영역 너비 고정 */
+    flex-shrink: 0;
+}
+.smart-link-container {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.link-item .icon-placeholder {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #f0f4f9;
+    margin: 0 auto 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #555;
+    font-size: 12px;
+    transition: background-color 0.3s;
+}
+.link-item:hover .icon-placeholder {
+    background-color: #dbe4f1;
+}
+.link-item p {
+    margin: 0;
+    font-size: 15px;
+    color: #555;
+}
