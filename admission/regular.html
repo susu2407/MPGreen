@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입학안내(정시모집)</title>
+</head>
+<style>
+    /* 리스트 스타일 */
+    ul,ol{
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    /* a태그 스타일 */
+    a{
+        text-decoration: none; color: black;
+    }
+
+    /* container 레이아웃 */
+    #container{
+        width: 1200px;
+        height: 600px;
+        margin-top: 146px;
+        margin-left: 360px;
+        /* box-sizing: border-box; */
+    }
+
+    /* sidebar 레이아웃 */
+    .sidebar{
+        float: inline-start;
+        width: 210px;
+        height: 418px;
+    }
+
+    /* board 레이아웃 */
+    .board{
+        display: flex;
+        width: 990px;
+        height: 500px;
+        margin-left: 210px;
+    }
+
+    /* sidebar 윗부분 레이아웃 */
+    .sidebarHeader{
+        width: 210px;
+        height: 54px;
+        padding-top: 62px;
+
+    }
+    
+    /* sidevar 제목 서식 */
+    .sbTitle{
+        width: 128.4px;
+        height: 36px;
+        margin-top: -1px;
+        font: 700 32px bold;
+    }
+
+    /* sidebar 메뉴 서식 */
+    .sidebarMenu{
+        width: 210px;
+        height: 302px;
+        border-top: 2px solid black;
+    }
+
+    /* sidebar item 서식 */
+    .item{
+        position: relative;
+        width: 210px;
+        height: 60px;
+        padding-top: 2px;
+        border-bottom: 1px solid #dcdcdc;
+        box-sizing: border-box;
+        flex-direction: column;
+        transform: rotate(0deg);
+        opacity: 1;
+        display: flex;
+        
+    }
+    /* item 텍스트 서식 */
+    .itemText{
+        width: 77.51px;
+        height: 18px;
+        margin-top: 18px;
+        margin-left: 20px;
+        font-family: "Noto Sans KR";
+        font: 350 16px light;
+        text-align: left;
+        line-height: 21px;
+        color: #333333;
+    }
+ 
+    /* item 영역 hover 할 때 색 변경(배경+글자) */
+    .item:hover a {
+    color: #FFFFFF;
+    }
+
+    .item:hover {
+        background-color: #3F97F6;
+        border-color: #3F97F6;
+    }
+
+    /* list 서식 */
+    .list {
+        width: 210px;
+        height: 302px;
+        transform: rotate(0deg);
+        opacity: 1;
+        list-style: none;
+
+        }
+    
+    /* board 윗부분 레이아웃 */
+    .boardUpper{
+        width: 930px;
+        height: 56px;
+        margin-top: 62px;
+        margin-left: 60px;
+        border-bottom: 2px solid black;
+        box-sizing: border-box;
+
+    }
+
+    /* board 제목 서식 */
+    .buText{
+        width: 104.36px;
+        height: 30px;
+        margin-top: 7px;
+        font-family: "Noto Sans KR";
+        font: 700 26px bold;
+        line-height: 44px;
+        text-align: left;
+    }
+
+    /* board 본문 레이아웃 */
+    .boardLower{
+        width: 930px;
+        height: 19px;
+
+    }
+    
+    /* board 본문 서식 */
+    .blText{
+        width: 125.33px;
+        height: 18px;
+        font-family: "Noto Sans KR";
+        font: 350 16px light;
+        line-height: 100%;
+        text-align: center;
+    }
+
+
+    /*=== 본문 컨텐츠 레이아웃===*/
+    .boardLower {
+    max-width: 800px;
+    margin-top: 40px;
+    }
+
+    .boardLower h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    border-left: 4px solid #3F97F6;
+    padding-left: 10px;
+    }
+
+    .schedule-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+    }
+
+    .schedule-list li {
+    margin-bottom: 12px;
+    line-height: 1.6;
+    font-size: 15px;
+    color: #333;
+    }
+
+    .schedule-list li strong {
+    color: #3F97F6;
+    }
+
+    .download-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    }
+
+    .download-buttons .btn {
+    padding: 10px 20px;
+    background-color: #3F97F6;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+    }
+
+    .download-buttons .btn:hover {
+    background-color: #357ACC;
+    }
+
+    .download-buttons .btn.gray {
+    background-color: #777;
+    }
+
+    .download-buttons .btn.gray:hover {
+    background-color: #555;
+    }
+
+
+</style>
+<body>
+  <main>
+    <section id="container"> 
+        <div class="sidebar"> <!--사이드바-->
+            <div class="sidebarHeader"> <!--사이드바 윗부분(제목 영역)-->
+                <h2 class="sbTitle">입학안내</h2> <!--사이드바 제목-->
+            </div>
+            <div class="sidebarMenu"> <!--사이드바 하위 메뉴-->
+                <ul class="list"> <!--사이드바 리스트-->
+                    <li class="item"> <!--사이드바 리스트 요소-->
+                        <a href="#" class="itemText">공지사항</a>
+                    </li>
+                    <li class="item">
+                        <a href="./early.html" class="itemText">수시모집</a>
+                    </li>
+                    <li class="item">
+                        <a href="./regular.html" class="itemText">정시모집</a>
+                    </li>
+                    <li class="item">
+                        <a href="./transfer.html" class="itemText">편입학</a>
+                    </li>
+                    <li class="item">
+                        <a href="#" class="itemText">입학상담</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="board"> <!--본문 영역-->
+            <div class="boardUpper"> <!--본문 윗부분(제목 영역)-->
+                <h3 class="buText">정시모집</h3>
+                <div class="boardLower"> <!--본문(내용 영역)-->
+                   <div>
+                    <h2>2026학년도 정시모집</h2>
+                    <ul class="schedule-list">
+                        <li><strong>원서접수</strong> : 2025. 12. 29.(월) ~ 12. 31.(수) 18:00</li>
+                        <li><strong>서류제출</strong> : 2025. 12. 29.(월) ~ 2026. 1. 5.(월) 18:00 (18시 도착분까지 인정)</li>
+                        <li><strong>실기고사</strong> : (가군) 음악·미술·스포츠헬스케어학과 — 2026. 1. 9.(금) 09:00</li>
+                        <li><strong>합격자 발표</strong> : 2026. 2. 2.(월) 16:00 예정</li>
+                        <li><strong>등록금 납부</strong> : 2026. 2. 3.(화) ~ 2. 5.(목) 16:00까지</li>
+                        <li><strong>충원합격자 발표 및 등록금 납부</strong> : 2026. 2. 6.(금) ~ 2. 13.(금) 16:00까지</li>
+                    </ul>
+                    </div>
+
+
+                    <div class="download-buttons">
+                        <a href="#" download="2026_정시모집.pdf" class="btn">2026학년도 정시모집</a>
+                        <a href="#" download="2025_정시모집.pdf" class="btn">2025학년도 정시모집</a>
+                        <a href="#" download="2024_정시모집.pdf" class="btn">2024학년도 정시모집</a>
+                        <a href="#" download="2023_정시모집.pdf" class="btn">2023학년도 정시모집</a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+  </main>
+</body>
+</html>
