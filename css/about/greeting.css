@@ -1,0 +1,43 @@
+/* ===== 컨텐츠 꾸미기 레이아웃 ===== */
+.boardLower article { 
+    width: 100%; 
+}
+
+/* 제목 */
+.boardLower h2 {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 50px;
+}
+
+/* 섹션 */
+.section {
+    margin-bottom: 25px;
+}
+
+/* 섹션 내부 마진 */
+.section p, .section ul {
+    margin-top: 10px;
+}
+
+.president-sign {
+    display: flex;
+    align-items: center; /* 글자와 이미지 수평 중앙 정렬 */
+    justify-content: flex-end; /* 오른쪽 끝 정렬 */
+    margin-top: 40px;
+}
+
+.president-sign span {
+    font-weight: 600;
+    font-size: 16px;
+    color: #2c3e50;
+}
+
+.sign-img {
+    width: 110px; /* 권장 가로 폭 */
+    height: auto; /* 세로는 비율 유지 */
+}
+

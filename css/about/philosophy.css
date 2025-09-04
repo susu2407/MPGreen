@@ -1,0 +1,59 @@
+.philosophy {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  line-height: 1.8;
+  color: #333;
+}
+
+.philosophy-title {
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 10px; /* 아래 여백 조정 */
+  color: #2c3e50;
+  position: relative;
+}
+
+/* 가로줄 추가 */
+.philosophy-title::after {
+  content: "";
+  display: block;
+  width: 100px;         /* 가로줄 길이 */
+  height: 1px;          /* 줄 두께 */
+  background-color: #555;
+  margin: 1px auto 0;  /* 위:10px, 자동 좌우 가운데 정렬 */
+}
+
+
+.philosophy-intro {
+  text-align: center;
+  font-size: 17px;
+  margin-bottom: 40px;
+  color: #555;
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+.section h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  border-left: 4px solid #3F97F6;
+  padding-left: 10px;
+  color: #2c3e50;
+}
+
+.section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.section ul li {
+  margin-bottom: 8px;
+  font-size: 15px;
+  color: #444;
+}
