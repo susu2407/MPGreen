@@ -1,0 +1,135 @@
+body { padding: 50px; background: #fafafa; font-family: dotum; }
+
+.system {
+    position: relative;
+    width: 1080px;
+    max-width: 100%;
+
+    font-family: dotum;
+    color:#000;
+    margin: 0 auto;
+    padding: 30px 0 50px;
+}
+
+/* 최상위 총장 */
+.system p {
+    display: table;
+    width: 318px;
+    margin: 0 auto 40px;
+}
+.system b {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    height: 68px;
+    border: 1px solid #d3d3d3;
+    background: #f5f5f5;
+    font-size: 1.1em;
+}
+.system span {
+    position: absolute;
+    right: 0;
+    top: 200px;
+    display: table;
+    width: 318px;
+    height: 68px;
+    background: #ededed;
+    border: 1px solid #d3d3d3;
+    text-align: center;
+}
+
+.system .department {
+    display: table;
+    width: 318px;       /* 원하는 너비 */
+    height: 68px;       /* 원하는 높이 */
+    margin: 0 auto 20px; /* 페이지 가운데 정렬 + 아래 여백 */
+    text-align: center; /* 가로 가운데 정렬 */
+}
+
+/* 부서 제목은 색/배경 살짝 다르게 */
+.system .department b {
+    display: table-cell;
+    vertical-align: middle;
+    width: 318px;
+    text-align: center;
+    height: 68px;
+    border: 1px solid #d3d3d3;
+    background: #f5f5f5; /* 원하는 색으로 변경 */
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.system .departmentBox {
+    border: 1px solid #d3d3d3;
+    background: #f9f9f9; /* 박스 배경 */
+    padding: 10px;
+    width: 930px; /* 필요에 따라 조절 */
+    margin: 0 auto 30px; /* 박스 간 여백 */
+}
+
+/* depth3 - 하위 부서 */
+.system .depth3 strong {
+    display: block;
+    width: 280px;
+    height: 48px;
+    line-height: 48px;
+    border: 1px solid #d3d3d3;
+    background: #ededed;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.system .depth3 div {
+    padding: 10px 0;
+    width: 280px;
+    min-height: 80px;
+    border: 1px solid #d3d3d3;
+    border-top: none;
+    background: #fff;
+    line-height: 1.5em;
+    text-align: center;
+    margin: 0 auto 20px;
+}
+
+/* depth3 가로 배치 */
+.system .depth3 {
+    display: flex;
+    justify-content: space-around; /* 팀 간 간격 */
+    padding: 10px 0 0;
+}
+
+/* 각 팀 박스 */
+.system .depth3 li {
+    width: 30%; /* 팀 박스 너비 */
+    text-align: center;
+}
+
+.system .depth3 strong {
+    display: block;
+    height: 48px;
+    line-height: 48px;
+    background: #ededed;
+    border: 1px solid #d3d3d3;
+}
+
+.system .depth3 div {
+
+    min-height: 80px;
+    background: #fff;
+    padding: 10px 0;
+}
+/* depth3 위치 조정 */
+.system .depth3 > li:nth-child(1) { position: relative; }
+.system .depth3 > li:nth-child(2) { position: relative; }
+.system .depth3 > li:nth-child(3) { position: relative; }
+
+/* ul 기본 스타일 제거 */
+.system ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+.system li {
+    position: relative;
+    margin-bottom: 20px;
+}

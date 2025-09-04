@@ -1,57 +1,43 @@
- /*컨테츠 꾸미기 레이아웃*/
-     /* ===== 총장 인사말 효과 ===== */
-        .boardLower h2 {
-            font-size: 1.8em;
-            font-weight: 700;
-            color: #2b7a0b;
-            text-align: center;
-            margin-bottom: 30px;
-            animation: fadeIn 2s ease-in-out;
-        }
+/* ===== 컨텐츠 꾸미기 레이아웃 ===== */
+.boardLower article { 
+    width: 100%; 
+}
 
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(-20px);}
-            100% { opacity: 1; transform: translateY(0);}
-        }
+/* 제목 */
+.boardLower h2 {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 50px;
+}
 
-        .section {
-            margin-bottom: 25px;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: slideUp 1s forwards;
-        }
+/* 섹션 */
+.section {
+    margin-bottom: 25px;
+}
 
-        .section:nth-child(2) { animation-delay: 0.3s; }
-        .section:nth-child(3) { animation-delay: 0.6s; }
-        .section:nth-child(4) { animation-delay: 0.9s; }
-        .section:nth-child(5) { animation-delay: 1.2s; }
+/* 섹션 내부 마진 */
+.section p, .section ul {
+    margin-top: 10px;
+}
 
-        @keyframes slideUp {
-            to { opacity: 1; transform: translateY(0);}
-        }
+.president-sign {
+    display: flex;
+    align-items: center; /* 글자와 이미지 수평 중앙 정렬 */
+    justify-content: flex-end; /* 오른쪽 끝 정렬 */
+    margin-top: 40px;
+}
 
-        .final-message {
-            background: linear-gradient(135deg, #d1f0d1, #eaf7e0);
-            padding: 20px;
-            border-radius: 12px;
-            text-align: center;
-            font-weight: 700;
-            color: #2b7a0b;
-            line-height: 1.6em;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transform: scale(1);
-            transition: transform 0.3s ease;
-        }
+.president-sign span {
+    font-weight: 600;
+    font-size: 16px;
+    color: #2c3e50;
+}
 
-        .final-message:hover {
-            transform: scale(1.05);
-        }
+.sign-img {
+    width: 110px; /* 권장 가로 폭 */
+    height: auto; /* 세로는 비율 유지 */
+}
 
-        .section ul {
-            margin: 10px 0 15px 20px;
-        }
-
-        .section ul li {
-            margin-bottom: 5px;
-            line-height: 1.6em;
-        }
