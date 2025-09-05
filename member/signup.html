@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<<<<<<< Updated upstream
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,5 +8,261 @@
 </head>
 <body>
     
+=======
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* 기본 스타일 초기화 및 폰트 설정 */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            /* Noto Sans KR 폰트 적용 */
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f0f2f5;
+            /* 페이지 최소 너비를 990px로 설정해 스크롤 가능하게 함 */
+            min-width: 990px;
+        }
+        
+        /* 하얀 배경을 화면 전체에 깔아주는 역할 */
+        .form-wrapper {
+            background-color: white;
+            padding: 50px 0; /* body에서 가져온 위아래 여백 */
+        }
+
+        /* 회원가입 폼을 감싸는 전체 공간 */
+        .signup-form-container {
+            width: 990px;
+            /* margin: 0 auto; 로 중앙 정렬 */
+            margin: 0 auto;
+        }
+
+        /* 1. 상단 제목 영역 */
+        .form-header {
+            padding: 20px 0;
+            margin: 0 20px;
+        }
+        .form-header h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .form-header p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* 2. 입력 필드 전체 영역 */
+        .form-fields {
+            width: 990px;
+            border-top: 2px solid rgba(7, 31, 75, 1);
+        }
+
+        /* 각 입력 줄(row)의 스타일 */
+        .form-row {
+            display: flex; /* 라벨과 입력칸을 가로로 배치 */
+            border-bottom: 1px solid rgba(222, 222, 222, 1); /* 테두리를 row 단위로 적용 */
+        }
+
+        /* 왼쪽 라벨 스타일 */
+        .form-label {
+            width: 198px;
+            min-height: 65px;
+            background: rgba(244, 248, 252, 1);
+            border-style: solid;
+            border-color: rgba(222, 222, 222, 1);
+            /* 테두리: 위 오른쪽 아래 왼쪽 */
+            border-width: 0 1px 0 0;
+            
+            /* 폰트 및 정렬 */
+            font-weight: 350;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: -0.5px;
+            
+            display: flex;
+            justify-content: center; /* 가로 중앙 */
+            align-items: center;   /* 세로 중앙 */
+        }
+
+        /* 오른쪽 입력칸 영역 스타일 */
+        .form-input {
+            flex-grow: 1; /* 남은 공간 모두 차지 */
+            min-height: 65px;
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            flex-wrap: wrap;
+        }
+
+        /* 입력칸(input) 공통 스타일 */
+        .text-input {
+            width: 308.8px;
+            height: 39px;
+            background: rgba(255, 255, 255, 1);
+            border: 1px solid rgba(204, 204, 204, 1);
+            padding: 10px;
+            font-size: 14px;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        .text-input:focus {
+            outline: 1px solid #007bff;
+        }
+
+        .form-input span {
+            margin-left: 15px;
+            font-size: 13px;
+            color: #888;
+        }
+
+        /* 주소 필드 스타일 */
+        .address-row .form-input {
+            padding: 12.5px 10px;
+            align-content: center;
+        }
+        .address-input-group {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        .address-input-group .text-input {
+            width: 150px;
+            margin-right: 10px;
+        }
+        .address-input-group button {
+            border: 1px solid #ccc;
+            background-color: #f0f0f0;
+            padding: 0 15px;
+            cursor: pointer;
+            height: 39px;
+        }
+        .address-row .form-input .text-input {
+            width: 100%;
+        }
+        .address-row .form-input .text-input:not(:last-child) {
+             margin-bottom: 10px;
+        }
+
+        /* 필수입력(*) 글자 스타일 */
+        .required {
+            color: red;
+            margin-left: 2px;
+        }
+
+        .required-info {
+            text-align: right;
+            padding: 15px 0;
+            font-size: 13px;
+        }
+
+        /* 3. 하단 버튼 영역 */
+        .form-actions {
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px 0;
+        }
+        .form-actions button {
+            height: 48px;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-left: 8px;
+        }
+
+        .cancel-btn {
+            width: 56px;
+            background: rgba(139, 139, 139, 1);
+        }
+
+        .signup-btn {
+            width: 92px;
+            background: rgba(63, 151, 246, 1);
+        }
+    </style>
+</head>
+<body>
+    <div class="form-wrapper">
+        <div class="signup-form-container">
+            <div class="form-header">
+                <h1>회원가입</h1>
+                <p>반갑습니다 그린대학교입니다. 회원가입 후 더 많은 정보를 이용하세요.</p>
+                <p>대학구성원(학생, 교직원)은 회원가입 없이 학번, 교번(사번) 아이디를 사용하여 로그인할 수 있습니다.</p>
+            </div>
+
+            <div class="form-fields">
+                <div class="form-row">
+                    <div class="form-label"><label for="user-id">아이디<span class="required">*</span></label></div>
+                    <div class="form-input">
+                        <input type="text" id="user-id" class="text-input" placeholder="아이디 입력">
+                        <span>영문·숫자 조합 4~10자 이내</span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-label"><label for="user-password">비밀번호<span class="required">*</span></label></div>
+                    <div class="form-input">
+                        <input type="password" id="user-password" class="text-input" placeholder="비밀번호 입력">
+                        <span>비밀번호는 8-16자리 이내, 영문·숫자·특수문자 조합</span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-label"><label for="user-password-confirm">비밀번호 확인<span class="required">*</span></label></div>
+                    <div class="form-input">
+                        <input type="password" id="user-password-confirm" class="text-input" placeholder="비밀번호 확인 입력">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-label"><label for="user-name">이름<span class="required">*</span></label></div>
+                    <div class="form-input">
+                        <input type="text" id="user-name" class="text-input" placeholder="이름 입력">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-label"><label for="user-phone">휴대폰<span class="required">*</span></label></div>
+                    <div class="form-input">
+                        <input type="text" id="user-phone" class="text-input" placeholder="휴대폰 입력">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-label"><label for="user-email">이메일<span class="required">*</span></label></div>
+                    <div class="form-input">
+                        <input type="email" id="user-email" class="text-input" placeholder="이메일 입력">
+                    </div>
+                </div>
+                <div class="form-row address-row">
+                    <div class="form-label"><label>주소</label></div>
+                    <div class="form-input">
+                        <div class="address-input-group">
+                            <input type="text" class="text-input" placeholder="우편번호 선택">
+                            <button type="button">우편번호 선택</button>
+                        </div>
+                        <input type="text" class="text-input" placeholder="기본주소 선택">
+                        <input type="text" class="text-input" placeholder="상세주소 입력">
+                    </div>
+                </div>
+            </div>
+
+            <div class="required-info">
+                <span class="required">*</span> 필수입력
+            </div>
+
+            <div class="form-actions">
+                <button type="button" class="cancel-btn">취소</button>
+                <button type="submit" class="signup-btn">회원가입</button>
+            </div>
+        </div>
+    </div>
+>>>>>>> Stashed changes
 </body>
 </html>
