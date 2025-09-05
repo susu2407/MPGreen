@@ -73,7 +73,7 @@
     }
     /* item 텍스트 서식 */
     .itemText{
-        width: 77.51px;
+        width: 100px;
         height: 18px;
         margin-top: 18px;
         margin-left: 20px;
@@ -117,7 +117,7 @@
 
     /* board 제목 서식 */
     .buText{
-        width: 104.36px;
+        width: 160.36px;
         height: 30px;
         margin-top: 7px;
         font-family: "Noto Sans KR";
