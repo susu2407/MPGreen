@@ -1,5 +1,0 @@
- .org-image {
-      width: 930px;
-      height: 1246px;
-      object-fit: contain; /* 이미지 비율 유지 */
-    }
