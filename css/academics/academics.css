@@ -1,0 +1,480 @@
+/* 
+///////////////////////////////////////////////////
+// 기본 화면 초기화
+///////////////////////////////////////////////////
+ */
+    *{
+        margin : 0px;
+        padding: 0px;
+        letter-spacing: 0%;
+        vertical-align: middle;
+    }
+    html { font-size: 12xp;}
+    body { font-family: 'Noto Sans Kr', sans-serif;}
+
+    a{
+        text-decoration:  none;
+        color:  black;
+    }
+
+    ul, ol{
+        list-style: none;
+    }
+
+    #wrapper{
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+    }
+    .container {
+        width: 1200px;
+        margin: 0 auto;
+    }
+
+
+
+
+/* 
+///////////////////////////////////////////////////
+// 본문 레이아웃
+///////////////////////////////////////////////////
+ */
+
+    /* 리스트 스타일 */
+    ul,ol{
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    /* a태그 스타일 */
+    a{
+        text-decoration: none; color: black;
+    }
+
+    /* container 레이아웃 */
+    #container{
+        width: 1200px;
+        height: 600px;
+        margin-left: 360px;
+        /* box-sizing: border-box; */
+    }
+
+    /* sidebar 레이아웃 */
+    .sidebar{
+        float: inline-start;
+        width: 210px;
+        height: 418px;
+    }
+
+    /* board 레이아웃 */
+    .board{
+        display: flex;
+        width: 990px;
+        height: 500px;
+        margin-left: 210px;
+    }
+
+    /* sidebar 윗부분 레이아웃 */
+    .sidebarHeader{
+        width: 210px;
+        height: 54px;
+        padding-top: 62px;
+
+    }
+    
+    /* sidevar 제목 서식 */
+    .sbTitle{
+        width: max-content;
+        height: 36px;
+        margin-top: -1px;
+        font: 700 32px bold;
+    }
+
+    /* sidebar 메뉴 서식 */
+    .sidebarMenu{
+        width: 210px;
+        height: 302px;
+        border-top: 2px solid black;
+    }
+
+    /* sidebar item 서식 */
+    .item{
+        position: relative;
+        width: 210px;
+        height: 60px;
+        padding-top: 2px;
+        border-bottom: 1px solid #dcdcdc;
+        box-sizing: border-box;
+        flex-direction: column;
+        transform: rotate(0deg);
+        opacity: 1;
+        display: flex;
+        
+    }
+    /* item 텍스트 서식 */
+    .itemText{
+        width: max-content;
+        height: 18px;
+        margin-top: 18px;
+        margin-left: 20px;
+        font-family: "Noto Sans KR";
+        font: 350 16px light;
+        text-align: left;
+        line-height: 21px;
+        color: #333333;
+    }
+ 
+    /* item 영역 hover 할 때 색 변경(배경+글자) */
+    .item:hover a {
+    color: #FFFFFF;
+    }
+
+    .item:hover {
+        background-color: #3F97F6;
+        border-color: #3F97F6;
+    }
+
+    /* list 서식 */
+    .list {
+        width: 210px;
+        height: 302px;
+        transform: rotate(0deg);
+        opacity: 1;
+        list-style: none;
+
+        }
+    
+    /* board 윗부분 레이아웃 */
+    .boardUpper{
+        width: 930px;
+        height: 56px;
+        margin-top: 62px;
+        margin-bottom: 30px;
+        margin-left: 60px;
+        border-bottom: 2px solid black;
+        box-sizing: border-box;
+
+    }
+
+    /* board 제목 서식 */
+    .buText{
+        width: max-content;
+        height: 30px;
+        margin-top: 7px;
+        font-family: "Noto Sans KR";
+        font: 700 26px bold;
+        line-height: 44px;
+        text-align: center;
+    }
+
+    /* board 본문 레이아웃 */
+    .boardLower{
+        width: 930px;
+        height: 19px;
+
+    }
+    
+    /* board 본문 서식 */
+    .blText{
+        width: max-content;
+        height: 18px;
+        margin-top: 42px;
+        font-family: "Noto Sans KR";
+        font: 350 16px light;
+        line-height: 100%;
+        text-align: center;
+    }
+
+    .collegeContainer{
+        display: flex;
+        
+        
+    }
+    .college{
+        width: auto;
+        height: 18px;
+        padding-left: 344px;
+        font: 350 16px #5b6774;
+        display: flex;
+    }
+    .majorTable{
+        border-top: 2px solid #071F4B;
+    }
+    
+/* 
+///////////////////////////////////////////////////
+// Header
+///////////////////////////////////////////////////
+*/
+    #background{
+        width: 1920px;
+        height: 42px;
+        background-color: #ECF2F6;
+        padding-left: 1346.73px;
+        padding-right: 360px;
+    }
+
+    .bgPath{
+        width: 213.27px;
+        height: 32px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        display: flex;
+        /* align-items: center; */
+    }
+
+    .bgPathList{
+        font-weight: 350;
+        font-size: 14px;
+        line-height: 22px;
+        text-align: center;
+        margin-left: 14px;
+    }
+
+    .bgPathListBold{
+        color: #071F4B
+        
+    }
+
+    .bgpArrow{
+        margin-left: 5px;
+        /* display: inline-block;
+        vertical-align: middle; */
+    }
+     
+    header > div:nth-child(2) > div > nav .dropdown-content li {
+    height: 30px;
+    padding-top: 10px;
+    padding-left: 5px;
+    border-bottom: 1px solid #3F97F6;
+    }
+    header > div:nth-child(2) > div > nav .dropdown-content li:last-child{
+        border-bottom: none;
+    }
+
+    header > div:nth-child(2) > div > nav .dropdown{
+        position : relative;
+        display: inline-block;
+    }
+    header > div:nth-child(2) > div > nav .dropdown > ul{
+        border: 1px solid #3F97F6;
+        height: auto;
+    }
+    header > div:nth-child(2) > div > nav .dropdown-content a {
+        color: white;
+        margin: 0 auto;
+        text-align: left;
+        font-weight: 400;
+    }
+
+    header > div:nth-child(2) > div > nav .dropbtn{
+        cursor : pointer;
+    }
+    header > div:nth-child(2) > div > nav .dropdown-content{
+        display: none;
+        flex-direction: column;
+        position : absolute;
+        z-index : 1000;
+        width: 150px;
+        background-color: #3F97F6;
+        margin-top: -25px;
+    }
+    header > div:nth-child(2) > div > nav .dropdown-content a:hover{
+        color: #93cef8;
+    }
+    header > div:nth-child(2) > div > nav .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    header{
+        width: 100%;
+        height: auto;
+        box-sizing: border-box;
+    }
+
+    header > div:nth-child(1){
+        height: 27px;
+        background-color: #3F97F6;
+    }
+
+    header > div:nth-child(2){
+        height: 77px;
+    }
+
+    header > div > div{
+        width: 1200px;
+        height: 77px;
+        margin: 0 auto;
+    }
+
+    header > div > div > p{
+        float: right;
+        margin-top: 2px;
+    }
+
+    header > div > div > p > a{
+        color: white;
+        margin-left: 10px;
+        font-size: 12px;
+    }
+
+    header > div:nth-child(2) img{
+        float: left;
+        margin-top: 10px;
+    }
+
+    header > div:nth-child(2) > div > nav{
+        float: right;
+        width: 660px;
+        height: 77px;
+    }
+
+    header > div:nth-child(2) > div > nav > ul > li{
+        float: right;
+        width: 16%;
+        height: 100%;
+    }
+
+    header > div:nth-child(2) > div > nav a{
+        margin-top: 25px;
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        font-size: 16px;
+        line-height: 21px;
+        font-weight: 500;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: space-around; 
+        align-items: center; 
+        height: 77px;
+    }
+
+    /* 상단 유틸 설정 */
+    .util {
+        display: flex;              /* 가로 나열 */
+        justify-content: flex-end;  /* 오른쪽 맞춤 */
+        align-items: center;
+        margin-top: 10px;
+    }
+    .util a { color: #fff;}
+    .util li:not(:last-child)::after {
+        content: " │ ";               /* 구분자 */
+        color: #fff;
+
+    }
+    
+/* 
+///////////////////////////////////////////////////
+// Footer
+///////////////////////////////////////////////////
+*/
+
+    footer {
+        width:100%; 
+        height:auto;
+        color:#ddd;}
+    footer > div { width:100%; }
+    /* terms 부분 */
+    footer > div:nth-child(1){ background:#202839;}
+    /* 맨 아래 info 부분 */
+    footer > div:nth-child(2){ 
+        height:200px; 
+        background:#1a202d;
+        display: flex;
+        align-items: center;
+     }
+    /* 바 전체 */
+    footer .terms{
+        width:100%;;
+        margin:0 auto;
+        display:flex;               /* footer-inner를 세로로 가운데 배치 */
+    }
+
+    /* 각 칸: 정확히 240×50, 포지셔닝 기준 제공 */
+    footer .terms li{
+        flex:0 0 240px;          /* 240px × 5 = 1200px */
+        height:50px;
+        list-style:none;
+        position:relative;       /* ::after 기준 */
+        display:flex;
+    }
+
+    /* 박스 전체가 클릭되도록 */
+    footer .terms li a {
+        font-size: 15px;
+        color:#fff; 
+        text-decoration:none;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        width:100%; height:100%;
+    }
+    /* 양끝에 '│' 문자 추가 */
+    footer .terms::before,
+    footer .terms::after {
+        content:"│";
+        color:#626874;
+        display:flex;
+        align-items:center;
+    }
+    /* 마지막 li를 제외한 li의 오른쪽에 '│' 문자 추가 */
+    footer .terms li:not(:last-child)::after{
+        content:"│";
+        position:absolute; 
+        right:0; top:50%;
+        transform:translateY(-50%);   /* 세로 중앙 */
+        color:#626874;              /* 원하시는 색 */
+        pointer-events:none;          /* 클릭 방해 방지 */
+    }
+    footer .footer-inner {
+        width: 1200px;
+        margin: 0 auto;
+        height: 200px;
+        display: flex;
+        align-items: flex-start;  /* 상단 정렬 */
+        position: relative;       /* 기준점 */
+        margin-top: 80px;
+    }
+    /* 푸터 로고 */
+    footer .footer-logo {
+        flex: 0 0 200px;
+    }
+    footer .footer-logo img {
+        max-width: 100%;
+        height: auto;
+    }
+    /* 푸터 info */
+    footer .info p {
+        color: #a8a9ac;
+        font-size: 12px;
+    }
+
+    /* 푸터 오른쪽 검색박스 */
+    footer .footer-tools{
+        position: absolute;    /* footer-inner를 기준으로 위치 고정 */
+        top: 35px;             /* 상단에서 35px 떨어짐 */
+        left: 1000px;          /* 왼쪽에서 1000px 떨어짐 */
+    }
+    footer .footer-tools select {
+        width: 200px;
+        height: 36px;
+        background: #131721          /* 배경색 및 화살표 */
+                    url(./images/bg-related-arr-open.png) 
+                    no-repeat right 
+                    10px 
+                    center;
+        color: #a8a9ac;             /* 글자색 (흰색) */
+        border: 1px solid #131721;  /* 테두리 (디자인 맞게 수정 가능) */
+        border-radius: 4px;           /* 모서리 둥글기 */
+        padding: 0 10px;              /* 좌우 여백 */
+        font-size: 14px;              /* 글자 크기 */
+        appearance: none;             /* 기본 화살표 없애기 (브라우저마다 다름) */
+        outline: none;
+        cursor: pointer;
+    }
+
