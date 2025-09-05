@@ -67,52 +67,87 @@ header nav .dropdown:hover .dropdown-content{ display: block; }
   justify-content:flex-end; align-items:center; padding:8px 0;
 }
 
-/* ===== 메인 레이아웃 ===== */
-main{ width:100%; }
-.container.content-wrap {
-  display:flex;
-  gap:24px;
-  padding:24px 0;
-  margin:0 auto 40px;     /* 좌우 자동 → 가운데 정렬 */
-}
-/* ===== 사이드바 (대학생활) ===== */
-.sidebar{
-  flex-basis: 260px; background: transparent; padding: 8px 0;
-}
-.sidebar h4{
-  font-size: 32px; font-weight: 800; line-height: 1.1;
-  margin: 0 0 18px 8px;
-}
-.sidebar ul{ margin:0; padding:0; }
-.sidebar ul li{ margin:0; }
-.sidebar ul li a{
-  display:block; padding:16px 20px; color:#222; background:#fff;
-  border-bottom:1px solid #e5e7eb; border-radius:0;
-}
-.sidebar ul li a:hover{ background:#f5f9ff; }
-.sidebar ul li.active a{
-  background:#3F97F6; color:#fff; border-bottom:none;
-  box-shadow: inset 0 -3px 0 #2a2f3a;
+/* 메인 컨테이너 */
+#container {
+  width: 1200px;
+  margin: 0 auto ;   /* 가운데 정렬 */
+  display: flex;          /* 가로 배치 */
+  align-items: flex-start;
+  box-sizing: border-box;
+  gap: 60px;              /* 사이드바와 본문 간격 */
 }
 
-/* ===== 콘텐츠 공통 ===== */
-.content{ flex:1; padding:20px; }
-.content h2{
-  font-size:22px; margin-bottom:16px;
-  border-bottom:2px solid #ddd; padding-bottom:8px;
+#container .container.content-wrap {
+  display: block;     /* flex 제거 → block */
+  gap: 0;
+  padding: 0;
+  margin: 0;
+  width: 100%;
 }
 
+/* ===== 페이지네이션 ===== */
+.pagination {
+  display: flex;                 /* 가로 배치 */
+  justify-content: center;       /* 가운데 정렬 */
+  align-items: center;           /* 세로 중앙 정렬 */
+  margin: 30px 0;                /* 위아래 여백 */
+  gap: 6px;                      /* 버튼 간격 */
+}
+
+.pagination a {
+  display: inline-block;
+  padding: 6px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.pagination a:hover {
+  background: #f5f5f5;
+}
+
+.pagination a.active {
+  background: #3F97F6;
+  color: #fff;
+  border-color: #3F97F6;
+  font-weight: 600;
+}
+
+
+
+/* ===== 콘텐츠 ===== */
+#container .content {
+  width: 100%;
+  min-height: 600px;      /* 조금 더 넉넉하게 */
+  margin-left: 60px;
+  padding: 20px 30px;     /* 좌우 padding 추가 */
+}
+
+#container .content h2 {
+  margin: 0;
+  padding: 7px 0 8px 0;
+  border-bottom: 2px solid #000;
+  font-size: 26px;
+  line-height: 44px;
+}
+
+/* float 해제 */
+#container::after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
 /* --------------------------------------------------------------------------------- */
 /* ===== 학생회 소개 전용 컴포넌트 ===== */
-/* 소개 문단 */
 .council-intro .lead{
   font-size:14px; line-height:1.7; color:#374151;
   background:#fff; border:1px solid #e5e7eb; border-radius:6px;
   padding:14px 16px; margin-bottom:16px;
 }
-
-/* 정보 표 (조직/업무/연락처 등) */
 .info-table{
   width:100%; border-collapse:collapse; background:#fff; margin:10px 0 18px;
 }
@@ -122,11 +157,8 @@ main{ width:100%; }
 .info-table th{
   width:20%; background:#f8f9fa; font-weight:700; color:#111827;
 }
-
-/* 카드형 임원/본부 소개 */
 .council-cards{
-  display:grid;
-  grid-template-columns: repeat(4, 1fr);
+  display:grid; grid-template-columns: repeat(4, 1fr);
   gap:12px; margin: 6px 0 18px;
 }
 .card{
@@ -135,42 +167,16 @@ main{ width:100%; }
 }
 .card-title{ font-size:15px; font-weight:700; margin-bottom:6px; }
 .card-desc{ font-size:13px; color:#4b5563; line-height:1.6; }
-
-/* 안내 박스 */
 .notice-box{
   background:#f5f9ff; border:1px solid #e5e7eb; border-radius:6px;
   padding:10px 12px; color:#374151; font-size:13px;
 }
 
 /* --------------------------------------------------------------------------------- */
-
-/* ===== 동아리/스터디 페이지 전용 ===== */
-
-/* 동아리 소개용 info-table (clubs와 동일하게 재사용) */
-.info-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: #fff;
-  margin: 10px 0 18px;
-}
-.info-table th, 
-.info-table td {
-  border-bottom: 1px solid #e5e7eb;
-  padding: 12px 10px;
-  font-size: 14px;
-  text-align: left;
-}
-.info-table th {
-  width: 20%;
-  background: #f8f9fa;
-  font-weight: 700;
-  color: #111827;
-}
-
-/* 동아리/스터디 카드 목록 */
+/* ===== 동아리/스터디 페이지 ===== */
 .club-cards {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4개 카드 배치 */
+  grid-template-columns: repeat(4, 1fr);
   gap: 12px;
   margin: 6px 0 18px;
 }
@@ -186,96 +192,45 @@ main{ width:100%; }
   transform: translateY(-3px);
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
-.club-cards .card-title {
-  font-size: 15px;
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-.club-cards .card-desc {
-  font-size: 13px;
-  color: #4b5563;
-  line-height: 1.6;
-}
-
-/* 안내 박스 (공통 사용 가능) */
-.notice-box {
-  background: #f5f9ff;
-  border: 1px solid #e5e7eb;
-  border-radius: 6px;
-  padding: 10px 12px;
-  color: #374151;
-  font-size: 13px;
-}
-
+.club-cards .card-title { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+.club-cards .card-desc { font-size: 13px; color: #4b5563; line-height: 1.6; }
 
 /* --------------------------------------------------------------------------------- */
 /* ===== 식단안내 페이지 ===== */
-
-/* 주간 네비게이션 */
 .week-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-  margin: 20px 0;
+  display: flex; justify-content: center; align-items: center;
+  gap: 16px; margin: 20px 0;
 }
-.week-nav .week-range {
-  font-size: 20px;
-  font-weight: 600;
-}
+.week-nav .week-range { font-size: 20px; font-weight: 600; }
 .week-nav button {
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  color: #3F97F6;
-  font-weight: bold;
+  background: none; border: none; font-size: 24px;
+  cursor: pointer; color: #3F97F6; font-weight: bold;
 }
-
-/* 식단표 */
 .meal-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: #fff;
-  margin-bottom: 16px;
-  table-layout: fixed;
+  width: 100%; border-collapse: collapse; background: #fff;
+  margin-bottom: 16px; table-layout: fixed;
 }
-.meal-table th,
-.meal-table td {
-  border: 1px solid #ddd;
-  padding: 12px 10px;
-  font-size: 14px;
-  text-align: center;
-  vertical-align: top;
+.meal-table th, .meal-table td {
+  border: 1px solid #ddd; padding: 12px 10px; font-size: 14px;
+  text-align: center; vertical-align: top;
 }
 .meal-table thead th {
-  background: #1f4e79;
-  color: #fff;
-  font-weight: 600;
+  background: #1f4e79; color: #fff; font-weight: 600;
 }
 .meal-table tbody th {
-  background: #f8f9fa;
-  font-weight: 600;
-  width: 100px;
+  background: #f8f9fa; font-weight: 600; width: 100px;
 }
-.meal-table td {
-  line-height: 1.5;
-}
+.meal-table td { line-height: 1.5; }
+
 /* --------------------------------------------------------------------------------- */
 /* ===== 갤러리 페이지 ===== */
-
 .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3열 */
-  gap: 20px;
-  margin: 20px 0;
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 20px; margin: 20px 0;
 }
 .gallery-item {
-  background: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  background: #fff; border: 1px solid #e5e7eb; border-radius: 8px;
+  overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .gallery-item:hover {
@@ -283,26 +238,16 @@ main{ width:100%; }
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 .gallery-item img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  display: block;
+  width: 100%; height: 200px; object-fit: cover; display: block;
 }
 .gallery-item .title {
-  font-size: 14px;
-  font-weight: 600;
-  margin: 10px 12px 4px;
+  font-size: 14px; font-weight: 600; margin: 10px 12px 4px;
 }
 .gallery-item .meta {
-  font-size: 12px;
-  color: #6b7280;
-  margin: 0 12px 12px;
+  font-size: 12px; color: #6b7280; margin: 0 12px 12px;
 }
 
-
-
 /* --------------------------------------------------------------------------------- */
-
 /* ===== 푸터 ===== */
 footer{ width:100%; height:auto; color:#ddd; }
 footer > div{ width:100%; }
@@ -334,13 +279,12 @@ footer .info p{ color:#a8a9ac; font-size:12px; }
 footer .footer-tools{ position:absolute; top:35px; left:1000px; }
 footer .footer-tools select{
   width:200px; height:36px;
-  /* css/life 기준으로 루트 images 폴더라면 ../../images/ 가 맞음 */
   background:#131721 url(../../images/bg-related-arr-open.png) no-repeat right 10px center;
   color:#a8a9ac; border:1px solid #131721; border-radius:4px; padding:0 10px;
   font-size:14px; appearance:none; outline:none; cursor:pointer;
 }
 
-/* ===== 반응형(간단) ===== */
+/* ===== 반응형 ===== */
 @media (max-width: 1280px){
   .container, .crumb.container, footer .footer-inner{ width: 100%; padding: 0 16px; }
 }
@@ -348,7 +292,113 @@ footer .footer-tools select{
   .council-cards{ grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 600px){
-  .container.content-wrap{ flex-direction: column; }
-  .sidebar{ flex-basis: auto; }
+  #container .container.content-wrap{ flex-direction: column; }
+  #container .sidebar{ width: 100%; height: auto; float: none; }
   .council-cards{ grid-template-columns: 1fr; }
 }
+
+
+
+
+
+/* ===== 사이드바 (layout.html과 동일하게) ===== */
+
+/* 사이드바 제목 */
+.sidebarHeader {
+  margin: 0;
+  padding: 0;
+  height: auto;
+  display: flex;
+  align-items: flex-end;  /* 텍스트 baseline 정렬 */
+}
+
+/* 사이드바 제목 글자 */
+.sbTitle {
+  font-size: 26px;      /* 본문 h2와 크기 맞춤 */
+  font-weight: 700;
+  line-height: 44px;    /* 본문 h2와 동일 line-height */
+  margin: 0;
+  padding: 0;
+}
+
+/* 본문 제목 */
+#container .content h2 {
+  margin: 0;
+  padding: 0;
+  border-bottom: 2px solid #000;
+  font-size: 26px;     /* 사이드바와 동일 */
+  line-height: 44px;   /* 사이드바와 동일 */
+}
+
+
+
+/* 메뉴 항목 */
+.item {
+  height: 60px;
+  border-bottom: 1px solid #dcdcdc;
+  box-sizing: border-box;
+}
+.item a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: 60px;   /* 텍스트 세로 중앙 */
+  padding-left: 20px;
+  font-size: 16px;
+  color: #333;
+  text-decoration: none;
+}
+
+/* hover/active */
+.item:hover a {
+  background: #3F97F6;
+  color: #fff;
+}
+.item.active a {
+  background: #3F97F6;
+  color: #fff;
+}
+
+
+
+
+    /* list 서식 */
+    .list {
+        width: 210px;
+        height: 302px;
+        transform: rotate(0deg);
+        opacity: 1;
+        list-style: none;
+
+        }
+    
+    /* board 윗부분 레이아웃 */
+    .boardUpper{
+        width: 930px;
+        height: 56px;
+        margin-top: 62px;
+        margin-left: 60px;
+        border-bottom: 2px solid black;
+        box-sizing: border-box;
+
+    }
+
+    /* board 제목 서식 */
+    .buText{
+        width: 104.36px;
+        height: 30px;
+        margin-top: 7px;
+        font-family: "Noto Sans KR";
+        font: 700 26px bold;
+        line-height: 44px;
+        text-align: center;
+    }
+
+    /* board 본문 레이아웃 */
+    .boardLower{
+        width: 930px;
+        height: 19px;
+
+    }
+
+
