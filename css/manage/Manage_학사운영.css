@@ -1,0 +1,90 @@
+/* 학사운영 */
+
+
+/* 기본 테이블 스타일 */
+    .basic {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    main .managemain form.register th{
+        height: auto;
+        width: 100px;
+        height: 100%;
+    }
+
+    main .managemain form.register td{
+        text-align: left;
+    }
+
+    main .managemain form.register p{
+        font-size: 14px;
+        color: red;
+    }
+
+/* 드롭다운 박스 스타일 */
+    .basic td select{
+        width: 200px; /* 원하는 너비로 조절 */
+        height: 40px; /* 높이 조절 */
+        padding: 5px; /* 내부 여백 추가 */
+        border: 1px solid #ccc;
+        font-size: 14px;
+    }
+/* 공통 요소 */
+    /* 버튼 */
+    main .managemain form.register .button {
+        width: 100px;
+        margin-left: auto;
+        display: block;
+        margin-top: 20px;
+        background-color: #2b5993;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+
+/* input박스 스타일  */
+    main .managemain input {
+        width: 50%;
+        height: 10%;
+        font-size: 14px;
+        padding: 5px;
+        border: 1px solid #ccc; /* 테두리 스타일 */
+        box-sizing: border-box;
+    }
+    /* 수업 기간&시간 input */
+    main .managemain input.period {
+        width: 200px;
+    }
+
+    /* 강의설명 box */
+    .explain {
+        width: 50%;
+        height: 150px; /* 원하는 높이로 조절 */
+        padding: 5px; /* 내부 여백 */
+        border: 1px solid #ccc; /* 테두리 스타일 */
+        font-size: 14px;
+        box-sizing: border-box;
+        resize: none; /* 사용자가 크기를 조절하지 못하게 고정 */
+    }
+    
+    /* 수업 시간 요일 체크박스 설정 */
+    .time-and-days {
+    display: flex;
+    align-items: center; /* 세로 중앙 정렬 */
+    gap: 20px; /* 시간 입력 그룹과 체크박스 그룹 사이의 간격 */
+}
+
+/* 기존 체크박스 그룹 스타일은 그대로 유지 */
+    .day-checkbox-group {
+        display: flex;
+        align-items: center;
+        gap: 15px; /* 각 체크박스 간의 간격 */
+    }
+
+/* 추가로, input 태그의 폰트 사이즈를 조정하여 글자가 잘 보이게 할 수 있습니다. */
+    .time-and-days input[type="time"] {
+        font-size: 16px;
+        padding: 5px;
+    }
+
