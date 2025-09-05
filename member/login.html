@@ -3,9 +3,248 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
+    <title>로그인 페이지</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* CSS 시작 */
+        
+        /* 기본 스타일 초기화 및 폰트 설정 */
+        body {
+            display: flex; /* 자식 요소를 정렬하기 위해 flex 사용 */
+            justify-content: flex-start; /* 가로 중앙 정렬 */
+            align-items: flex-start; /* 세로 중앙 정렬 */
+            height: 100vh; /* 화면 전체 높이 사용 */
+            margin: 0;
+            background-color: #f4f4f4; /* 배경색 살짝 추가 */
+            font-family: 'Noto Sans KR', sans-serif; /* 기본 폰트 지정 */
+        }
+
+        /* 전체 레이아웃 (Layout ㅣ 전체 페이지) */
+        .container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* 로그인 폼 영역 (Form → Fieldset / Layout ㅣ선택창) */
+        .login-form {
+            width: 495px;
+            /* height: 365px; 명세에 있지만 내용에 따라 자동 조절되도록 주석처리 */
+        }
+        
+        /* 제목 (LOGIN ㅣ제목) */
+        .login-title {
+            font-size: 20px;
+            font-weight: 500; /* Medium */
+            color: #3F97F6;
+            margin: 0;
+            line-height: 24px;
+        }
+
+        /* 코멘트 (로그인을 하시면... ㅣ 코멘트) */
+        .login-comment {
+            font-size: 15px;
+            font-weight: 350; /* DemiLight (가장 비슷한 300 또는 400 사용) */
+            color: #3F97F6;
+            margin-top: 5px; /* 제목과의 간격 */
+            margin-bottom: 25px; /* 다음 요소와의 간격 */
+            line-height: 24px;
+        }
+        
+        /* 상단 영역 (role 선택, 아이디/비밀번호 찾기) */
+        .form-header {
+            display: flex;
+            justify-content: space-between; /* 양쪽 끝으로 정렬 */
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        /* role 선택 그룹 */
+        .role-selector {
+            display: flex;
+            gap: 15px; /* 각 항목 사이 간격 */
+        }
+
+        .role-selector label {
+            font-size: 14px;
+            color: #555;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        /* 기본 라디오 버튼 숨기기 */
+        .role-selector input[type="radio"] {
+            display: none;
+        }
+        
+        /* 커스텀 라디오 버튼 모양 만들기 (role 체크 모양) */
+        .role-selector label::before {
+            content: '';
+            display: inline-block;
+            width: 18px; /* 명세: 22px */
+            height: 18px;
+            margin-right: 8px;
+            border-radius: 50%; /* 원 모양 */
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+        }
+        
+        /* 선택됐을 때 커스텀 라디오 버튼 스타일 */
+        .role-selector input[type="radio"]:checked + label::before {
+            background-color: #3F97F6;
+            border-color: #3F97F6;
+        }
+
+        .find-link a {
+            font-size: 14px;
+            color: #555;
+            text-decoration: none;
+        }
+        
+        /* 아이디, 비밀번호 입력 칸 */
+        .input-field {
+            width: 100%; /* 부모 너비에 맞춤 */
+            height: 47px;
+            border: 1px solid #CCCCCC;
+            background: #FFFFFF;
+            padding: 0 15px; /* 안쪽 여백 */
+            font-size: 14px;
+            margin-bottom: 10px;
+            box-sizing: border-box; /* 패딩, 테두리를 너비에 포함 */
+        }
+        
+        /* 입력창 플레이스홀더 스타일 */
+        .input-field::placeholder {
+            color: #999;
+        }
+
+        /* 로그인 클릭 칸 */
+        .login-button {
+            width: 100%;
+            height: 48px;
+            background-color: #3F97F6;
+            color: white;
+            border: none;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer; /* 마우스 올리면 손가락 모양으로 */
+            margin-top: 10px;
+        }
+        
+        /* 하단 안내 영역 */
+        .info-section {
+            margin-top: 20px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+        
+        .info-icon {
+            margin-right: 8px;
+        }
+
+        .info-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            
+        }
+
+        .info-title-group {
+            display: flex;
+            align-items: center;
+        }
+        
+        .info-header h2 {
+            position: relative; /* 가상 요소의 위치 기준 */
+            padding-left: -20px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #145074;
+            margin: 0;
+        }
+        
+        .info-header .signup-link a {
+            font-size: 14px;
+            color: #555;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 100px ;
+        }
+        
+        .info-list {
+            list-style-type: none; /* 기본 리스트 스타일 제거 */
+            padding: 0;
+            margin: 0;
+            font-size: 12px;
+            color: #777;
+            line-height: 1.8;
+        }
+        
+        /* 리스트 항목 앞에 '-' 붙이기 */
+        .info-list li::before {
+            content: '- ';
+        }
+
+    </style>
 </head>
 <body>
-    
+
+    <div class="container">
+        <div class="login-form">
+            <h1 class="login-title">LOGIN</h1>
+            <p class="login-comment">로그인을 하시면 더 다양한 서비스를 받으실 수 있습니다.</p>
+
+            <form>
+                <div class="form-header">
+                    <div class="role-selector">
+                        <input type="radio" id="student" name="role" checked>
+                        <label for="student">학부생</label>
+
+                        <input type="radio" id="staff" name="role">
+                        <label for="staff">교직원</label>
+
+                        <input type="radio" id="general" name="role">
+                        <label for="general">일반인</label>
+                    </div>
+                    <div class="find-link">
+                        <a href="#">아이디/비밀번호 찾기</a>
+                    </div>
+                </div>
+
+                <input type="text" class="input-field" placeholder="아이디">
+                <input type="password" class="input-field" placeholder="비밀번호">
+
+                <button type="submit" class="login-button">로그인</button>
+            </form>
+
+            <div class="info-section">
+                <div class="info-header">
+                    <div class="info-title-group">
+                        <img src="../images/bullet-h4.png" alt="가입 안내 불릿 아이콘" class="info-icon">
+                        <h2>아이디, 비밀번호 안내</h2>
+                    </div>
+                    <div class="signup-link">
+                        <a href="#">회원가입</a>
+                    </div>
+                </div>
+                <ul class="info-list">
+                    <li>대학 구성원(학원, 교직원)은 회원가입없이 교번, 학번을 사용하여 로그인이 가능합니다.</li>
+                    <li>비밀번호 분실시 학생지원팀에 방문하셔서 초기화하실 수 있습니다.</li>
+                    <li>재학, 휴학, 졸업 유예인 경우 사용하실 수 있으며, 매년 학적변동이 일어날 때 상태가 변경됩니다.</li>
+                    <li>문의사항이 있으시면 담당자(055-123-4567)에게 전화주세요</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
