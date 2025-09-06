@@ -1,30 +1,34 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>커뮤니티 - 자유게시판</title>
-  <link rel="stylesheet" href="../css/community/Community.css">
-</head>
-<body>
-<div id="wrapper">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>커뮤니티 - 자료실</title>
 
+  <!-- 공용 레이아웃 고정 파일 -->
+  <link rel="stylesheet" href="../css/common/layout.css">
+  <link rel="stylesheet" href="../css/common/header.css">
+  <link rel="stylesheet" href="../css/common/footer.css">
+
+  <!-- 커뮤니티 전용 -->
+  <link rel="stylesheet" href="../css/community/community.css">
+</head>
+<body class="page-community data-list">
   <!-- ===== 헤더 ===== -->
   <header>
     <div>
       <div>
         <ul class="util">
-          <li><a href="../main.html">HOME</a></li>
+          <li><a href="#">HOME</a></li>
           <li><a href="#">사이트맵</a></li>
           <li><a href="#">로그인</a></li>
           <li><a href="#">학생지원</a></li>
         </ul>
       </div>
     </div>
-
-    <!-- 로고 + GNB -->
     <div>
       <div>
-        <a href="../main.html"><img src="../images/header_logo.png" alt="그린대학교"></a>
+        <a href="/"><img src="../images/header_logo.png" alt="그린대학교"></a>
         <nav>
           <ul>
             <li class="dropdown">
@@ -40,7 +44,7 @@
             <li class="dropdown">
               <a class="dropbtn" href="#">입학안내</a>
               <ul class="dropdown-content">
-                <li><a href="notice.html">공지사항</a></li>
+                <li><a href="#">공지사항</a></li>
                 <li><a href="#">수시모집</a></li>
                 <li><a href="#">정시모집</a></li>
                 <li><a href="#">편입학</a></li>
@@ -60,7 +64,7 @@
             <li class="dropdown">
               <a class="dropbtn" href="#">학사안내</a>
               <ul class="dropdown-content">
-                <li><a href="notice.html">공지사항</a></li>
+                <li><a href="#">공지사항</a></li>
                 <li><a href="#">학사일정</a></li>
                 <li><a href="#">수강신청</a></li>
                 <li><a href="#">성적</a></li>
@@ -80,12 +84,12 @@
             <li class="dropdown">
               <a class="dropbtn" href="#">커뮤니티</a>
               <ul class="dropdown-content">
-                  <li><a href="./notice.html">공지사항</a></li>
-                  <li><a href="./news.html">뉴스 및 칼럼</a></li>
-                  <li><a href="./jobs.html">취업정보</a></li>
-                  <li><a href="./free.html">자유게시판</a></li>
-                  <li><a href="./qna.html">질문과 답변</a></li>
-                  <li><a href="./data.html">자료실</a></li>
+                <li><a href="#">공지사항</a></li>
+                <li><a href="#">뉴스 및 칼럼</a></li>
+                <li><a href="#">취업정보</a></li>
+                <li><a href="#">자유게시판</a></li>
+                <li><a href="#">질문과 답변</a></li>
+                <li><a href="#">자료실</a></li>
               </ul>
             </li>
           </ul>
@@ -94,116 +98,125 @@
     </div>
   </header>
 
-  <!-- ===== breadcrumb bar ===== -->
-  <div class="crumb-bar">
-    <div class="crumb container">
-      <img src="../images/ico-home.png" alt="홈" class="crumb-home">
-      <a href="#">커뮤니티</a>
-      <span class="sep">›</span>
-      <span class="current">자료실</span>
-    </div>
-  </div>
-
-  <!-- ===== 본문 ===== -->
+  <!-- ===== 메인 ===== -->
   <main>
-    <div class="container content-wrap">
-      <!-- 좌측 메뉴 -->
-      <aside class="sidebar">
-        <h4>커뮤니티</h4>
-        <ul>
-          <li><a href="./notice.html">공지사항</a></li>
-          <li><a href="./news.html">뉴스 및 칼럼</a></li>
-        <li><a href="./jobs.html">취업정보</a></li>
-        <li><a href="./free.html">자유게시판</a></li>
-          <li><a href="./qna.html">질문과 답변</a></li>
-          <li class="active"><a href="./data.html">자료실</a></li>
-        </ul>
-      </aside>
-
-      <!-- 우측 콘텐츠 -->
-      <section class="content">
-        <h2>자료실</h2>
-
-        <!-- 검색 영역 -->
-        <div class="search-box">
-          <select>
-            <option>전체</option>
-            <option>제목</option>
-            <option>업체</option>
-          </select>
-          <input type="text" placeholder="검색어를 입력해 주세요">
-          <button>검색</button>
-        </div>
-
-        
-
-
-
-        <table class="data-board">
-        <colgroup>
-            <col style="width:8%">   <!-- 번호 -->
-            <col style="width:50%">  <!-- 제목 -->
-            <col style="width:14%">  <!-- 작성자 -->
-            <col style="width:14%">  <!-- 작성일 -->
-            <col style="width:14%">  <!-- 조회수 -->
-        </colgroup>
-        <thead>
-            <tr>
-            <th>번호</th>
-            <th>제목</th>
-            <th>작성자</th>
-            <th>작성일</th>
-            <th>조회수</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-            <td>3</td>
-            <td>
-                <img src="../images/ico-file01.png" alt="첨부파일" class="file-icon">
-                교원자격증 재교부 및 기재사항 정정신청 안내(서식)
-            </td>
-            <td>학사관리과</td>
-            <td>24.04.09</td>
-            <td>120</td>
-            </tr>
-            <tr>
-            <td>2</td>
-            <td>
-                <img src="../images/ico-file01.png" alt="첨부파일" class="file-icon">
-                2025 융합인재학부 오리엔테이션 자료
-            </td>
-            <td>융합인재학부</td>
-            <td>24.04.09</td>
-            <td>120</td>
-            </tr>
-            <tr>
-            <td>1</td>
-            <td>
-                <img src="../images/ico-file01.png" alt="첨부파일" class="file-icon">
-                2022년 2월 8일 면접 전략 특강 강의 자료
-            </td>
-            <td>취업지원실</td>
-            <td>24.04.09</td>
-            <td>120</td>
-            </tr>
-        </tbody>
-        </table>
-
-
-
-        <!-- 페이징 -->
-        <div class="pagination">
-          <a href="#">&laquo;</a>
-          <a href="#">&lsaquo;</a>
-          <a href="#" class="active">1</a>
-          <a href="#">2</a>
-          <a href="#">3</a>
-          <a href="#">&rsaquo;</a>
-          <a href="#">&raquo;</a>
-        </div>
-      </section>
+    <!-- 상단 경로 -->
+    <div class="top-bar">
+      <div class="top-bar-content">
+        <img src="../images/ico-home.png" alt="홈">
+        <img src="../images/bg-path-arrow.png" alt=">">
+        <a href="#" class="sidebar-text">커뮤니티</a>
+        <img src="../images/bg-path-arrow.png" alt=">">
+        <a href="#" class="sidebar-text">자료실</a>
+      </div>
     </div>
+
+    <section id="container">
+      <!-- 좌측 사이드바 -->
+      <div class="sidebar">
+        <div class="sidebarHeader">
+          <h2 class="sbTitle">커뮤니티</h2>
+        </div>
+        <div class="sidebarMenu">
+          <ul class="list">
+            <li class="item"><a class="itemText" href="./notice.html">공지사항</a></li>
+            <li class="item"><a class="itemText" href="./news.html">뉴스 및 칼럼</a></li>
+            <li class="item"><a class="itemText" href="./jobs.html">취업정보</a></li>
+            <li class="item"><a class="itemText" href="./free.html">자유게시판</a></li>
+            <li class="item"><a class="itemText" href="./qna.html">질문과 답변</a></li>
+            <li class="item active"><a class="itemText" href="./data.html" style="color:#fff">자료실</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 본문 -->
+      <div class="board">
+        <div class="boardUpper">
+          <h3 class="buText">자료실</h3>
+        </div>
+
+        <div class="notice-wrap">
+          <!-- 상단 필터/검색 -->
+          <form class="notice-toolbar" action="#" method="get">
+            <select class="notice-field" name="field" aria-label="검색 대상 선택">
+              <option value="title">제목</option>
+              <option value="writer">작성자</option>
+            </select>
+            <input class="notice-input" type="text" name="q" placeholder="검색어를 입력해 주세요" />
+            <button type="submit" class="notice-btn">검색</button>
+          </form>
+
+          <!-- 자료실 리스트 -->
+          <table class="notice-table">
+            <colgroup>
+              <col class="col-no">
+              <col class="col-title">
+              <col class="col-writer">
+              <col class="col-date">
+              <col class="col-views">
+            </colgroup>
+            <thead>
+              <tr>
+                <th class="col-no">번호</th>
+                <th class="col-title">제목</th>
+                <th class="col-writer">작성자</th>
+                <th class="col-date">작성일</th>
+                <th class="col-views">조회수</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="col-no">3</td>
+                <td class="col-title">
+                  <div class="title-wrap">
+                    <img src="../images/ico-file01.png" alt="첨부파일" class="badge-file">
+                    교원자격증 재교부 및 기재사항 정정신청 안내(서식)
+                  </div>
+                </td>
+                <td>학사관리과</td>
+                <td>24.04.09</td>
+                <td>120</td>
+              </tr>
+              <tr>
+                <td class="col-no">2</td>
+                <td class="col-title">
+                  <div class="title-wrap">
+                    <img src="../images/ico-file01.png" alt="첨부파일" class="badge-file">
+                    2025 융합인재학부 오리엔테이션 자료
+                  </div>
+                </td>
+                <td>융합인재학부</td>
+                <td>24.04.09</td>
+                <td>120</td>
+              </tr>
+              <tr>
+                <td class="col-no">1</td>
+                <td class="col-title">
+                  <div class="title-wrap">
+                    <img src="../images/ico-file01.png" alt="첨부파일" class="badge-file">
+                    2022년 2월 8일 면접 전략 특강 강의 자료
+                  </div>
+                </td>
+                <td>취업지원실</td>
+                <td>24.04.09</td>
+                <td>120</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- 페이지네이션 -->
+          <div class="notice-paging">
+            <button class="notice-nav" aria-label="첫 페이지">«</button>
+            <button class="notice-nav" aria-label="이전 페이지">‹</button>
+            <button class="notice-page is-active">1</button>
+            <button class="notice-page">2</button>
+            <button class="notice-page">3</button>
+            <button class="notice-nav" aria-label="다음 페이지">›</button>
+            <button class="notice-nav" aria-label="마지막 페이지">»</button>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- ===== 푸터 ===== -->
@@ -214,7 +227,7 @@
           <li><a href="#">개인정보처리방침</a></li>
           <li><a href="#">통합정보시스템</a></li>
           <li><a href="#">학사일정</a></li>
-          <li><a href="#">주요민원 연락처</a></li>
+          <li><a href="#">주요민원 연럭처</a></li>
           <li><a href="#">교내공지사항</a></li>
         </ul>
       </div>
@@ -248,7 +261,5 @@
       </div>
     </div>
   </footer>
-
-</div>
 </body>
 </html>

@@ -1,30 +1,34 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>커뮤니티 - 질문과 답변</title>
-  <link rel="stylesheet" href="../css/community/Community.css">
-</head>
-<body>
-<div id="wrapper">
 
+  <!-- 공용 레이아웃 고정 파일 -->
+  <link rel="stylesheet" href="../css/common/layout.css">
+  <link rel="stylesheet" href="../css/common/header.css">
+  <link rel="stylesheet" href="../css/common/footer.css">
+
+  <!-- 커뮤니티 전용 -->
+  <link rel="stylesheet" href="../css/community/community.css">
+</head>
+<body class="page-community qna-list">
   <!-- ===== 헤더 ===== -->
   <header>
     <div>
       <div>
         <ul class="util">
-          <li><a href="../index.html">HOME</a></li>
+          <li><a href="#">HOME</a></li>
           <li><a href="#">사이트맵</a></li>
           <li><a href="#">로그인</a></li>
           <li><a href="#">학생지원</a></li>
         </ul>
       </div>
     </div>
-
-    <!-- 로고 + GNB -->
     <div>
       <div>
-        <a href="../index.html"><img src="../images/header_logo.png" alt="그린대학교"></a>
+        <a href="/"><img src="../images/header_logo.png" alt="그린대학교"></a>
         <nav>
           <ul>
             <li class="dropdown">
@@ -40,7 +44,7 @@
             <li class="dropdown">
               <a class="dropbtn" href="#">입학안내</a>
               <ul class="dropdown-content">
-                <li><a href="notice.html">공지사항</a></li>
+                <li><a href="#">공지사항</a></li>
                 <li><a href="#">수시모집</a></li>
                 <li><a href="#">정시모집</a></li>
                 <li><a href="#">편입학</a></li>
@@ -60,7 +64,7 @@
             <li class="dropdown">
               <a class="dropbtn" href="#">학사안내</a>
               <ul class="dropdown-content">
-                <li><a href="notice.html">공지사항</a></li>
+                <li><a href="#">공지사항</a></li>
                 <li><a href="#">학사일정</a></li>
                 <li><a href="#">수강신청</a></li>
                 <li><a href="#">성적</a></li>
@@ -80,12 +84,12 @@
             <li class="dropdown">
               <a class="dropbtn" href="#">커뮤니티</a>
               <ul class="dropdown-content">
-                  <li><a href="./notice.html">공지사항</a></li>
-                  <li><a href="./news.html">뉴스 및 칼럼</a></li>
-                  <li><a href="./jobs.html">취업정보</a></li>
-                  <li><a href="./free.html">자유게시판</a></li>
-                  <li><a href="./qna.html">질문과 답변</a></li>
-                  <li><a href="./data.html">자료실</a></li>
+                <li><a href="./notice.html">공지사항</a></li>
+                <li><a href="./news.html">뉴스 및 칼럼</a></li>
+                <li><a href="./jobs.html">취업정보</a></li>
+                <li><a href="./free.html">자유게시판</a></li>
+                <li><a href="./qna.html">질문과 답변</a></li>
+                <li><a href="./data.html">자료실</a></li>
               </ul>
             </li>
           </ul>
@@ -94,128 +98,144 @@
     </div>
   </header>
 
-  <!-- ===== breadcrumb bar ===== -->
-  <div class="crumb-bar">
-    <div class="crumb container">
-      <img src="../images/ico-home.png" alt="홈" class="crumb-home">
-      <a href="#">커뮤니티</a>
-      <span class="sep">›</span>
-      <span class="current">질문과답변</span>
-    </div>
-  </div>
-
-  <!-- ===== 본문 ===== -->
+  <!-- ===== 메인 ===== -->
   <main>
-    <div class="container content-wrap">
-      <!-- 좌측 메뉴 -->
-      <aside class="sidebar">
-        <h4>커뮤니티</h4>
-        <ul>
-          <li><a href="./notice.html">공지사항</a></li>
-          <li><a href="./news.html">뉴스 및 칼럼</a></li>
-          <li><a href="./jobs.html">취업정보</a></li>
-          <li><a href="./free.html">자유게시판</a></li>
-          <li class="active"><a href="./qna.html">질문과 답변</a></li>
-          <li><a href="./data.html">자료실</a></li>
-        </ul>
-      </aside>
-
-      <!-- 우측 콘텐츠 -->
-      <section class="content">
-        <h2>질문과 답변</h2>
-
-        <!-- 검색 영역 -->
-        <div class="search-box">
-          <select>
-            <option>전체</option>
-            <option>제목</option>
-            <option>업체</option>
-          </select>
-          <input type="text" placeholder="검색어를 입력해 주세요">
-          <button>검색</button>
-        </div>
-
-        <!-- QnA 게시판 테이블 -->
-        <table class="qna-board">
-        <colgroup>
-            <col style="width:8%">   <!-- 번호 -->
-            <col style="width:50%">  <!-- 제목 -->
-            <col style="width:12%">  <!-- 작성자 -->
-            <col style="width:15%">  <!-- 작성일 -->
-            <col style="width:15%">  <!-- 상태 -->
-        </colgroup>
-        <thead>
-            <tr>
-            <th>번호</th>
-            <th>제목</th>
-            <th>작성자</th>
-            <th>작성일</th>
-            <th>상태</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-            <td>5</td>
-            <td>
-                <img src="../images/ico-lock.png" alt="잠금" class="lock-icon">
-                문의드립니다.
-            </td>
-            <td>홍길동</td>
-            <td>24.04.09</td>
-            <td><span class="status waiting">답변대기</span></td>
-            </tr>
-            <tr>
-            <td>4</td>
-            <td>취업 진로 상담</td>
-            <td>홍길동</td>
-            <td>24.04.09</td>
-            <td><span class="status done">답변완료</span></td>
-            </tr>
-            <tr class="reply">
-            <td>3</td>
-            <td>
-                <span class="reply-prefix">RE :</span> [답변] 취업 진로 상담
-            </td>
-            <td>담당자</td>
-            <td>24.04.09</td>
-            <td><span class="status done">답변완료</span></td>
-            </tr>
-            <tr>
-            <td>2</td>
-            <td>
-                <img src="../images/ico-lock.png" alt="잠금" class="lock-icon">
-                취업실전전략1 일반선택 교과목 문의입니다
-            </td>
-            <td>홍길동</td>
-            <td>24.04.09</td>
-            <td><span class="status done">답변완료</span></td>
-            </tr>
-            <tr class="reply">
-            <td>1</td>
-            <td>
-                <span class="reply-prefix">RE :</span> [답변] 취업실전전략1 일반선택 교과목 문의입니다
-            </td>
-            <td>담당자</td>
-            <td>24.04.09</td>
-            <td><span class="status done">답변완료</span></td>
-            </tr>
-        </tbody>
-        </table>
-        
-
-
-        <!-- 페이징 -->
-        <div class="pagination">
-          <a href="#">&laquo;</a>
-          <a href="#">&lsaquo;</a>
-          <a href="#" class="active">1</a>
-          <a href="#">2</a>
-          <a href="#">3</a>
-          <a href="#">&rsaquo;</a>
-          <a href="#">&raquo;</a>
-        </div>
-      </section>
+    <!-- 상단 경로 -->
+    <div class="top-bar">
+      <div class="top-bar-content">
+        <img src="../images/ico-home.png" alt="홈">
+        <img src="../images/bg-path-arrow.png" alt=">">
+        <a href="#" class="sidebar-text">커뮤니티</a>
+        <img src="../images/bg-path-arrow.png" alt=">">
+        <a href="#" class="sidebar-text">질문과 답변</a>
+      </div>
     </div>
+
+    <section id="container">
+      <!-- 좌측 사이드바 -->
+      <div class="sidebar">
+        <div class="sidebarHeader">
+          <h2 class="sbTitle">커뮤니티</h2>
+        </div>
+        <div class="sidebarMenu">
+          <ul class="list">
+            <li class="item"><a class="itemText" href="./notice.html">공지사항</a></li>
+            <li class="item"><a class="itemText" href="./news.html">뉴스 및 칼럼</a></li>
+            <li class="item"><a class="itemText" href="./jobs.html">취업정보</a></li>
+            <li class="item"><a class="itemText" href="./free.html">자유게시판</a></li>
+            <li class="item active"><a class="itemText" href="./qna.html" style="color:#fff">질문과 답변</a></li>
+            <li class="item"><a class="itemText" href="./data.html">자료실</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 본문 -->
+      <div class="board">
+        <div class="boardUpper">
+          <h3 class="buText">질문과 답변</h3>
+        </div>
+
+        <div class="notice-wrap">
+          <!-- 상단 필터/검색 -->
+          <form class="notice-toolbar" action="#" method="get">
+            <select class="notice-field" name="field" aria-label="검색 대상 선택">
+              <option value="all">전체</option>
+              <option value="title">제목</option>
+              <option value="writer">작성자</option>
+              <option value="status">상태</option>
+            </select>
+            <input class="notice-input" type="text" name="q" placeholder="검색어를 입력해 주세요" />
+            <button type="submit" class="notice-btn">검색</button>
+          </form>
+
+          <!-- 리스트 -->
+          <table class="notice-table qna-table">
+            <colgroup>
+              <col class="col-no">
+              <col class="col-title">
+              <col class="col-writer">
+              <col class="col-date">
+              <col class="col-status">
+            </colgroup>
+            <thead>
+              <tr>
+                <th class="col-no">번호</th>
+                <th class="col-title">제목</th>
+                <th class="col-writer">작성자</th>
+                <th class="col-date">작성일</th>
+                <th class="col-status">상태</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="col-no">5</td>
+                <td class="col-title">
+                  <div class="title-wrap qna-lock">
+                    <img src="../images/ico-lock.png" alt="비밀글" class="lock">
+                    문의드립니다.
+                  </div>
+                </td>
+                <td>홍길동</td>
+                <td>24.04.09</td>
+                <td><span class="qna-status is-await">답변대기</span></td>
+              </tr>
+
+              <tr>
+                <td class="col-no">4</td>
+                <td class="col-title">취업 진로 상담</td>
+                <td>홍길동</td>
+                <td>24.04.09</td>
+                <td><span class="qna-status is-done">답변완료</span></td>
+              </tr>
+
+              <tr class="is-reply">
+                <td class="col-no">3</td>
+                <td class="col-title">
+                  <div class="title-wrap qna-reply">RE : [답변] 취업 진로 상담</div>
+                </td>
+                <td>담당자</td>
+                <td>24.04.09</td>
+                <td><span class="qna-status is-done">답변완료</span></td>
+              </tr>
+
+              <tr>
+                <td class="col-no">2</td>
+                <td class="col-title">
+                  <div class="title-wrap qna-lock">
+                    <img src="../images/ico-lock.png" alt="비밀글" class="lock">
+                    취업실전전략1 일반선택 교과목 문의입니다
+                  </div>
+                </td>
+                <td>홍길동</td>
+                <td>24.04.09</td>
+                <td><span class="qna-status is-done">답변완료</span></td>
+              </tr>
+
+              <tr class="is-reply">
+                <td class="col-no">1</td>
+                <td class="col-title">
+                  <div class="title-wrap qna-reply">RE : [답변] 취업실전전략1 일반선택 교과목 문의입니다</div>
+                </td>
+                <td>담당자</td>
+                <td>24.04.09</td>
+                <td><span class="qna-status is-done">답변완료</span></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- 페이지네이션 -->
+          <div class="notice-paging">
+            <button class="notice-nav" aria-label="첫 페이지">«</button>
+            <button class="notice-nav" aria-label="이전 페이지">‹</button>
+            <button class="notice-page is-active">1</button>
+            <button class="notice-page">2</button>
+            <button class="notice-page">3</button>
+            <button class="notice-nav" aria-label="다음 페이지">›</button>
+            <button class="notice-nav" aria-label="마지막 페이지">»</button>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- ===== 푸터 ===== -->
@@ -226,7 +246,7 @@
           <li><a href="#">개인정보처리방침</a></li>
           <li><a href="#">통합정보시스템</a></li>
           <li><a href="#">학사일정</a></li>
-          <li><a href="#">주요민원 연락처</a></li>
+          <li><a href="#">주요민원 연럭처</a></li>
           <li><a href="#">교내공지사항</a></li>
         </ul>
       </div>
@@ -260,7 +280,5 @@
       </div>
     </div>
   </footer>
-
-</div>
 </body>
 </html>
