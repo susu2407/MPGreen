@@ -1,30 +1,35 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>대학생활 - 갤러리</title>
-  <link rel="stylesheet" href="../css/life/Life.css">
-</head>
-<body>
-<div id="wrapper">
 
+  <!-- 공용 레이아웃 고정 파일 -->
+  <link rel="stylesheet" href="../css/common/layout.css">
+  <link rel="stylesheet" href="../css/common/header.css">
+  <link rel="stylesheet" href="../css/common/footer.css">
+
+  <!-- 섹션 전용 (대학생활) -->
+  <link rel="stylesheet" href="../css/life/life.css">
+</head>
+
+<body class="page-life gallery">
   <!-- ===== 헤더 ===== -->
   <header>
     <div>
       <div>
         <ul class="util">
-          <li><a href="../main.html">HOME</a></li>
+          <li><a href="#">HOME</a></li>
           <li><a href="#">사이트맵</a></li>
           <li><a href="#">로그인</a></li>
           <li><a href="#">학생지원</a></li>
         </ul>
       </div>
     </div>
-
-    <!-- 로고 + GNB -->
     <div>
       <div>
-        <a href="../main.html"><img src="../images/header_logo.png" alt="그린대학교"></a>
+        <a href="/"><img src="../images/header_logo.png" alt="그린대학교"></a>
         <nav>
           <ul>
             <li class="dropdown">
@@ -40,7 +45,7 @@
             <li class="dropdown">
               <a class="dropbtn" href="#">입학안내</a>
               <ul class="dropdown-content">
-                <li><a href="../community/notice.html">공지사항</a></li>
+                <li><a href="#">공지사항</a></li>
                 <li><a href="#">수시모집</a></li>
                 <li><a href="#">정시모집</a></li>
                 <li><a href="#">편입학</a></li>
@@ -60,7 +65,7 @@
             <li class="dropdown">
               <a class="dropbtn" href="#">학사안내</a>
               <ul class="dropdown-content">
-                <li><a href="../community/notice.html">공지사항</a></li>
+                <li><a href="#">공지사항</a></li>
                 <li><a href="#">학사일정</a></li>
                 <li><a href="#">수강신청</a></li>
                 <li><a href="#">성적</a></li>
@@ -68,6 +73,8 @@
                 <li><a href="#">자주하는 질문</a></li>
               </ul>
             </li>
+
+            <!-- 대학생활 -->
             <li class="dropdown">
               <a class="dropbtn" href="#">대학생활</a>
               <ul class="dropdown-content">
@@ -77,6 +84,7 @@
                 <li><a href="./gallery.html">갤러리</a></li>
               </ul>
             </li>
+
             <li class="dropdown">
               <a class="dropbtn" href="#">커뮤니티</a>
               <ul class="dropdown-content">
@@ -94,78 +102,94 @@
     </div>
   </header>
 
-  <!-- ===== breadcrumb bar ===== -->
-  <div class="crumb-bar">
-    <div class="crumb container">
-      <img src="../images/ico-home.png" alt="홈" class="crumb-home">
-      <a href="#">대학생활</a>
-      <span class="sep">›</span>
-      <span class="current">갤러리</span>
+  <!-- ===== 메인 ===== -->
+  <main>
+    <!-- 상단 경로 -->
+    <div class="top-bar">
+      <div class="top-bar-content">
+        <img src="../images/ico-home.png" alt="홈">
+        <img src="../images/bg-path-arrow.png" alt=">">
+        <a href="#" class="sidebar-text">대학생활</a>
+        <img src="../images/bg-path-arrow.png" alt=">">
+        <a href="#" class="sidebar-text">갤러리</a>
+      </div>
     </div>
-  </div>
 
-  <!-- ===== 본문 ===== -->
-    <main>
-      <section id="container">
-        <aside class="sidebar">
-          <div class="sidebarHeader">
-            <h2 class="sbTitle">대학생활</h2>
-          </div>
-          <div class="sidebarMenu">
-            <ul class="list">
-              <li class="item"><a href="./clubs.html">학생회 소개</a></li>
-              <li class="item"><a href="./study.html">동아리/스터디</a></li>
-              <li class="item"><a href="./cafeteria.html">식단안내</a></li>
-              <li class="item active"><a href="./gallery.html">갤러리</a></li>
-            </ul>
-          </div>
-        </aside>
+    <section id="container">
+      <!-- 좌측 사이드바 -->
+      <div class="sidebar">
+        <div class="sidebarHeader">
+          <h2 class="sbTitle">대학생활</h2>
+        </div>
+        <div class="sidebarMenu">
+          <ul class="list">
+            <li class="item"><a class="itemText" href="./clubs.html">학생회 소개</a></li>
+            <li class="item"><a class="itemText" href="./study.html">동아리/스터디</a></li>
+            <li class="item"><a class="itemText" href="./cafeteria.html">식단안내</a></li>
+            <li class="item active"><a class="itemText" href="./gallery.html" style="color:#fff">갤러리</a></li>
+          </ul>
+        </div>
+      </div>
 
-      <!-- 우측 콘텐츠 -->
-      <section class="content">
-        <h2>갤러리</h2>
+      <!-- 본문 -->
+      <div class="board">
+        <div class="boardUpper">
+          <h3 class="buText">갤러리</h3>
+        </div>
 
-        <!-- 갤러리 리스트 -->
+        <div class="life-wrap life-gallery">
+          <p class="gallery-intro">
+            
+          </p>
+
         <div class="gallery-grid">
-          <div class="gallery-item">
-            <img src="../images/gallary_sample1.jpg" alt="갤러리 이미지1">
-            <p class="title">제40회 1995학년도 학위수여식</p>
-            <p class="meta">조회수 23 | 25.02.20</p>
-          </div>
-          <div class="gallery-item">
-            <img src="../images/gallary_sample2.jpg" alt="갤러리 이미지2">
-            <p class="title">제40회 1995학년도 학위수여식</p>
-            <p class="meta">조회수 23 | 25.02.20</p>
-          </div>
-          <div class="gallery-item">
-            <img src="../images/gallary_sample3.jpg" alt="갤러리 이미지3">
-            <p class="title">산업구조 변화대응 특화훈련 워크샵</p>
-            <p class="meta">조회수 23 | 25.02.20</p>
-          </div>
-          <div class="gallery-item">
-            <img src="../images/gallary_sample4.png" alt="갤러리 이미지4">
-            <p class="title">공동 학력 인증 협약</p>
-            <p class="meta">조회수 23 | 25.02.20</p>
-          </div>
-          <div class="gallery-item">
-            <img src="../images/gallary_sample5.jpg" alt="갤러리 이미지5">
-            <p class="title">우수 훈련기관 인증패</p>
-            <p class="meta">조회수 23 | 25.02.20</p>
-          </div>
+          <!-- 카드 1 -->
+          <a class="gallery-card" href="#">
+            <img class="thumb" src="../images/gallary_sample1.jpg" alt="갤러리1">
+            <div class="body">
+              <div class="title">제40회 1995학년도 학위수여식</div>
+              <div class="meta"><span>조회수 23</span><span>25.02.20</span></div>
+            </div>
+          </a>
+
+          <!-- 카드 2 -->
+          <a class="gallery-card" href="#">
+            <img class="thumb" src="../images/gallary_sample2.jpg" alt="갤러리2">
+            <div class="body">
+              <div class="title">제40회 1995학년도 학위수여식</div>
+              <div class="meta"><span>조회수 18</span><span>25.02.18</span></div>
+            </div>
+          </a>
+
+          <!-- 카드 3 -->
+          <a class="gallery-card" href="#">
+            <img class="thumb" src="../images/gallary_sample3.jpg" alt="갤러리3">
+            <div class="body">
+              <div class="title">제40회 1995학년도 학위수여식</div>
+              <div class="meta"><span>조회수 31</span><span>25.02.15</span></div>
+            </div>
+          </a>
+
+          <!-- 카드 4 -->
+          <a class="gallery-card" href="#">
+            <img class="thumb" src="../images/gallary_sample4.png" alt="갤러리4">
+            <div class="body">
+              <div class="title">제40회 1995학년도 학위수여식</div>
+              <div class="meta"><span>조회수 27</span><span>25.02.12</span></div>
+            </div>
+          </a>
+
+          <!-- 카드 5 -->
+          <a class="gallery-card" href="#">
+            <img class="thumb" src="../images/gallary_sample5.jpg" alt="갤러리5">
+            <div class="body">
+              <div class="title">제40회 1995학년도 학위수여식</div>
+              <div class="meta"><span>조회수 42</span><span>25.02.10</span></div>
+            </div>
+          </a>
         </div>
 
-        <!-- 페이지네이션 -->
-        <div class="pagination">
-          <a href="#">&laquo;</a>
-          <a href="#">&lsaquo;</a>
-          <a href="#" class="active">1</a>
-          <a href="#">2</a>
-          <a href="#">3</a>
-          <a href="#">&rsaquo;</a>
-          <a href="#">&raquo;</a>
-        </div>
-      </section>
-    </div>
+    </section>
   </main>
 
   <!-- ===== 푸터 ===== -->
@@ -176,7 +200,7 @@
           <li><a href="#">개인정보처리방침</a></li>
           <li><a href="#">통합정보시스템</a></li>
           <li><a href="#">학사일정</a></li>
-          <li><a href="#">주요민원 연락처</a></li>
+          <li><a href="#">주요민원 연럭처</a></li>
           <li><a href="#">교내공지사항</a></li>
         </ul>
       </div>
@@ -210,7 +234,5 @@
       </div>
     </div>
   </footer>
-
-</div>
 </body>
 </html>
