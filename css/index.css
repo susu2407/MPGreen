@@ -1,5 +1,7 @@
 /* =============== 메인 CSS 파일 =============== */
-
+main {
+    background-color: #f3f5f9;
+}
 /* --- 1. 최상단 메인 배너 섹션 ----------------------------------- */
 .hero-section {
     width: 100%;
@@ -81,8 +83,8 @@
 
 /* 활성화된 상태 (속이 꽉 찬 동그라미) */
 .slide-indicators span.active {
-    background-color: #3a75c4;
-    border: 2px solid #3a75c4; /* 크기 유지를 위해 테두리는 유지 */
+    background-color: #3f97f6;
+    border: 2px solid #3f97f6; /* 크기 유지를 위해 테두리는 유지 */
 }
 
 /* --- 2. 공지사항 섹션 ----------------------------------- */
@@ -110,7 +112,7 @@
     align-items: center;
     padding-bottom: 15px;
     margin-bottom: 15px;
-    border-bottom: 2px solid #3a75c4;
+    border-bottom: 2px solid #3f97f6;
 }
 
 .notice-header h3 {
@@ -120,7 +122,7 @@
 
 /* 3. h3 개별 스타일 (색상) */
 .notice-header h3 {
-    color: #3a75c4; /* 학사안내,, 뉴스/이벤트, 스마트 링크까지 */
+    color: #3F97F6; /* 학사안내,, 뉴스/이벤트, 스마트 링크까지 */
 }
 .notice-board.blue-header .notice-header h3 {
     color: white; /* 공지사항 */
@@ -145,7 +147,7 @@
 
 /* 파란색 공지사항 보드 스타일 */
 .notice-board.blue-header {
-    background-color: #3a75c4;
+    background-color: #3f97f6;
     color: white;
 }
 
@@ -167,7 +169,7 @@
     font-size: 15px;
 }
 
-.notice-board a { color: inherit; }
+
 .notice-board li a {
     white-space: nowrap;
     overflow: hidden;
@@ -176,7 +178,7 @@
     transition: color 0.3s;
     text-decoration: none;
 }
-.notice-board li a:hover { color: #3a75c4; }
+.notice-board li a:hover { color: #3f97f6; }
 .notice-board.blue-header li a:hover { color: #fff; text-decoration: underline; }
 
 .notice-board li span {
@@ -311,18 +313,19 @@
 /* --- 5. 하단 콘텐츠 섹션 (뉴스/이벤트, SMART LINK) ----------------------------------- */
 .bottom-content-section {
     padding: 60px 0;
-    background-color: #fff;
 }
 .bottom-content-section .container {
     display: flex;
+    overflow: visible;
 }
 /* --- 뉴스/이벤트 영역 --- */
-/* h3을 notic-header h3으로 공통적용 */
+/* h3을 (학사안내와 공지사항의) notic-header h3으로 공통적용 */
 
-.news-board {
-    background-color: whi;
+/* 배경색 투명 지정 */
+.news-board, .smart-link-section > .notice-board {
+    background-color: transparent;
 }
-
+/* 뉴스 목차 */
 .news-board li {
     display: flex;
     justify-content: space-between;
@@ -330,25 +333,21 @@
     padding: 10px 0;
     font-size: 15px;
 }
-.news-board li a {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
 .news-board li span {
     color: #888;
     font-size: 14px;
     flex-shrink: 0;
 }
 /* --- smart link 영역 --- */
-.smart-link-section {
-    width: 600px;
-    flex-shrink: 0;
-}
+
 .smart-link-container {
     display: flex;
     justify-content: space-between;
     text-align: center;
+}
+.smart-link-title {
+    display: flex;
+    justify-content: center;
 }
 /* --- 3. 개별 아이콘 링크 --- */
 .link-item {

@@ -84,7 +84,10 @@
             <form class="register" >
                     <div>
                         <h4><img src="/images/bullet-h4.png" alt="h4">기본정보 입력</h4>
-                        <table class="basic">
+                    </div>
+
+                    <!-- 테이블 시작 -->
+                    <table class="basic">
                             <tr>
                                 <th>과목코드</th>
                                 <td>
@@ -93,7 +96,7 @@
                                 
                                 <th>개설학과</th>
                                 <td>
-                                    <select class="university" onchange="updateDepartments()" id="collegeSelect">
+                                    <select onchange="updateDepartments()" id="collegeSelect">
                                         <option value="">인문사회대학</option>
                                         <option >...</option>
                                     </select>
@@ -142,12 +145,7 @@
                                     </select>
                                 </td>
                                 <th>담당교수</th>
-                                <td>
-                                    <select>
-                                        <option value="">선택</option>
-                                        <option value="">...</option>
-                                    </select>
-                                </td>
+                                <td colspan="3"><input placeholder="교수명 입력"></td>
                             </tr>
                             <tr>
                                 <th>강의명</th>
@@ -155,18 +153,18 @@
                             </tr>
                             <tr>
                                 <th>강의 설명</th>
-                                <td colspan="3">
-                                    <!--<input type="text" name="lec_info" class="explain" placeholder="강의 개요 및 목표, 학습 내용 등">-->
-                                    <textarea class="explain" placeholder="강의 개요 및 목표, 학습 내용 등"></textarea>
-                                </td>
+                                    <td colspan="3">
+                                        <!--<input type="text" name="lec_info" class="explain" placeholder="강의 개요 및 목표, 학습 내용 등">-->
+                                        <textarea class="explain" placeholder="강의 개요 및 목표, 학습 내용 등"></textarea>
+                                    </td>
                             </tr>
                         </table>
-                    </div>
+                    
 
-                    <!-- 수업정보 입력 -->
+<!-- 수업정보 입력 -->
                     <div class="stdinfo">
                         <h4><img src="/images/bullet-h4.png" alt="h4">수업정보 입력</h4>
-                        <table>
+                        <table class="basic">
                             <tr>
                                 <th>수업 기간</th>
                                 <td colspan="3"><input type="date" name="startDate" class="period"> ~ <input type="date" name="endDate" class="period"></td>
