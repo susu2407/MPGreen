@@ -1,162 +1,21 @@
-*{
-    margin : 0px;
-    padding: 0px;
-    letter-spacing: 0%;
-    vertical-align: middle;
-}
-html { font-size: 12xp;}
-body { font-family: 'Noto Sans Kr', sans-serif;}
-
-#wrapper{
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-}
-
-/* 리스트 스타일 */
-    ul,ol{
-        list-style: none;
-        margin: 0px;
-        padding: 0px;
-    }
-
-    /* a태그 스타일 */
-    a{
-        text-decoration: none; color: black;
-    }
-
-    /* container 레이아웃 */
-    #container{
-        width: 1200px;
-        height: auto;
-        margin-top: 146px;
-        margin-left: 360px;
-        /* box-sizing: border-box; */
-    }
-
-    /* sidebar 레이아웃 */
-    .sidebar{
-        float: inline-start;
-        width: 210px;
-        height: 418px;
-    }
 
     /* board 레이아웃 */
     .board{
         flex-direction: column;
-        display: flex;
-        width: 990px;
-        height: auto;
-        margin-left: 210px;
-    }
-
-    /* sidebar 윗부분 레이아웃 */
-    .sidebarHeader{
-        width: 210px;
-        height: 54px;
-        padding-top: 62px;
-
     }
     
-    /* sidevar 제목 서식 */
-    .sbTitle{
-        width: 128.4px;
-        height: 36px;
-        margin-top: -1px;
-        font: 700 32px bold;
-    }
-
-    /* sidebar 메뉴 서식 */
-    .sidebarMenu{
-        width: 210px;
-        height: 302px;
-        border-top: 2px solid black;
-    }
-
-    /* sidebar item 서식 */
-    .item{
-        position: relative;
-        width: 210px;
-        height: 60px;
-        padding-top: 2px;
-        border-bottom: 1px solid #dcdcdc;
-        box-sizing: border-box;
-        flex-direction: column;
-        transform: rotate(0deg);
-        opacity: 1;
-        display: flex;
-        
-    }
-    /* item 텍스트 서식 */
-    .itemText{
-        width: auto;
-        height: 18px;
-        margin-top: 18px;
-        margin-left: 20px;
-        font-family: "Noto Sans KR";
-        font: 350 16px light;
-        text-align: left;
-        line-height: 21px;
-        color: #333333;
-    }
- 
-    /* item 영역 hover 할 때 색 변경(배경+글자) */
-    .item:hover a {
-    color: #FFFFFF;
-    }
-
-    .item:hover {
-        background-color: #3F97F6;
-        border-color: #3F97F6;
-    }
-
-    /* list 서식 */
-    .list {
-        width: 210px;
-        height: 302px;
-        transform: rotate(0deg);
-        opacity: 1;
-        list-style: none;
-
-        }
-    
-    /* board 윗부분 레이아웃 */
-    .boardUpper{
-        width: 930px;
-        height: 56px;
-        margin-top: 62px;
-        margin-left: 60px;
-        border-bottom: 2px solid black;
-        box-sizing: border-box;
-
-    }
-
-    /* board 제목 서식 */
-    .buText{
-        width: 104.36px;
-        height: 30px;
-        margin-top: 7px;
-        font-family: "Noto Sans KR";
-        font: 700 26px bold;
-        line-height: 44px;
-        text-align: left;
-    }
-
     /* board 본문 레이아웃 */
     .boardLower{
-        width: 930px;
+        width: 100%;
         height: auto;
-        margin: 30px 0 0 60px ;
     }
-    
-    /* board 본문 서식 */
-    .blText{
-        width: 125.33px;
-        height: 18px;
-        font-family: "Noto Sans KR";
-        font: 350 16px light;
-        line-height: 100%;
-        text-align: center;
+
+    .sbTitle{
+        width: auto;
+    }
+
+    .boardUpper{
+        margin-bottom: 30px;
     }
 
     /*========== 상단 바  ==========*/
@@ -254,7 +113,7 @@ body { font-family: 'Noto Sans Kr', sans-serif;}
     border-collapse: collapse;
     width: 930px;
     height: auto;
-    margin: 0 0 50px 0;
+    margin:0 0 50px 0;
     table-layout: fixed;
     }
     .selection{
@@ -336,14 +195,13 @@ body { font-family: 'Noto Sans Kr', sans-serif;}
     .searchingField{
     display: flex;
     align-items: center;
-    margin:0 0 15px 0;
+    margin:30px 0 15px 0;
     justify-content: flex-start;
 }
 
-
 .regTable button{
-    background-color: #942626;
-    width: 37.77px;
+    background-color: #092E71;
+    width: 63.53px;
     height: 29px;
     color: #FFFFFF;;
     font-weight: 350;

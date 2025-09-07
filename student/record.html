@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>수강신청내역</title>
+    <title>학적</title>
     <link rel="stylesheet" href="../css/student/Student.css">
+    <link rel="stylesheet" href="../css/common/layout.css">
     <link rel="stylesheet" href="../css/common/header.css">
     <link rel="stylesheet" href="../css/common/footer.css">
 </head>
@@ -106,7 +107,7 @@
             <img src="../images/bg-path-arrow.png" alt="next">
             <a href="#" class="sidebar-text">학생지원</a>
             <img src="../images/bg-path-arrow.png" alt="next">
-            <a href="#" class="sidebar-text">성적조회</a>
+            <a href="#" class="sidebar-text">학적</a>
         </div>
     </div>
 
@@ -137,121 +138,144 @@
         </div>
         <div class="board"> <!--본문 영역-->
             <div class="boardUpper">
-                <h3 class="buText">성적조회</h3>
+                <h3 class="buText">학적</h3>
             </div>
             <div class="boardLower">
-                <div class="searchingField">
-                    <span>
-                        <select class="selectYear">
-                            <option>2025</option>
-                            <option>2024</option>
-                            <option>2023</option>
-                            <option>2022</option>
-                        </select>년
-                    </span>
-                    <span>
-                        <select class="selectSem">
-                            <option>1</option>
-                            <option>2</option>
-                        </select>학기
-                    </span>
-                    <span class="recordPhrase">
-                        신청과목수 6과목, 총 신청학점 18학점&nbsp;&nbsp;&nbsp;&nbsp;
-                    </span>
-                </div>        
+                <div class="tableHeader">
+                    <h4>기본정보</h4>
+                </div>
                 <div>
-                    <table class="regTable">
+                    <table class="stdInfo">
+                        <tbody>
+                            <tr>
+                                <td class="avatar" rowspan="4">
+                                    <img src="../images/icon-avatar.png" alt="프로필 사진">
+                                </td>
+                                <th scope="row">학번</th>
+                                <td>202001230</td>
+                                <th scope="row">학과</th>
+                                <td>컴퓨터공학과</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">이름</th>
+                                <td>홍길동</td>
+                                <th scope="row">주민번호</th>
+                                <td>900103-1234567</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">휴대폰</th>
+                                <td>010-1234-1001</td>
+                                <th scope="row">EMAIL</th>
+                                <td>hong1001@naver.com</td>
+                            </tr>
+                                <tr>
+                                <th scope="row">학년/학기</th>
+                                <td>3학년 / 1학기</td>
+                                <th scope="row">상태</th>
+                                <td class="status-is-active">재학중</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tableHeader">
+                    <h4>취득학점현황</h4>
+                </div>
+                <div>
+                    <table class="point">
+                        <thead>
+                            <th>구분</th>
+                            <th>전공(7)</th>
+                            <th>교양(6)</th>
+                            <th>선택(1)</th>
+                            <th>사회봉사</th>
+                            <th>기타</th>
+                            <th>총취득학점</th>
+                            <th>졸업요건학점</th>
+                        </thead>
+                        <tbody>
+                            <td>취득학점</td>
+                            <td>21</td>
+                            <td>16</td>
+                            <td>3</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>40</td>
+                            <td>130</td>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="phrase">
+                    <p>
+                        - 각 괄호안의 숫자는 이수 과목 수
+                    </p>
+                </div>
+                <div class="tableHeader">
+                    <h4>년도/학기별 취득학점현황</h4>
+                </div>
+                <div>
+                    <table class="stdReport">
                         <thead>
                             <tr>
-                                <th>교과목 코드</th>
-                                <th>과목명</th>
-                                <th>대상학년</th>
-                                <th>담당교수</th>
-                                <th>학점</th>
-                                <th>이수구분</th>
-                                <th>강의시간</th>
-                                <th>강의장</th>
-                                <th>관리</th>
+                                <th>년도</th>
+                                <th>학년</th>
+                                <th>학기</th>
+                                <th>신청학점</th>
+                                <th>전공학점</th>
+                                <th>선택학점</th>
+                                <th>기타학점</th>
+                                <th>총취득학점</th>
+                                <th>평점평균</th>
+                                <th>기타</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>830003</td>
-                                <td>자바프로그래밍</td>
-                                <td>2학년</td>
-                                <td>김자바</td>
+                                <td>2020</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>18</td>
+                                <td>15</td>
                                 <td>3</td>
-                                <td>전공</td>
-                                <td>화 1,2,3</td>
-                                <td>컴퓨터실</td>
-                                <td>
-                                    <button>취소</button>
-                                </td>
+                                <td>0</td>
+                                <td>18</td>
+                                <td>3.2</td>
+                                <td>&nbsp;</td>
                             </tr>
                             <tr>
-                                <td>830003</td>
-                                <td>자료구조</td>
-                                <td>2학년</td>
-                                <td>김자료</td>
+                                <td>2020</td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>18</td>
+                                <td>15</td>
                                 <td>3</td>
-                                <td>전공</td>
-                                <td>화 1,2,3</td>
-                                <td>컴퓨터실</td>
-                                <td>
-                                    <button>취소</button>
-                                </td>
+                                <td>0</td>
+                                <td>18</td>
+                                <td>3.2</td>
+                                <td>&nbsp;</td>
                             </tr>
                             <tr>
-                                <td>830003</td>
-                                <td>대학영어</td>
-                                <td>2학년</td>
-                                <td>김영어</td>
-                                <td>3</td>
-                                <td>교양</td>
-                                <td>화 1,2,3</td>
-                                <td>강의장1</td>
-                                <td>
-                                    <button>취소</button>
-                                </td>
+                                <td>2021</td>
+                                <td>2</td>
+                                <td>1</td>
+                                <td>18</td>
+                                <td>18</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>18</td>
+                                <td>4.2</td>
+                                <td>&nbsp;</td>
                             </tr>
                             <tr>
-                                <td>830003</td>
-                                <td>알고리즘</td>
-                                <td>2학년</td>
-                                <td>김자바</td>
-                                <td>3</td>
-                                <td>전공</td>
-                                <td>화 1,2,3</td>
-                                <td>컴퓨터실</td>
-                                <td>
-                                    <button>취소</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>830003</td>
-                                <td>세계의역사</td>
-                                <td>2학년</td>
-                                <td>김역사</td>
-                                <td>3</td>
-                                <td>교양</td>
-                                <td>화 1,2,3</td>
-                                <td>강의실2</td>
-                                <td>
-                                    <button>취소</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>830003</td>
-                                <td>데이터베이스</td>
-                                <td>2학년</td>
-                                <td>김디비</td>
-                                <td>3</td>
-                                <td>전공</td>
-                                <td>화 1,2,3</td>
-                                <td>컴퓨터실</td>
-                                <td>
-                                    <button>취소</button>
-                                </td>
+                                <td>2021</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>18</td>
+                                <td>18</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>18</td>
+                                <td>4.2</td>
+                                <td>&nbsp;</td>
                             </tr>
                         </tbody>
                     </table>
