@@ -1,30 +1,35 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>대학생활 - 식단안내</title>
-  <link rel="stylesheet" href="../css/life/Life.css">
-</head>
-<body>
-<div id="wrapper">
 
+  <!-- 공용 레이아웃 고정 파일 -->
+  <link rel="stylesheet" href="../css/common/layout.css">
+  <link rel="stylesheet" href="../css/common/header.css">
+  <link rel="stylesheet" href="../css/common/footer.css">
+
+  <!-- 섹션 전용 (대학생활) -->
+  <link rel="stylesheet" href="../css/life/life.css">
+</head>
+
+<body class="page-life meal">
   <!-- ===== 헤더 ===== -->
   <header>
     <div>
       <div>
         <ul class="util">
-          <li><a href="../main.html">HOME</a></li>
+          <li><a href="#">HOME</a></li>
           <li><a href="#">사이트맵</a></li>
           <li><a href="#">로그인</a></li>
           <li><a href="#">학생지원</a></li>
         </ul>
       </div>
     </div>
-
-    <!-- 로고 + GNB -->
     <div>
       <div>
-        <a href="../main.html"><img src="../images/header_logo.png" alt="그린대학교"></a>
+        <a href="/"><img src="../images/header_logo.png" alt="그린대학교"></a>
         <nav>
           <ul>
             <li class="dropdown">
@@ -40,7 +45,7 @@
             <li class="dropdown">
               <a class="dropbtn" href="#">입학안내</a>
               <ul class="dropdown-content">
-                <li><a href="../community/notice.html">공지사항</a></li>
+                <li><a href="#">공지사항</a></li>
                 <li><a href="#">수시모집</a></li>
                 <li><a href="#">정시모집</a></li>
                 <li><a href="#">편입학</a></li>
@@ -60,7 +65,7 @@
             <li class="dropdown">
               <a class="dropbtn" href="#">학사안내</a>
               <ul class="dropdown-content">
-                <li><a href="../community/notice.html">공지사항</a></li>
+                <li><a href="#">공지사항</a></li>
                 <li><a href="#">학사일정</a></li>
                 <li><a href="#">수강신청</a></li>
                 <li><a href="#">성적</a></li>
@@ -68,6 +73,8 @@
                 <li><a href="#">자주하는 질문</a></li>
               </ul>
             </li>
+
+            <!-- 대학생활 -->
             <li class="dropdown">
               <a class="dropbtn" href="#">대학생활</a>
               <ul class="dropdown-content">
@@ -77,6 +84,7 @@
                 <li><a href="./gallery.html">갤러리</a></li>
               </ul>
             </li>
+
             <li class="dropdown">
               <a class="dropbtn" href="#">커뮤니티</a>
               <ul class="dropdown-content">
@@ -94,99 +102,166 @@
     </div>
   </header>
 
-  <!-- ===== breadcrumb bar ===== -->
-  <div class="crumb-bar">
-    <div class="crumb container">
-      <img src="../images/ico-home.png" alt="홈" class="crumb-home">
-      <a href="#">대학생활</a>
-      <span class="sep">›</span>
-      <span class="current">식단안내</span>
+  <!-- ===== 메인 ===== -->
+  <main>
+    <!-- 상단 경로 -->
+    <div class="top-bar">
+      <div class="top-bar-content">
+        <img src="../images/ico-home.png" alt="홈">
+        <img src="../images/bg-path-arrow.png" alt=">">
+        <a href="#" class="sidebar-text">대학생활</a>
+        <img src="../images/bg-path-arrow.png" alt=">">
+        <a href="#" class="sidebar-text">식단안내</a>
+      </div>
     </div>
-  </div>
 
-  <!-- ===== 본문 ===== -->
-    <main>
-      <section id="container">
-        <aside class="sidebar">
-          <div class="sidebarHeader">
-            <h2 class="sbTitle">대학생활</h2>
-          </div>
-          <div class="sidebarMenu">
-            <ul class="list">
-              <li class="item"><a href="./clubs.html">학생회 소개</a></li>
-              <li class="item"><a href="./study.html">동아리/스터디</a></li>
-              <li class="item active"><a href="./cafeteria.html">식단안내</a></li>
-              <li class="item"><a href="./gallery.html">갤러리</a></li>
-            </ul>
-          </div>
-        </aside>
+    <section id="container">
+      <!-- 좌측 사이드바 -->
+      <div class="sidebar">
+        <div class="sidebarHeader">
+          <h2 class="sbTitle">대학생활</h2>
+        </div>
+        <div class="sidebarMenu">
+          <ul class="list">
+            <li class="item"><a class="itemText" href="./clubs.html">학생회 소개</a></li>
+            <li class="item"><a class="itemText" href="./study.html">동아리/스터디</a></li>
+            <li class="item active"><a class="itemText" href="./cafeteria.html" style="color:#fff">식단안내</a></li>
+            <li class="item"><a class="itemText" href="./gallery.html">갤러리</a></li>
+          </ul>
+        </div>
+      </div>
 
-      <!-- 우측 콘텐츠 -->
-      <section class="content">
-        <h2>식단안내</h2>
-
-        <!-- 주간 네비게이션 -->
-        <div class="week-nav">
-          <button class="prev">‹</button>
-          <span class="week-range">2025.03.10 ~ 2025.03.14</span>
-          <button class="next">›</button>
+      <!-- 본문 -->
+      <div class="board">
+        <div class="boardUpper">
+          <h3 class="buText">식단안내</h3>
         </div>
 
-        <!-- 식단표 -->
-        <table class="meal-table">
-          <thead>
-            <tr>
-              <th>구분</th>
-              <th>2025.3.10(월)</th>
-              <th>2025.3.11(화)</th>
-              <th>2025.3.12(수)</th>
-              <th>2025.3.13(목)</th>
-              <th>2025.3.14(금)</th>
-              <th>2025.3.15(토)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th>조식</th>
-              <td colspan="6">미운영</td>
-            </tr>
-            <tr>
-              <th>중식</th>
-              <td>
-                정식 5,500원<br>
-                뼈다귀해장국, 두부강정, 아귀콩조림
-              </td>
-              <td>
-                정식 5,500원<br>
-                바지락미역국, 잡채, 포기김치
-              </td>
-              <td>
-                정식 5,500원<br>
-                닭칼국수, 계란말이, 포기김치
-              </td>
-              <td>
-                정식 5,500원<br>
-                된장찌개, 고등어구이, 포기김치
-              </td>
-              <td>
-                정식 5,500원<br>
-                김치찌개, 제육볶음, 포기김치
-              </td>
-              <td>미운영</td>
-            </tr>
-            <tr>
-              <th>석식</th>
-              <td colspan="6">미운영</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="life-wrap life-meal">
+          <!-- 주간 범위/네비 -->
+          <div class="meal-header">
+            <button type="button" class="meal-nav prev" aria-label="이전 주">&#8249;</button>
+            <div class="meal-range">2025.03.10 ~ 2025.03.14</div>
+            <button type="button" class="meal-nav next" aria-label="다음 주">&#8250;</button>
+          </div>
 
-        <div class="notice-box">
-          <p>※ 항상 그린식당을 이용해 주셔서 감사합니다.</p>
+          <!-- 식단 테이블 -->
+          <table class="meal-table">
+            <colgroup>
+              <col style="width:120px">
+              <col>
+              <col>
+              <col>
+              <col>
+              <col>
+              <col>
+            </colgroup>
+            <thead>
+              <tr>
+                <th>구분</th>
+                <th>2025.3.10(월)</th>
+                <th>2025.3.11(화)</th>
+                <th>2025.3.12(수)</th>
+                <th>2025.3.13(목)</th>
+                <th>2025.3.14(금)</th>
+                <th>2025.3.15(토)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- 조식 -->
+              <tr>
+                <th class="meal-type">조식</th>
+                <td class="center mute">미운영</td>
+                <td class="center mute">미운영</td>
+                <td class="center mute">미운영</td>
+                <td class="center mute">미운영</td>
+                <td class="center mute">미운영</td>
+                <td class="center mute">미운영</td>
+              </tr>
+
+              <!-- 중식 -->
+              <tr>
+                <th class="meal-type">중식</th>
+                <td class="menu">
+                  <span class="price-badge">정식 5,500원</span>
+                  <ul>
+                    <li>백미밥</li>
+                    <li>바지락미역국</li>
+                    <li>닭안심매콤조림</li>
+                    <li>야끼우동</li>
+                    <li>두부강정</li>
+                    <li>상추겉절이</li>
+                    <li>포기김치</li>
+                  </ul>
+                </td>
+                <td class="menu">
+                  <span class="price-badge">정식 5,500원</span>
+                  <ul>
+                    <li>백미밥</li>
+                    <li>바지락미역국</li>
+                    <li>닭안심매콤조림</li>
+                    <li>야끼우동</li>
+                    <li>두부강정</li>
+                    <li>상추겉절이</li>
+                    <li>포기김치</li>
+                  </ul>
+                </td>
+                <td class="menu">
+                  <span class="price-badge">정식 5,500원</span>
+                  <ul>
+                    <li>백미밥</li>
+                    <li>바지락미역국</li>
+                    <li>닭안심매콤조림</li>
+                    <li>야끼우동</li>
+                    <li>두부강정</li>
+                    <li>상추겉절이</li>
+                    <li>포기김치</li>
+                  </ul>
+                </td>
+                <td class="menu">
+                  <span class="price-badge">정식 5,500원</span>
+                  <ul>
+                    <li>백미밥</li>
+                    <li>바지락미역국</li>
+                    <li>닭안심매콤조림</li>
+                    <li>야끼우동</li>
+                    <li>두부강정</li>
+                    <li>상추겉절이</li>
+                    <li>포기김치</li>
+                  </ul>
+                </td>
+                <td class="menu">
+                  <span class="price-badge">정식 5,500원</span>
+                  <ul>
+                    <li>백미밥</li>
+                    <li>바지락미역국</li>
+                    <li>닭안심매콤조림</li>
+                    <li>야끼우동</li>
+                    <li>두부강정</li>
+                    <li>상추겉절이</li>
+                    <li>포기김치</li>
+                  </ul>
+                </td>
+                <td class="menu center mute">미운영</td>
+              </tr>
+
+              <!-- 석식 -->
+              <tr>
+                <th class="meal-type">석식</th>
+                <td class="center mute">미운영</td>
+                <td class="center mute">미운영</td>
+                <td class="center mute">미운영</td>
+                <td class="center mute">미운영</td>
+                <td class="center mute">미운영</td>
+                <td class="center mute">미운영</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p class="meal-note">※ 항상 그린식당을 이용해 주셔서 감사합니다.</p>
         </div>
-
-      </section>
-    </div>
+      </div>
+    </section>
   </main>
 
   <!-- ===== 푸터 ===== -->
@@ -197,7 +272,7 @@
           <li><a href="#">개인정보처리방침</a></li>
           <li><a href="#">통합정보시스템</a></li>
           <li><a href="#">학사일정</a></li>
-          <li><a href="#">주요민원 연락처</a></li>
+          <li><a href="#">주요민원 연럭처</a></li>
           <li><a href="#">교내공지사항</a></li>
         </ul>
       </div>
@@ -231,7 +306,5 @@
       </div>
     </div>
   </footer>
-
-</div>
 </body>
 </html>

@@ -19,7 +19,6 @@
         display: flex;
         gap: 60px; /* 사이드바와 보드 사이 여백 */
     }
-
     .sidebar {
         width: 210px;
         flex-shrink: 0; /* 줄어들지 않게 */
@@ -32,7 +31,9 @@
     .board, .board * {
         box-sizing: border-box;
     }
-
+    .board, .board * {
+        box-sizing: border-box;
+    }
 
 
     /* sidebar 윗부분 레이아웃 */
@@ -130,6 +131,7 @@
     width: 100%;
     display: block;
     }
+
 
     
     /* board 본문 서식 */

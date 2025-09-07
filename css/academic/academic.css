@@ -1,0 +1,78 @@
+/* hover 시 글자색 유지 */
+.page-academic .sidebar .item:hover .itemText { color: #fff; }
+
+
+/* 대학생활 페이지 사이드바 - active 상태 글씨 색 보정 */
+.page-academic .sidebar .item.active {
+  background: #3F97F6;    /* 파란 배경 */
+  border-color: #3F97F6;
+}
+
+.page-academic .sidebar .item.active .itemText {
+  color: #fff !important; /* 흰 배경이면 여기만 다른 색으로 */
+}
+
+/* hover 시에도 글자가 안 사라지게 */
+.page-academic .sidebar .item:hover .itemText {
+  color: #fff;
+}
+
+
+
+
+
+/* 본문 하위 제목 */
+.boardLower h4 {
+  margin: 20px 0 10px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #000;
+}
+
+/* 설명 파란 글씨 */
+.boardLower p.sub-title {
+  font-weight: 600;
+  color: #0055aa;
+  margin: 6px 0;
+}
+
+/* 리스트 기본 */
+.boardLower ul {
+  margin: 6px 0 16px 22px;
+  padding: 0;
+  list-style: disc;
+  color: #333;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+/* 성적 표 *//* 성적 표 */
+.boardLower table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin: 10px 0;
+  background: #fff;
+  table-layout: fixed;   /* 열 너비 고정 */
+}
+
+.boardLower th,
+.boardLower td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* 열 너비 재설정 */
+.boardLower th:nth-child(1),
+.boardLower td:nth-child(1) { width: 15%; }  /* 등급 */
+.boardLower th:nth-child(2),
+.boardLower td:nth-child(2) { width: 15%; }  /* 평점 */
+.boardLower th:nth-child(3),
+.boardLower td:nth-child(3) { width: 20%; }  /* 백분위 기준점수 */
+.boardLower th:nth-child(4),
+.boardLower td:nth-child(4) { width: 15%; }  /* 비고 (줄임) */
+
+
+
