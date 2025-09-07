@@ -4,11 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>대학소개(조직도)</title>
-    <link rel="stylesheet" href="../css/about/About.css">
-    <link rel="stylesheet" href="../css/common/layout.css">
+    <link rel="stylesheet" href="/css/about/About.css">
+    <link rel="stylesheet" href="/css/common/layout.css">
+
 </head>
 <body>
-  <main>
+
+    <!-- ===== 메인 ===== -->
+    <main>
+         <!-- ===== 상단바 ===== -->
+        <div class="top-bar">
+            <div class="top-bar-content">
+                <img src="/images/ico-home.png" alt="홈">
+                <img src="/images/bg-path-arrow.png" alt="next">
+                <a href="#" class="sidebar-text">대학소개</a>
+                <img src="/images/bg-path-arrow.png" alt="next">
+                <a href="#" class="sidebar-text">조직도</a>
+            </div>
+        </div>
     <section id="container"> 
         <div class="sidebar"> <!--사이드바-->
             <div class="sidebarHeader"> <!--사이드바 윗부분(제목 영역)-->
@@ -29,28 +42,25 @@
                         <a href="./organization.html" class="itemText">조직도</a>
                     </li>
                     <li class="item">
-                        <a href="./location.html" class="itemText">오시는길</a>
+                        <a href="./location.html" class="itemText">오시는 길</a>
                     </li>
                 </ul>
             </div>
         </div>
         <div class="board"> <!--본문 영역-->
-            <div class="boardUpper"> <!--본문 윗부분(제목 영역)-->
-                <h3 class="buText">조직도</h3>
-                <div class="boardLower"> <!--본문(내용 영역)-->
-                     <img src="../images/organization.png" alt="조직도" class="org-image">
 
+                <div class="boardUpper">
+                    <h3 class="buText">조직도</h3>
+                </div>
+                <div class="boardLower">
+                <img src="/images/organization.png" alt="조직도" class="org-image">
                         
                 </div>
 
-
-
-
-                </div>
             </div>
-
-        </div>
+        
     </section>
   </main>
+
 </body>
 </html>
