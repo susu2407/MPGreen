@@ -1,4 +1,4 @@
-    /* 리스트 스타일 */
+ /* 리스트 스타일 */
     ul,ol{
         list-style: none;
         margin: 0px;
@@ -11,27 +11,30 @@
     }
 
     /* container 레이아웃 */
-  #container {
-    width: 1200px;
-    height: 600px;
-    margin: 146px auto 0 auto; /* 좌우 자동 중앙 */
-    position: relative;         /* 내부 절대 위치 기준 */
-}
-
-    /* sidebar 레이아웃 */
-    .sidebar{
-        float: inline-start;
-        width: 210px;
-        height: 418px;
-    }
-
-    /* board 레이아웃 */
-    .board{
+    #container {
+        width: 1200px;
+        margin: 0 auto;
+        padding-bottom: 100px; /*footer와 간격*/
+        overflow: hidden; /* float 요소 포함 */
         display: flex;
-        width: 990px;
-        height: 500px;
-        margin-left: 210px;
+        gap: 60px; /* 사이드바와 보드 사이 여백 */
     }
+    .sidebar {
+        width: 210px;
+        flex-shrink: 0; /* 줄어들지 않게 */
+    }
+
+    .board {
+    width: 930px;          /* 전체 영역 */
+
+    }
+    .board, .board * {
+        box-sizing: border-box;
+    }
+    .board, .board * {
+        box-sizing: border-box;
+    }
+
 
     /* sidebar 윗부분 레이아웃 */
     .sidebarHeader{
@@ -72,7 +75,7 @@
     }
     /* item 텍스트 서식 */
     .itemText{
-        width: 100px;
+        width: 120px;
         height: 18px;
         margin-top: 18px;
         margin-left: 20px;
@@ -105,13 +108,11 @@
     
     /* board 윗부분 레이아웃 */
     .boardUpper{
-        width: 930px;
-        height: 56px;
-        margin-top: 62px;
-        margin-left: 60px;
-        border-bottom: 2px solid black;
-        box-sizing: border-box;
-
+    width: 100%;
+    height: 56px;
+    margin-top: 62px;
+    border-bottom: 2px solid black;
+    box-sizing: border-box;
     }
 
     /* board 제목 서식 */
@@ -126,11 +127,12 @@
     }
 
     /* board 본문 레이아웃 */
-    .boardLower{
-        width: 930px;
-        height: 19px;
-
+    .boardLower {
+    width: 100%;
+    display: block;
     }
+
+
     
     /* board 본문 서식 */
     .blText{
@@ -143,31 +145,30 @@
     }
 
     /*========== 상단 바  ==========*/
-    /* top-bar 전체 */
+    /* 상단바 전체 */
     .top-bar {
-    position: absolute;
-    top: 104px;         
-    left: 50%;          
-    transform: translateX(-50%); 
-    width: 100%;      
+    position: relative;
+    width: 100%;
     height: 42px;
     background-color: rgba(236,242,246,1);
-    display: flex;               /* flex 적용 */
-    justify-content: flex-end;   /* container 기준 오른쪽 끝 */
-    align-items: center;         /* 수직 중앙 정렬 */
+    display: flex;
+    justify-content: center; 
+    align-items: center;
     box-sizing: border-box;
+        position: relative; 
     }
 
-    /* 상단바 내부 요소 container 기준 오른쪽 끝 */
     .top-bar-content {
-        position: absolute;
-        right: calc((100% - 1200px)/2); 
-        display: flex;
-        gap: 14.6px;
-        align-items: center;         /* 수직 중앙 정렬 */
+    width: 1200px;       /* 고정 폭 */
+    display: flex;
+    justify-content: flex-end;
+    gap: 14.6px;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;      /* 좌우 중앙 정렬 */
     }
-
-
 
     /* 상단바 텍스트 */
     .sidebar-text {

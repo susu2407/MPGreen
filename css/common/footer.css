@@ -1,9 +1,11 @@
 /* =============== 푸터 CSS =============== */
 
 footer {
-    width:100%; 
-    height:auto;
-    color:#ddd;}
+    height: 200px;
+    flex-shrink: 0;  /* 푸터 크기 고정 */
+    background-color: #1a202d; /* 예시 */
+    color: #a8a9ac;
+}
 footer > div { width:100%; }
 /* terms 부분 */
 footer > div:nth-child(1){ background:#202839;}
@@ -15,20 +17,21 @@ footer > div:nth-child(2){
     align-items: center;
  }
 /* 바 전체 */
-footer .terms{
-    width:100%;;
-    margin:0 auto;
-    display:flex;               /* footer-inner를 세로로 가운데 배치 */
+footer .terms {
+  width: 1200px;   /* 고정 */
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
 
 /* 각 칸: 정확히 240×50, 포지셔닝 기준 제공 */
-footer .terms li{
-    flex:0 0 240px;          /* 240px × 5 = 1200px */
-    height:50px;
-    list-style:none;
-    position:relative;       /* ::after 기준 */
-    display:flex;
-    
+footer .terms li {
+  flex: 0 0 240px;  /* 고정 크기 */
+  height: 50px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* 박스 전체가 클릭되도록 */
@@ -39,7 +42,12 @@ footer .terms li a {
     display:flex;
     align-items:center;
     justify-content:center;
+<<<<<<< Updated upstream
     width:100%; height:100%;
+=======
+    width:100%; height:30%;
+    
+>>>>>>> Stashed changes
 }
 .terms {
             display: flex; /* 메뉴들을 가로로 나열 */
@@ -63,11 +71,11 @@ footer .footer-inner {
     display: flex;
     align-items: flex-start;  /* 상단 정렬 */
     position: relative;       /* 기준점 */
-    margin-top: 80px;
 }
 /* 푸터 로고 */
 footer .footer-logo {
     flex: 0 0 200px;
+    margin-top: 20px;
 }
 footer .footer-logo img {
     max-width: 100%;
@@ -77,19 +85,23 @@ footer .footer-logo img {
 footer .info p {
     color: #a8a9ac;
     font-size: 12px;
+    margin-top: 20px;
+    width: 600px;        /* 원하는 고정 폭 지정 */
+    flex-shrink: 0;      /* 부모 flex에 의해 줄어들지 않도록 고정 */
 }
 
 /* 푸터 오른쪽 검색박스 */
 footer .footer-tools{
     position: absolute;    /* footer-inner를 기준으로 위치 고정 */
-    top: 35px;             /* 상단에서 35px 떨어짐 */
+    top: 35px;             /* 상단에서 35px 떨어짐*/
     left: 1000px;          /* 왼쪽에서 1000px 떨어짐 */
+    
 }
 footer .footer-tools select {
     width: 200px;
     height: 36px;
     background: #131721          /* 배경색 및 화살표 */
-                url(./images/bg-related-arr-open.png) 
+                url(../images/bg-related-arr-open.png) 
                 no-repeat right 
                 10px 
                 center;
