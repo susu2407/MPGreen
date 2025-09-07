@@ -1,5 +1,17 @@
+*{
+    margin : 0px;
+    padding: 0px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+}
 html { font-size: 12xp;}
 body { font-family: 'Noto Sans Kr', sans-serif;}
+
+#wrapper{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
 
 /* 리스트 스타일 */
     ul,ol{
@@ -16,7 +28,7 @@ body { font-family: 'Noto Sans Kr', sans-serif;}
     /* container 레이아웃 */
     #container{
         width: 1200px;
-        height: 600px;
+        height: auto;
         margin-top: 146px;
         margin-left: 360px;
         /* box-sizing: border-box; */
@@ -33,8 +45,9 @@ body { font-family: 'Noto Sans Kr', sans-serif;}
     .board{
         display: flex;
         width: 990px;
-        height: 500px;
+        height: auto;
         margin-left: 210px;
+        flex-direction: column;
     }
 
     /* sidebar 윗부분 레이아웃 */
@@ -76,7 +89,7 @@ body { font-family: 'Noto Sans Kr', sans-serif;}
     }
     /* item 텍스트 서식 */
     .itemText{
-        width: auto;
+        width: 77.51px;
         height: 18px;
         margin-top: 18px;
         margin-left: 20px;
@@ -132,7 +145,8 @@ body { font-family: 'Noto Sans Kr', sans-serif;}
     /* board 본문 레이아웃 */
     .boardLower{
         width: 930px;
-        height: 19px;
+        height: auto;
+        margin-left: 60px;
 
     }
     
@@ -145,6 +159,45 @@ body { font-family: 'Noto Sans Kr', sans-serif;}
         line-height: 100%;
         text-align: center;
     }
+
+    /* 상단바 전체 */
+    .top-bar {
+    position: relative;
+    width: 100%;
+    height: 42px;
+    background-color: rgba(236,242,246,1);
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    box-sizing: border-box;
+        position: relative; 
+    }
+
+    .top-bar-content {
+    width: 1200px;       /* 고정 폭 */
+    display: flex;
+    justify-content: flex-end;
+    gap: 14.6px;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;      /* 좌우 중앙 정렬 */
+    }
+
+    /* 상단바 텍스트 */
+    .sidebar-text {
+        font-family: 'Noto Sans KR', sans-serif;
+        font-weight: 350;
+        font-style: DemiLight;
+        font-size: 14px;
+        line-height: 22px;
+        letter-spacing: 0;
+        vertical-align: middle;
+        text-decoration: none;
+        color: #000;
+    }
+
 
 /* 게시판 공통 */
 .searchingField{
@@ -203,7 +256,8 @@ tbody td {
     display:flex;
     justify-content:center;
     align-items:center;
-    margin-top: 30px;      
+    margin-top: 30px;
+    margin-bottom: 100px;      
     gap:24px;               
 }
 

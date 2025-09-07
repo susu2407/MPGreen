@@ -235,19 +235,15 @@
     line-height: 1.2;
     display: inline-block;
     color: #145074;
-
-
 }
 
 .majorTable{
     border-top: 2px solid #071F4B;
     border-collapse: collapse;
     width: 930px;
-    height: 502px;
+    height: auto;
     margin-top: 20px;
     table-layout: fixed;
-
-
 }
 
 thead th{
@@ -261,6 +257,7 @@ thead th{
 }
 tbody td {
     border-bottom: 1px solid #ddd;
+    height: 50px;
     padding: 12px 10px;
     text-align: center;  
     font-size: 14px;
