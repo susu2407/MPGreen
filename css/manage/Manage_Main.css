@@ -189,17 +189,17 @@ main .managemain div h4 {
     }
 
     .input-container {
-        padding: 0 2px; /* 입력창 간의 간격 */
+        padding: 0 2px;
     }
 
     .search-condition {
-        width: 100px; /* '검색조건' 입력창의 고정 너비 */
+        width: 100px; 
         padding: 8px;
         border: 1px solid #ccc;
     }
 
     .search-input {
-        width: 250px; /* '검색어를 입력해 주세요' 입력창의 고정 너비 */
+        width: 250px; 
         padding: 8px;
         border: 1px solid #ccc;
     }
