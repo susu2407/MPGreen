@@ -1,45 +1,3 @@
-/* 
-///////////////////////////////////////////////////
-// 기본 화면 초기화
-///////////////////////////////////////////////////
- */
-    *{
-        margin : 0px;
-        padding: 0px;
-        letter-spacing: 0%;
-        vertical-align: middle;
-    }
-    html { font-size: 12xp;}
-    body { font-family: 'Noto Sans Kr', sans-serif;}
-
-    a{
-        text-decoration:  none;
-        color:  black;
-    }
-
-    ul, ol{
-        list-style: none;
-    }
-
-    #wrapper{
-        width: 100%;
-        height: 100%;
-        box-sizing: border-box;
-    }
-    .container {
-        width: 1200px;
-        margin: 0 auto;
-    }
-
-
-
-
-/* 
-///////////////////////////////////////////////////
-// 본문 레이아웃
-///////////////////////////////////////////////////
- */
-
     /* 리스트 스타일 */
     ul,ol{
         list-style: none;
@@ -53,27 +11,24 @@
     }
 
     /* container 레이아웃 */
-    #container{
+    #container {
         width: 1200px;
-        height: 600px;
-        margin-left: 360px;
-        /* box-sizing: border-box; */
+        margin: 0 auto;
+        padding-bottom: 100px; /*footer와 간격*/
+        overflow: hidden; /* float 요소 포함 */
     }
 
-    /* sidebar 레이아웃 */
-    .sidebar{
-        float: inline-start;
+    .sidebar {
+        float: left;
         width: 210px;
-        height: 418px;
     }
 
-    /* board 레이아웃 */
-    .board{
-        display: flex;
-        width: 990px;
-        height: 500px;
-        margin-left: 210px;
+    .board {
+        margin-left: 210px; /* 사이드바 오른쪽 */
+        display: block;
     }
+
+
 
     /* sidebar 윗부분 레이아웃 */
     .sidebarHeader{
@@ -85,7 +40,7 @@
     
     /* sidevar 제목 서식 */
     .sbTitle{
-        width: max-content;
+        width: auto;
         height: 36px;
         margin-top: -1px;
         font: 700 32px bold;
@@ -114,7 +69,7 @@
     }
     /* item 텍스트 서식 */
     .itemText{
-        width: max-content;
+        width: 100px;
         height: 18px;
         margin-top: 18px;
         margin-left: 20px;
@@ -150,7 +105,6 @@
         width: 930px;
         height: 56px;
         margin-top: 62px;
-        margin-bottom: 30px;
         margin-left: 60px;
         border-bottom: 2px solid black;
         box-sizing: border-box;
@@ -159,322 +113,183 @@
 
     /* board 제목 서식 */
     .buText{
-        width: max-content;
+        width: 160.36px;
         height: 30px;
         margin-top: 7px;
         font-family: "Noto Sans KR";
         font: 700 26px bold;
         line-height: 44px;
-        text-align: center;
+        text-align: ledt;
     }
 
     /* board 본문 레이아웃 */
-    .boardLower{
-        width: 930px;
-        height: 19px;
+    .boardLower {
+    width: 100%;
+    display: block;
+    margin-left: 60px;
+}
 
-    }
     
     /* board 본문 서식 */
     .blText{
-        width: max-content;
+        width: 125.33px;
         height: 18px;
-        margin-top: 42px;
         font-family: "Noto Sans KR";
         font: 350 16px light;
         line-height: 100%;
         text-align: center;
     }
 
-    .collegeContainer{
-        display: flex;
-        
-        
-    }
-    .college{
-        width: auto;
-        height: 18px;
-        padding-left: 344px;
-        font: 350 16px #5b6774;
-        display: flex;
-    }
-    .majorTable{
-        border-top: 2px solid #071F4B;
-    }
-    
-/* 
-///////////////////////////////////////////////////
-// Header
-///////////////////////////////////////////////////
-*/
-    #background{
-        width: 1920px;
-        height: 42px;
-        background-color: #ECF2F6;
-        padding-left: 1346.73px;
-        padding-right: 360px;
+    /*========== 상단 바  ==========*/
+    /* 상단바 전체 */
+    .top-bar {
+    position: relative;
+    width: 100%;
+    height: 42px;
+    background-color: rgba(236,242,246,1);
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    box-sizing: border-box;
+        position: relative; 
     }
 
-    .bgPath{
-        width: 213.27px;
-        height: 32px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        display: flex;
-        /* align-items: center; */
+    .top-bar-content {
+    width: 1200px;       /* 고정 폭 */
+    display: flex;
+    justify-content: flex-end;
+    gap: 14.6px;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;      /* 좌우 중앙 정렬 */
     }
 
-    .bgPathList{
+    /* 상단바 텍스트 */
+    .sidebar-text {
+        font-family: 'Noto Sans KR', sans-serif;
         font-weight: 350;
+        font-style: DemiLight;
         font-size: 14px;
         line-height: 22px;
-        text-align: center;
-        margin-left: 14px;
+        letter-spacing: 0;
+        vertical-align: middle;
+        text-decoration: none;
+        color: #000;
     }
 
-    .bgPathListBold{
-        color: #071F4B
-        
-    }
 
-    .bgpArrow{
-        margin-left: 5px;
-        /* display: inline-block;
-        vertical-align: middle; */
-    }
-     
-    header > div:nth-child(2) > div > nav .dropdown-content li {
-    height: 30px;
-    padding-top: 10px;
-    padding-left: 5px;
-    border-bottom: 1px solid #3F97F6;
-    }
-    header > div:nth-child(2) > div > nav .dropdown-content li:last-child{
-        border-bottom: none;
-    }
+    /* 사범대학 */
+.collegeContainer img{
+    width: 320px;
+    height: 240px;
+}
 
-    header > div:nth-child(2) > div > nav .dropdown{
-        position : relative;
-        display: inline-block;
-    }
-    header > div:nth-child(2) > div > nav .dropdown > ul{
-        border: 1px solid #3F97F6;
-        height: auto;
-    }
-    header > div:nth-child(2) > div > nav .dropdown-content a {
-        color: white;
-        margin: 0 auto;
-        text-align: left;
-        font-weight: 400;
-    }
+.collegeContainer{
+    width:930px;
+    height: 290px;
+    display: flex;
+    margin-top: 30px;
+}
+.collegeArticle{
+    margin-left: 24.09px;
+}
 
-    header > div:nth-child(2) > div > nav .dropbtn{
-        cursor : pointer;
-    }
-    header > div:nth-child(2) > div > nav .dropdown-content{
-        display: none;
-        flex-direction: column;
-        position : absolute;
-        z-index : 1000;
-        width: 150px;
-        background-color: #3F97F6;
-        margin-top: -25px;
-    }
-    header > div:nth-child(2) > div > nav .dropdown-content a:hover{
-        color: #93cef8;
-    }
-    header > div:nth-child(2) > div > nav .dropdown:hover .dropdown-content {
-        display: block;
-    }
+.college {
+    width: auto;
+    font: 16px 350;
+    color:  #5b6774;
+    margin: 0;
+}
 
-    header{
-        width: 100%;
-        height: auto;
-        box-sizing: border-box;
-    }
+.collegeTitle{
+    font-size: 26px;
+    font-weight: 350;
+    color: #3b88d4;
+    margin: 15px 0 17px 0;
+}
 
-    header > div:nth-child(1){
-        height: 27px;
-        background-color: #3F97F6;
-    }
+.collegeText{
+    font-size: 16px;
+    font-weight: 350;
+    line-height: 24px;
+    letter-spacing: -0.5px;
+    margin: 0;
+    color: #666666;
+}
 
-    header > div:nth-child(2){
-        height: 77px;
-    }
+.tableHeader{
+    width: 930px;
+    height: 24px;
+    display: flex;
+    margin-bottom: 27px;
+}
 
-    header > div > div{
-        width: 1200px;
-        height: 77px;
-        margin: 0 auto;
-    }
+.tableHeader h4{
+    margin: 0;
+    background: url(../../images/bullet-h4.png) no-repeat left center;
+    padding-left: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.2;
+    display: inline-block;
+    color: #145074;
 
-    header > div > div > p{
-        float: right;
-        margin-top: 2px;
-    }
 
-    header > div > div > p > a{
-        color: white;
-        margin-left: 10px;
-        font-size: 12px;
-    }
+}
 
-    header > div:nth-child(2) img{
-        float: left;
-        margin-top: 10px;
-    }
+.majorTable{
+    border-top: 2px solid #071F4B;
+    border-collapse: collapse;
+    width: 930px;
+    height: 502px;
+    margin-top: 20px;
+    table-layout: fixed;
 
-    header > div:nth-child(2) > div > nav{
-        float: right;
-        width: 660px;
-        height: 77px;
-    }
 
-    header > div:nth-child(2) > div > nav > ul > li{
-        float: right;
-        width: 16%;
-        height: 100%;
-    }
+}
 
-    header > div:nth-child(2) > div > nav a{
-        margin-top: 25px;
-        display: block;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        font-size: 16px;
-        line-height: 21px;
-        font-weight: 500;
-    }
+thead th{
+    height: 50px;
+    background-color: #f4f8fc;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-weight: 550;
+    line-height: 24px;
+    letter-spacing: -0.5px;
+}
+tbody td {
+    border-bottom: 1px solid #ddd;
+    padding: 12px 10px;
+    text-align: center;  
+    font-size: 14px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-weight: 350;
+    line-height: 24px;
+    letter-spacing: -0.5px;
+}
 
-    nav ul {
-        display: flex;
-        justify-content: space-around; 
-        align-items: center; 
-        height: 77px;
-    }
+/* 셀 내부에만 선 */
+.majorTable th,
+.majorTable td {
+  border-bottom: 1px solid #dedede;   /* 가로줄 */
+  border-right: 1px solid #dedede;    /* 세로줄 */
+}
 
-    /* 상단 유틸 설정 */
-    .util {
-        display: flex;              /* 가로 나열 */
-        justify-content: flex-end;  /* 오른쪽 맞춤 */
-        align-items: center;
-        margin-top: 10px;
-    }
-    .util a { color: #fff;}
-    .util li:not(:last-child)::after {
-        content: " │ ";               /* 구분자 */
-        color: #fff;
+/* 마지막 행/열은 선 제거 (겉선 없애기) */
+.majorTable th:last-child,
+.majorTable td:last-child {
+  border-right: none;
+}
 
-    }
-    
-/* 
-///////////////////////////////////////////////////
-// Footer
-///////////////////////////////////////////////////
-*/
+.majorTable thead th:nth-child(1) { width: 26.8%; }  
+.majorTable thead th:nth-child(2) { width: 26.8%; }  
+.majorTable thead th:nth-child(3) { width: 26.8%; }  
+.majorTable thead th:nth-child(4) { width: 19.6%; }  
+tbody > tr > td> a{
+    margin-left: 5.69px;
+}
 
-    footer {
-        width:100%; 
-        height:auto;
-        color:#ddd;}
-    footer > div { width:100%; }
-    /* terms 부분 */
-    footer > div:nth-child(1){ background:#202839;}
-    /* 맨 아래 info 부분 */
-    footer > div:nth-child(2){ 
-        height:200px; 
-        background:#1a202d;
-        display: flex;
-        align-items: center;
-     }
-    /* 바 전체 */
-    footer .terms{
-        width:100%;;
-        margin:0 auto;
-        display:flex;               /* footer-inner를 세로로 가운데 배치 */
-    }
-
-    /* 각 칸: 정확히 240×50, 포지셔닝 기준 제공 */
-    footer .terms li{
-        flex:0 0 240px;          /* 240px × 5 = 1200px */
-        height:50px;
-        list-style:none;
-        position:relative;       /* ::after 기준 */
-        display:flex;
-    }
-
-    /* 박스 전체가 클릭되도록 */
-    footer .terms li a {
-        font-size: 15px;
-        color:#fff; 
-        text-decoration:none;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        width:100%; height:100%;
-    }
-    /* 양끝에 '│' 문자 추가 */
-    footer .terms::before,
-    footer .terms::after {
-        content:"│";
-        color:#626874;
-        display:flex;
-        align-items:center;
-    }
-    /* 마지막 li를 제외한 li의 오른쪽에 '│' 문자 추가 */
-    footer .terms li:not(:last-child)::after{
-        content:"│";
-        position:absolute; 
-        right:0; top:50%;
-        transform:translateY(-50%);   /* 세로 중앙 */
-        color:#626874;              /* 원하시는 색 */
-        pointer-events:none;          /* 클릭 방해 방지 */
-    }
-    footer .footer-inner {
-        width: 1200px;
-        margin: 0 auto;
-        height: 200px;
-        display: flex;
-        align-items: flex-start;  /* 상단 정렬 */
-        position: relative;       /* 기준점 */
-        margin-top: 80px;
-    }
-    /* 푸터 로고 */
-    footer .footer-logo {
-        flex: 0 0 200px;
-    }
-    footer .footer-logo img {
-        max-width: 100%;
-        height: auto;
-    }
-    /* 푸터 info */
-    footer .info p {
-        color: #a8a9ac;
-        font-size: 12px;
-    }
-
-    /* 푸터 오른쪽 검색박스 */
-    footer .footer-tools{
-        position: absolute;    /* footer-inner를 기준으로 위치 고정 */
-        top: 35px;             /* 상단에서 35px 떨어짐 */
-        left: 1000px;          /* 왼쪽에서 1000px 떨어짐 */
-    }
-    footer .footer-tools select {
-        width: 200px;
-        height: 36px;
-        background: #131721          /* 배경색 및 화살표 */
-                    url(./images/bg-related-arr-open.png) 
-                    no-repeat right 
-                    10px 
-                    center;
-        color: #a8a9ac;             /* 글자색 (흰색) */
-        border: 1px solid #131721;  /* 테두리 (디자인 맞게 수정 가능) */
-        border-radius: 4px;           /* 모서리 둥글기 */
-        padding: 0 10px;              /* 좌우 여백 */
-        font-size: 14px;              /* 글자 크기 */
-        appearance: none;             /* 기본 화살표 없애기 (브라우저마다 다름) */
-        outline: none;
-        cursor: pointer;
-    }
 
