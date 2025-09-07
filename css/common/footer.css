@@ -82,7 +82,7 @@ footer .footer-inner {
 /* ----- 푸터 로고 --- */
 footer .footer-logo {
     flex: 0 0 200px;
-    margin-top: 20px;
+    margin-top: 50px;
 }
 footer .footer-logo img {
     max-width: 100%;
@@ -92,7 +92,7 @@ footer .footer-logo img {
 footer .info p {
     color: #a8a9ac;
     font-size: 12px;
-    margin-top: 20px;
+    margin-top: 50px;
     width: 600px;        /* 원하는 고정 폭 지정 */
     flex-shrink: 0;      /* 부모 flex에 의해 줄어들지 않도록 고정 */
 }
@@ -100,7 +100,7 @@ footer .info p {
 /* ----- 푸터 오른쪽 검색박스 ----- */
 footer .footer-tools{
     position: absolute;    /* footer-inner를 기준으로 위치 고정 */
-    top: 35px;             /* 상단에서 35px 떨어짐*/
+    top: 55px;             /* 상단에서 35px 떨어짐*/
     left: 1000px;          /* 왼쪽에서 1000px 떨어짐 */
     
 }
