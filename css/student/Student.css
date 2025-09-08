@@ -422,41 +422,63 @@
   background: #0c3f99;
 }
 
-.pagination {
-  width: 930px;
-  height: 62px;
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-}
-
-/* 공통 버튼 */
-.pagination .page-btn,
-.pagination .page-num {
-  width: 32px;
-  height: 32px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #dedede;
-  background: #fff;
-  text-decoration: none;
-  font-family: 'Noto Sans KR', sans-serif;
-  font-weight: 350;
-  font-size: 15px;
-  color: #333;
-  cursor: pointer;
-}
-
-/* 현재 페이지 강조 */
-.pagination .page-num.active {
-  background: #3f97f6;
-  border: 1px solid #3f97f6;
-  color: #fff;
-}
-
+/* ===== 페이지네이션 ===== */
+    .page{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        margin-top: 30px;      
+        gap:24px;               
+    }
+    
+    .page > .prev,
+    .page > .pagenumber,
+    .page > .last{
+        display:flex;
+        align-items:center;
+        gap:4px;               
+    }
+    
+    
+    .page .pagenumber a{
+        display:inline-flex;              
+        justify-content:center;
+        align-items:center;
+        width:32px;
+        height:29px;
+        border:1px solid #dcdcdc;
+        background:#fff;
+        color:#333;
+        text-decoration:none;
+        box-sizing:border-box;
+        line-height:1;  
+        font-weight: 350;
+        font-size: 15px;
+    }
+    
+    
+    .page .pagenumber a.active{
+        background:#3F97F6;
+        border-color:#3F97F6;
+        color:#fff;
+    }
+    
+    .page .prev a,
+    .page .last a{
+        display:inline-flex;
+        justify-content:center;
+        align-items:center;
+        width:32px;
+        height:32px;
+        border:1px solid #dcdcdc;
+        background:#fff;
+        box-sizing:border-box;
+    }
+    .page a.paging img{
+        display:block;
+        max-width:18px;  
+        max-height:18px;
+    }
 
 /*========= enroll-list(수강신청내역) ==========*/
 .course-history-search {
