@@ -1,11 +1,7 @@
 /* 기본 폰트 및 배경 설정 */
 body { /* 레이아웃 조립하면 지우기 */
     font-family: sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f2f5;
+    flex-direction: column;
     margin: 0;
 }
 
@@ -16,16 +12,11 @@ body { /* 레이아웃 조립하면 지우기 */
 
 /* 헤더 배경색과 글자색 */
 .calendar-header {
-    height: 43px;
+    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-    background-color: white;
     color: #084A87;
-    border-radius: 8px 8px 0 0;
-    border: 1px solid #eee;
-    border-bottom: none;
 }
 .month-year {
     font-size: 1.5em;
@@ -41,8 +32,7 @@ body { /* 레이아웃 조립하면 지우기 */
 /* 달력 본체(날짜 그리드) 스타일 */
 .calendar {
     background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    border-radius: 0 0 8px 8px; /* 아래쪽 모서리를 둥글게 */
+    border: 1px solid #eee;
 }
 
 /* 달력 몸통 높이(889px) 적용 */
