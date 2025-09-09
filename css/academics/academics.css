@@ -1,144 +1,30 @@
-    /* 리스트 스타일 */
-    ul,ol{
-        list-style: none;
-        margin: 0px;
-        padding: 0px;
-    }
-
-    /* a태그 스타일 */
-    a{
-        text-decoration: none; color: black;
-    }
-
-    /* container 레이아웃 */
-    #container {
-        width: 1200px;
-        margin: 0 auto;
-        padding-bottom: 100px; /*footer와 간격*/
-        overflow: hidden; /* float 요소 포함 */
-    }
-
-    .sidebar {
-        float: left;
-        width: 210px;
-    }
-
-    .board {
-        margin-left: 210px; /* 사이드바 오른쪽 */
-        display: block;
-    }
-
-
-
-    /* sidebar 윗부분 레이아웃 */
-    .sidebarHeader{
-        width: 210px;
-        height: 54px;
-        padding-top: 62px;
-
+    * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0px;
     }
     
-    /* sidevar 제목 서식 */
+    /* board 레이아웃 */
+    .board{
+        flex-direction: column;
+    }
+    
+    /* board 본문 레이아웃 */
+    .boardLower{
+        width: 100%;
+        height: auto;
+    }
+
     .sbTitle{
         width: auto;
-        height: 36px;
-        margin-top: -1px;
-        font: 700 32px bold;
     }
 
-    /* sidebar 메뉴 서식 */
-    .sidebarMenu{
-        width: 210px;
-        height: 302px;
-        border-top: 2px solid black;
+    .sidebarHeader{
+        box-sizing: unset;
     }
-
-    /* sidebar item 서식 */
-    .item{
-        position: relative;
-        width: 210px;
-        height: 60px;
-        padding-top: 2px;
-        border-bottom: 1px solid #dcdcdc;
-        box-sizing: border-box;
-        flex-direction: column;
-        transform: rotate(0deg);
-        opacity: 1;
-        display: flex;
-        
-    }
-    /* item 텍스트 서식 */
-    .itemText{
-        width: 100px;
-        height: 18px;
-        margin-top: 18px;
-        margin-left: 20px;
-        font-family: "Noto Sans KR";
-        font: 350 16px light;
-        text-align: left;
-        line-height: 21px;
-        color: #333333;
-    }
- 
-    /* item 영역 hover 할 때 색 변경(배경+글자) */
-    .item:hover a {
-    color: #FFFFFF;
-    }
-
-    .item:hover {
-        background-color: #3F97F6;
-        border-color: #3F97F6;
-    }
-
-    /* list 서식 */
-    .list {
-        width: 210px;
-        height: 302px;
-        transform: rotate(0deg);
-        opacity: 1;
-        list-style: none;
-
-        }
     
-    /* board 윗부분 레이아웃 */
-    .boardUpper{
-        width: 930px;
-        height: 56px;
-        margin-top: 62px;
-        margin-left: 60px;
-        border-bottom: 2px solid black;
-        box-sizing: border-box;
-
-    }
-
-    /* board 제목 서식 */
-    .buText{
-        width: 160.36px;
-        height: 30px;
-        margin-top: 7px;
-        font-family: "Noto Sans KR";
-        font: 700 26px bold;
-        line-height: 44px;
-        text-align: ledt;
-    }
-
-    /* board 본문 레이아웃 */
-    .boardLower {
-    width: 100%;
-    display: block;
-    margin-left: 60px;
-}
-
     
-    /* board 본문 서식 */
-    .blText{
-        width: 125.33px;
-        height: 18px;
-        font-family: "Noto Sans KR";
-        font: 350 16px light;
-        line-height: 100%;
-        text-align: center;
-    }
+
 
     /*========== 상단 바  ==========*/
     /* 상단바 전체 */
@@ -235,19 +121,15 @@
     line-height: 1.2;
     display: inline-block;
     color: #145074;
-
-
 }
 
 .majorTable{
     border-top: 2px solid #071F4B;
     border-collapse: collapse;
     width: 930px;
-    height: 502px;
+    height: auto;
     margin-top: 20px;
     table-layout: fixed;
-
-
 }
 
 thead th{
@@ -261,6 +143,7 @@ thead th{
 }
 tbody td {
     border-bottom: 1px solid #ddd;
+    height: 50px;
     padding: 12px 10px;
     text-align: center;  
     font-size: 14px;
@@ -270,6 +153,7 @@ tbody td {
     line-height: 24px;
     letter-spacing: -0.5px;
 }
+
 
 /* 셀 내부에만 선 */
 .majorTable th,

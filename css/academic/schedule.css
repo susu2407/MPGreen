@@ -5,13 +5,11 @@
 
 /* 헤더 배경색과 글자색 */
 .calendar-header {
-    height: 43px;
+    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
     color: #084A87;
-    margin: 20px;
 }
 
 .month-year {
@@ -28,8 +26,7 @@
 /* 달력 본체(날짜 그리드) 스타일 */
 .calendar {
     background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    border-radius: 0 0 8px 8px; /* 아래쪽 모서리를 둥글게 */
+    border: 1px solid #eee;
 }
 
 /* 달력 몸통 높이(889px) 적용 */
